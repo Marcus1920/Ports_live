@@ -514,6 +514,16 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
     <script src="{{ asset('/js/vfs_fonts.js') }}"></script>
     <!--  Buttons HTML5 -->
 
+	
+	
+<!-- Vue  js    -->
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
+
+
+<!-- END  -->
+
+
     <script src="{{ asset('js/socket.io.js') }}"></script>
 
     <script src="{{ asset('js/calendar.min.js') }}"></script> <!-- Calendar -->
