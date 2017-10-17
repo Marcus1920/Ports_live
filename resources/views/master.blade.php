@@ -47,6 +47,10 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
 <!-- jQuery Library -->
   <script src="{{ asset('/js/jquery.min.js') }}"></script>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwXS96_uM6y-6ZJZhSJGE87pO-qxpDp-Q&libraries=geometry,places"></script>
+
+
+
+
   {{--<script>--}}
 
   {{--$(document).ready(function() {--}}
@@ -85,6 +89,9 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
       height: 100%;
     }
   </style>
+
+    <script src="https://unpkg.com/vue"></script>
+
 </head>
 <body>
   @if(!\Auth::check())
@@ -728,4 +735,8 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
 			});
 		});
   </script>
+
+<script src="js/approve.js">
+
+</script>
 </body></html>
