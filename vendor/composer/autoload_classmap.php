@@ -37,6 +37,7 @@ return array(
     'App\\Http\\Controllers\\DistricsController' => $baseDir . '/app/Http/Controllers/DistricsController.php',
     'App\\Http\\Controllers\\DocumentRepositoryController' => $baseDir . '/app/Http/Controllers/DocumentRepositoryController.php',
     'App\\Http\\Controllers\\DroneRequestController' => $baseDir . '/app/Http/Controllers/DroneRequestController.php',
+    'App\\Http\\Controllers\\DroneTypesController' => $baseDir . '/app/Http/Controllers/DroneTypesController.php',
     'App\\Http\\Controllers\\FormsController' => $baseDir . '/app/Http/Controllers/FormsController.php',
     'App\\Http\\Controllers\\FormsDataController' => $baseDir . '/app/Http/Controllers/FormsDataController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',

@@ -418,6 +418,7 @@ class ComposerStaticInit1c721112013bbf52b0a2636c6824a7ee
         'App\\Http\\Controllers\\DistricsController' => __DIR__ . '/../..' . '/app/Http/Controllers/DistricsController.php',
         'App\\Http\\Controllers\\DocumentRepositoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/DocumentRepositoryController.php',
         'App\\Http\\Controllers\\DroneRequestController' => __DIR__ . '/../..' . '/app/Http/Controllers/DroneRequestController.php',
+        'App\\Http\\Controllers\\DroneTypesController' => __DIR__ . '/../..' . '/app/Http/Controllers/DroneTypesController.php',
         'App\\Http\\Controllers\\FormsController' => __DIR__ . '/../..' . '/app/Http/Controllers/FormsController.php',
         'App\\Http\\Controllers\\FormsDataController' => __DIR__ . '/../..' . '/app/Http/Controllers/FormsDataController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
