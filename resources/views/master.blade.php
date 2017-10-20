@@ -71,6 +71,7 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
 			postal_code: 'short_name'
 		};
   </script>
+    <script src="https://unpkg.com/vue"></script>
   <style>
     body {
 
@@ -403,6 +404,14 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
               </li>
 
             @endif
+                @if (Auth::user())
+                    <li {{ (Request::is('reports') ? "class=active" : '') }}>
+                        <a class="sa-side-drone" href="{{ url('requestForm')}}">
+                            <span class="menu-item">drone Request</span>
+                        </a>
+                    </li>
+
+                @endif
 
           @endif
         </ul>
@@ -738,4 +747,6 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
 			});
 		});
   </script>
-</body></html>
+  <script src="js/droneRequest.js"></script>
+</body>
+</html>

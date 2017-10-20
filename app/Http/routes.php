@@ -1220,3 +1220,10 @@ Route::any("logPIR", function () {
 Route::group(['prefix' => "api"], function () {
 	Route::any("switchseen", "CasesSeenController@switchSeen");
 });
+
+/*-------------------------------------------------------------------
+DRONES ROUTING
+---------------------------------------------------------------------
+*/
+
+Route::get('requestForm','DronesController@create');

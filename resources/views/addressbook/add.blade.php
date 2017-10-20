@@ -1,6 +1,5 @@
 <!-- Modal Default -->
 @extends('master')
-
 @section('content')
     <div class="block-area" id="basic">
         <!-- Breadcrumb -->
