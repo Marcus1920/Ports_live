@@ -64,7 +64,7 @@ new Vue({
         {
             axios.get('/api/v1/drone-type')
                 .then(function (response) {
-                    console.log(response);
+                    console.log(response.data);
                 })
                 .catch(function (error) {
                     console.log(error);
