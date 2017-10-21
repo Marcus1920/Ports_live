@@ -89,6 +89,9 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
     .has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline {
           color:#FE1B1B;
       }
+      [ v-cloak]{
+          display:none;
+      }
   </style>
 </head>
 <body>
