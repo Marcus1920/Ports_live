@@ -16,7 +16,7 @@ class DronesController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     public function create()
@@ -32,8 +32,36 @@ class DronesController extends Controller
     }
 
 
-    public function show($id)
+    public function userDepartment()
     {
+
+        $searchString           = \Input::get('q');
+        $userDepartment          = \DB::table('departments')
+            ->whereRaw(
+                "CONCAT(`departments`.`id`, ' ', `departments`.`name`) LIKE '%{$searchString}%'")
+            ->select(
+                array
+
+                (
+                    'departments.id as id',
+                    'departments.name as name',
+                )
+            )
+
+            ->get();
+
+        $data = array();
+
+        foreach ($userDepartment as $department) {
+
+            $data[] = array(
+
+                "id"     => "{$department->id}",
+                "name"   => "Department ID: {$department->id} >  Name: {$department->name}",
+            );
+        }
+
+        return $data;
 
     }
 

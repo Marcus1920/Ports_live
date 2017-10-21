@@ -14,8 +14,8 @@ class DroneTypesController extends Controller
 
     public function index()
     {
-        //$droneTypes=DroneType::with('Department')->get();
-        $droneTypes=DroneType::all();
+        $droneTypes=DroneType::with('Department')->get();
+//        $droneTypes=DroneType::all();
         return $droneTypes;
     }
 
@@ -46,6 +46,6 @@ class DroneTypesController extends Controller
 
     public function destroy($id)
     {
-        //
+
     }
 }

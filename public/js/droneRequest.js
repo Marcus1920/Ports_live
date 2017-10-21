@@ -69,5 +69,22 @@ new Vue({
                 .catch(function (error) {
                     console.log(error);
                 });
+
+            axios.get('/api/v1/drone-sub-type')
+                .then(function (response) {
+                    console.log(response.data);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+
+            axios.get('/api/v1/userDepartment')
+                .then(function (response) {
+                    console.log(response.data);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+
         }
 });
