@@ -1,3 +1,4 @@
+
 new Vue(
     {
         el:''
@@ -168,4 +169,11 @@ new Vue(
 
 
 
+
+new Vue({
+    el: '#bonjour',
+    data: {
+        message:"hi"
+    }
+})
 
