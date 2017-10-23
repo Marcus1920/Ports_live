@@ -1256,7 +1256,7 @@ Route::any("logPIR", function () {
 });
 Route::group(['prefix' => "api"], function () {
 	Route::any("switchseen", "CasesSeenController@switchSeen");
-<<<<<<< HEAD
+
 });
 
 /*-------------------------------------------------------------------
@@ -1295,6 +1295,6 @@ Route::group(array('prefix' => 'api/v1'), function()
 
 
 Route::get('requestForm','DroneTypesController@index');
-=======
-});
->>>>>>> c9c0a56dde84fcb115004073888b3033a074ad15
+
+
+
