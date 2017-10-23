@@ -20,8 +20,15 @@ new Vue({
         comment: '',
         commentFB: '',
         submition: false,
-        showErrors: false
+        showErrors: false,
+        firstOption: [],
+        secondOption: [],
+        list: {
+            'Aerial':[ { size:'1',prize:'5' },{ size:'2',prize:'10'}],
+            'Aquatic':[{size:'3', prize:'8'}]
+        }
     },
+
     computed: {
         wrongDroneType()
         {
@@ -58,17 +65,28 @@ new Vue({
             this.submition = true
             if(this.wrongDroneType || this.wrongServiceType || this.wrongDepartment || this.wrongComment)
                 event.preventDefault()
-        }
+        },
+        updateDroneType: function()
+           {
+               console.log('data');
+            alert('data');
+           }
         },
     mounted()
         {
             axios.get('/api/v1/drone-type')
-                .then(function (response) {
-                    console.log(response.data);
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
+                .then(response => this.firstOption = response.data);
+                // .then(function (response) {
+                //     console.log(response.data);
+                // })
+                // .catch(function (error) {
+                //     console.log(error);
+                // });
+
+            // this.$http.get("/api/camps",function(camps){
+            //     this.$set('camps',camps);
+            //     this.$emit('data-loaded');
+            // });
 
             axios.get('/api/v1/drone-sub-type')
                 .then(function (response) {

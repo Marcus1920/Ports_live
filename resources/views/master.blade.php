@@ -75,14 +75,10 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
     <script src="https://unpkg.com/vue"></script>
   <style>
     body {
-
-      background-color: #5c788f;
-
+        background-color: #5c788f;
     }
-
-    .eerross {
-
-      background-image: url("{{ asset('/img/01_fix_background.png') }}");
+      .eerross {
+          background-image: url("{{ asset('/img/01_fix_background.png') }}");
       width: 100%;
       height: 100%;
     }
