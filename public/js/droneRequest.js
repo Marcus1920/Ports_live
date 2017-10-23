@@ -8,7 +8,7 @@ const ERRORS =
     invalidEmail: 'This is not a valid email address.'
 }
 
-new Vue({
+ var drones = new Vue({
     el: "#droneForm",
     data: {
         droneType: '',
@@ -66,10 +66,18 @@ new Vue({
             if(this.wrongDroneType || this.wrongServiceType || this.wrongDepartment || this.wrongComment)
                 event.preventDefault()
         },
-        updateDroneType: function()
+        updateDroneType : function(value)
            {
-               console.log('data');
-            alert('data');
+               if (value !== '') {
+                   alert(value);
+                   
+                   axios.get('/api/v1/drone-type')
+                       .then(response => this.firstOption = response.data);
+
+               }
+               //this.$emit('input', value);
+
+
            }
         },
     mounted()
