@@ -17,35 +17,35 @@
         <div class="panel-body">
             <form class="form" id="form" method="POST" v-on:submit="validateForm">
                 <div class="form-group" v-bind:class="{ 'has-error': submition }">
-                    <label for="case_number" class="form-control-label">Case Number</label>
+                    <label for="casenum" class="form-control-label">Case Number</label>
                     <input id="casenum"
                            class="form-control"
                            name="casenum"
                            v-model="casenum">
-                    <span class="help-block" v-if="submition">This field is required.</span>
+                    <span class="help-block" v-if="submition && wrongcasenumber">@{{caseNo}}.</span>
                 </div>
 
-                <div class="form-group" v-bind:class="{ 'has-error': submition}">
-                    <label for="service_request" class="form-control-label">Service Request:Quay wall inspection</label>
+                <div class="form-group" v-bind:class="{ 'has-error': submition && wrongservicerequest}">
+                    <label for="servicereq" class="form-control-label">Service Request:Quay wall inspection</label>
                     <input type="" id="servicereq" class="form-control" name="servicereq" v-model="servicereq">
-                    <span class="help-block" v-if="submition">This field is required.</span>
+                    <span class="help-block" v-if="submition && wrongservicerequest">@{{serviceRe}}</span>
                 </div>
 
                 <div class="form-group" v-bind:class="{ 'has-error': submition}">
-                    <label for="created_by" class="form-control-label">Created By</label>
+                    <label for="createb" class="form-control-label">Created By</label>
                     <input type="createb" id="createb" class="form-control" name="createb" v-model="createb">
-                    <span class="help-block" v-if="submition ">This field is required.</span>
+                    <span class="help-block" v-if="submition &&  ">@{{creatBy}}</span>
                 </div>
 
                 <div class="form-group" v-bind:class="{ 'has-error': submition}">
-                    <label for="department_req" class="form-control-label">Department Request service</label>
+                    <label for="dept" class="form-control-label">Department Request service</label>
                     <input type="dept" id="dept" class="form-control" name="dept" v-model="dept">
-                    <span class="help-block" v-if="submition ">This field is required.</span>
+                    <span class="help-block" v-if="submition && wrongDepartment ">@{{Deptment}}</span>
                 </div>
                 <div class="form-group" v-bind:class="{ 'has-error': submition}">
                     <label for="search" class="form-control-label">Search</label>
-                    <input type="sch" id="sch" class="form-control" name="sch" v-model="sch">
-                    <span class="help-block" v-if="submition ">This field is required.</span>
+                    <input type="search" id="sch" class="form-control" name="search" v-model="search">
+                    <span class="help-block" v-if="submition && wrongSearch ">@{{search}}</span>
                 </div>
                 <div class="form-group" v-bind:class="{ 'has-error': submition}">
                     <label for="navigation" class="form-control-label">Navigation pane</label>
@@ -68,14 +68,14 @@
                     <button class="btn btn-primary">Reject</button>
                 </div>
 
-                <div class="form-group" v-bind:class="{ 'has-error': submition}">
+                <div class="form-group" v-bind:class="{ 'has-error': submition && wrongcaseStatus}">
                     <label for="caseStatus" class="form-control-label">Case Status</label>
-                    <input type="stat"
-                           id="stat"
+                    <input type="caseStatus"
+                           id="caseStatus"
                            class="form-control"
-                           name="stat"
-                           v-model="stat">
-                    <span class="help-block" v-if="submition ">This field is required.</span>
+                           name="caseStatus"
+                           v-model="caseStatus">
+                    <span class="help-block" v-if="submition  && wrongCaseStatus">@{{caseStat}}</span>
                 </div>
 
                 {{--<div class="form-group" v-bind:class="{ 'has-error': submition}">--}}
@@ -113,7 +113,7 @@
                         <option>cases awaiting review</option>
                         <option>other</option>
                     </select>
-                    <span class="help-block">This field is required</span>
+                    <span class="help-block">@{{reject}}</span>
                 </div>
 
 

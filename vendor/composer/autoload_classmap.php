@@ -457,6 +457,7 @@ return array(
     'Doctrine\\Common\\Cache\\ChainCache' => $vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache/ChainCache.php',
     'Doctrine\\Common\\Cache\\ClearableCache' => $vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache/ClearableCache.php',
     'Doctrine\\Common\\Cache\\CouchbaseCache' => $vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache/CouchbaseCache.php',
+<<<<<<< HEAD
     'Doctrine\\Common\\Cache\\ExtMongoDBCache' => $vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache/ExtMongoDBCache.php',
     'Doctrine\\Common\\Cache\\FileCache' => $vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache/FileCache.php',
     'Doctrine\\Common\\Cache\\FilesystemCache' => $vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache/FilesystemCache.php',
@@ -468,6 +469,15 @@ return array(
     'Doctrine\\Common\\Cache\\MultiDeleteCache' => $vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache/MultiDeleteCache.php',
     'Doctrine\\Common\\Cache\\MultiGetCache' => $vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache/MultiGetCache.php',
     'Doctrine\\Common\\Cache\\MultiOperationCache' => $vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache/MultiOperationCache.php',
+=======
+    'Doctrine\\Common\\Cache\\FileCache' => $vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache/FileCache.php',
+    'Doctrine\\Common\\Cache\\FilesystemCache' => $vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache/FilesystemCache.php',
+    'Doctrine\\Common\\Cache\\FlushableCache' => $vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache/FlushableCache.php',
+    'Doctrine\\Common\\Cache\\MemcacheCache' => $vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache/MemcacheCache.php',
+    'Doctrine\\Common\\Cache\\MemcachedCache' => $vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache/MemcachedCache.php',
+    'Doctrine\\Common\\Cache\\MongoDBCache' => $vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache/MongoDBCache.php',
+    'Doctrine\\Common\\Cache\\MultiGetCache' => $vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache/MultiGetCache.php',
+>>>>>>> 84a0c44b3756bda5f52a6c1bd0e6f5f28eeb317f
     'Doctrine\\Common\\Cache\\MultiPutCache' => $vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache/MultiPutCache.php',
     'Doctrine\\Common\\Cache\\PhpFileCache' => $vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache/PhpFileCache.php',
     'Doctrine\\Common\\Cache\\PredisCache' => $vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache/PredisCache.php',
@@ -633,16 +643,25 @@ return array(
     'Doctrine\\DBAL\\Exception\\ConstraintViolationException' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Exception/ConstraintViolationException.php',
     'Doctrine\\DBAL\\Exception\\DatabaseObjectExistsException' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Exception/DatabaseObjectExistsException.php',
     'Doctrine\\DBAL\\Exception\\DatabaseObjectNotFoundException' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Exception/DatabaseObjectNotFoundException.php',
+<<<<<<< HEAD
     'Doctrine\\DBAL\\Exception\\DeadlockException' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Exception/DeadlockException.php',
+=======
+>>>>>>> 84a0c44b3756bda5f52a6c1bd0e6f5f28eeb317f
     'Doctrine\\DBAL\\Exception\\DriverException' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Exception/DriverException.php',
     'Doctrine\\DBAL\\Exception\\ForeignKeyConstraintViolationException' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Exception/ForeignKeyConstraintViolationException.php',
     'Doctrine\\DBAL\\Exception\\InvalidArgumentException' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Exception/InvalidArgumentException.php',
     'Doctrine\\DBAL\\Exception\\InvalidFieldNameException' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Exception/InvalidFieldNameException.php',
+<<<<<<< HEAD
     'Doctrine\\DBAL\\Exception\\LockWaitTimeoutException' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Exception/LockWaitTimeoutException.php',
     'Doctrine\\DBAL\\Exception\\NonUniqueFieldNameException' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Exception/NonUniqueFieldNameException.php',
     'Doctrine\\DBAL\\Exception\\NotNullConstraintViolationException' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Exception/NotNullConstraintViolationException.php',
     'Doctrine\\DBAL\\Exception\\ReadOnlyException' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Exception/ReadOnlyException.php',
     'Doctrine\\DBAL\\Exception\\RetryableException' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Exception/RetryableException.php',
+=======
+    'Doctrine\\DBAL\\Exception\\NonUniqueFieldNameException' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Exception/NonUniqueFieldNameException.php',
+    'Doctrine\\DBAL\\Exception\\NotNullConstraintViolationException' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Exception/NotNullConstraintViolationException.php',
+    'Doctrine\\DBAL\\Exception\\ReadOnlyException' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Exception/ReadOnlyException.php',
+>>>>>>> 84a0c44b3756bda5f52a6c1bd0e6f5f28eeb317f
     'Doctrine\\DBAL\\Exception\\ServerException' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Exception/ServerException.php',
     'Doctrine\\DBAL\\Exception\\SyntaxErrorException' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Exception/SyntaxErrorException.php',
     'Doctrine\\DBAL\\Exception\\TableExistsException' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Exception/TableExistsException.php',
@@ -667,7 +686,10 @@ return array(
     'Doctrine\\DBAL\\Platforms\\Keywords\\OracleKeywords' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Platforms/Keywords/OracleKeywords.php',
     'Doctrine\\DBAL\\Platforms\\Keywords\\PostgreSQL91Keywords' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Platforms/Keywords/PostgreSQL91Keywords.php',
     'Doctrine\\DBAL\\Platforms\\Keywords\\PostgreSQL92Keywords' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Platforms/Keywords/PostgreSQL92Keywords.php',
+<<<<<<< HEAD
     'Doctrine\\DBAL\\Platforms\\Keywords\\PostgreSQL94Keywords' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Platforms/Keywords/PostgreSQL94Keywords.php',
+=======
+>>>>>>> 84a0c44b3756bda5f52a6c1bd0e6f5f28eeb317f
     'Doctrine\\DBAL\\Platforms\\Keywords\\PostgreSQLKeywords' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Platforms/Keywords/PostgreSQLKeywords.php',
     'Doctrine\\DBAL\\Platforms\\Keywords\\ReservedKeywordsValidator' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Platforms/Keywords/ReservedKeywordsValidator.php',
     'Doctrine\\DBAL\\Platforms\\Keywords\\SQLAnywhere11Keywords' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Platforms/Keywords/SQLAnywhere11Keywords.php',
@@ -684,7 +706,10 @@ return array(
     'Doctrine\\DBAL\\Platforms\\OraclePlatform' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Platforms/OraclePlatform.php',
     'Doctrine\\DBAL\\Platforms\\PostgreSQL91Platform' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Platforms/PostgreSQL91Platform.php',
     'Doctrine\\DBAL\\Platforms\\PostgreSQL92Platform' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Platforms/PostgreSQL92Platform.php',
+<<<<<<< HEAD
     'Doctrine\\DBAL\\Platforms\\PostgreSQL94Platform' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Platforms/PostgreSQL94Platform.php',
+=======
+>>>>>>> 84a0c44b3756bda5f52a6c1bd0e6f5f28eeb317f
     'Doctrine\\DBAL\\Platforms\\PostgreSqlPlatform' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Platforms/PostgreSqlPlatform.php',
     'Doctrine\\DBAL\\Platforms\\SQLAnywhere11Platform' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Platforms/SQLAnywhere11Platform.php',
     'Doctrine\\DBAL\\Platforms\\SQLAnywhere12Platform' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Platforms/SQLAnywhere12Platform.php',
@@ -761,11 +786,15 @@ return array(
     'Doctrine\\DBAL\\Types\\BlobType' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/BlobType.php',
     'Doctrine\\DBAL\\Types\\BooleanType' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/BooleanType.php',
     'Doctrine\\DBAL\\Types\\ConversionException' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/ConversionException.php',
+<<<<<<< HEAD
     'Doctrine\\DBAL\\Types\\DateImmutableType' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/DateImmutableType.php',
     'Doctrine\\DBAL\\Types\\DateIntervalType' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/DateIntervalType.php',
     'Doctrine\\DBAL\\Types\\DateTimeImmutableType' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/DateTimeImmutableType.php',
     'Doctrine\\DBAL\\Types\\DateTimeType' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/DateTimeType.php',
     'Doctrine\\DBAL\\Types\\DateTimeTzImmutableType' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/DateTimeTzImmutableType.php',
+=======
+    'Doctrine\\DBAL\\Types\\DateTimeType' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/DateTimeType.php',
+>>>>>>> 84a0c44b3756bda5f52a6c1bd0e6f5f28eeb317f
     'Doctrine\\DBAL\\Types\\DateTimeTzType' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/DateTimeTzType.php',
     'Doctrine\\DBAL\\Types\\DateType' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/DateType.php',
     'Doctrine\\DBAL\\Types\\DecimalType' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/DecimalType.php',
@@ -773,16 +802,24 @@ return array(
     'Doctrine\\DBAL\\Types\\GuidType' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/GuidType.php',
     'Doctrine\\DBAL\\Types\\IntegerType' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/IntegerType.php',
     'Doctrine\\DBAL\\Types\\JsonArrayType' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/JsonArrayType.php',
+<<<<<<< HEAD
     'Doctrine\\DBAL\\Types\\JsonType' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/JsonType.php',
+=======
+>>>>>>> 84a0c44b3756bda5f52a6c1bd0e6f5f28eeb317f
     'Doctrine\\DBAL\\Types\\ObjectType' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/ObjectType.php',
     'Doctrine\\DBAL\\Types\\SimpleArrayType' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/SimpleArrayType.php',
     'Doctrine\\DBAL\\Types\\SmallIntType' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/SmallIntType.php',
     'Doctrine\\DBAL\\Types\\StringType' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/StringType.php',
     'Doctrine\\DBAL\\Types\\TextType' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/TextType.php',
+<<<<<<< HEAD
     'Doctrine\\DBAL\\Types\\TimeImmutableType' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/TimeImmutableType.php',
     'Doctrine\\DBAL\\Types\\TimeType' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/TimeType.php',
     'Doctrine\\DBAL\\Types\\Type' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/Type.php',
     'Doctrine\\DBAL\\Types\\VarDateTimeImmutableType' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/VarDateTimeImmutableType.php',
+=======
+    'Doctrine\\DBAL\\Types\\TimeType' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/TimeType.php',
+    'Doctrine\\DBAL\\Types\\Type' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/Type.php',
+>>>>>>> 84a0c44b3756bda5f52a6c1bd0e6f5f28eeb317f
     'Doctrine\\DBAL\\Types\\VarDateTimeType' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Types/VarDateTimeType.php',
     'Doctrine\\DBAL\\Version' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/Version.php',
     'Doctrine\\DBAL\\VersionAwarePlatformDriver' => $vendorDir . '/doctrine/dbal/lib/Doctrine/DBAL/VersionAwarePlatformDriver.php',
@@ -1880,6 +1917,7 @@ return array(
     'League\\Fractal\\Resource\\Collection' => $vendorDir . '/league/fractal/src/Resource/Collection.php',
     'League\\Fractal\\Resource\\Item' => $vendorDir . '/league/fractal/src/Resource/Item.php',
     'League\\Fractal\\Resource\\NullResource' => $vendorDir . '/league/fractal/src/Resource/NullResource.php',
+<<<<<<< HEAD
     'League\\Fractal\\Resource\\Primitive' => $vendorDir . '/league/fractal/src/Resource/Primitive.php',
     'League\\Fractal\\Resource\\ResourceAbstract' => $vendorDir . '/league/fractal/src/Resource/ResourceAbstract.php',
     'League\\Fractal\\Resource\\ResourceInterface' => $vendorDir . '/league/fractal/src/Resource/ResourceInterface.php',
@@ -1890,6 +1928,14 @@ return array(
     'League\\Fractal\\Serializer\\DataArraySerializer' => $vendorDir . '/league/fractal/src/Serializer/DataArraySerializer.php',
     'League\\Fractal\\Serializer\\JsonApiSerializer' => $vendorDir . '/league/fractal/src/Serializer/JsonApiSerializer.php',
     'League\\Fractal\\Serializer\\Serializer' => $vendorDir . '/league/fractal/src/Serializer/Serializer.php',
+=======
+    'League\\Fractal\\Resource\\ResourceAbstract' => $vendorDir . '/league/fractal/src/Resource/ResourceAbstract.php',
+    'League\\Fractal\\Resource\\ResourceInterface' => $vendorDir . '/league/fractal/src/Resource/ResourceInterface.php',
+    'League\\Fractal\\Scope' => $vendorDir . '/league/fractal/src/Scope.php',
+    'League\\Fractal\\Serializer\\ArraySerializer' => $vendorDir . '/league/fractal/src/Serializer/ArraySerializer.php',
+    'League\\Fractal\\Serializer\\DataArraySerializer' => $vendorDir . '/league/fractal/src/Serializer/DataArraySerializer.php',
+    'League\\Fractal\\Serializer\\JsonApiSerializer' => $vendorDir . '/league/fractal/src/Serializer/JsonApiSerializer.php',
+>>>>>>> 84a0c44b3756bda5f52a6c1bd0e6f5f28eeb317f
     'League\\Fractal\\Serializer\\SerializerAbstract' => $vendorDir . '/league/fractal/src/Serializer/SerializerAbstract.php',
     'League\\Fractal\\TransformerAbstract' => $vendorDir . '/league/fractal/src/TransformerAbstract.php',
     'Mockery' => $vendorDir . '/mockery/mockery/library/Mockery.php',
@@ -3968,7 +4014,10 @@ return array(
     'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',
     'phpDocumentor\\Reflection\\DocBlock\\Description' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Description.php',
     'phpDocumentor\\Reflection\\DocBlock\\DescriptionFactory' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/DescriptionFactory.php',
+<<<<<<< HEAD
     'phpDocumentor\\Reflection\\DocBlock\\ExampleFinder' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/ExampleFinder.php',
+=======
+>>>>>>> 84a0c44b3756bda5f52a6c1bd0e6f5f28eeb317f
     'phpDocumentor\\Reflection\\DocBlock\\Serializer' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Serializer.php',
     'phpDocumentor\\Reflection\\DocBlock\\StandardTagFactory' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/StandardTagFactory.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tag' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tag.php',
@@ -3990,9 +4039,12 @@ return array(
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Property' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Property.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\PropertyRead' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/PropertyRead.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\PropertyWrite' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/PropertyWrite.php',
+<<<<<<< HEAD
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Reference\\Fqsen' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Reference/Fqsen.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Reference\\Reference' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Reference/Reference.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Reference\\Url' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Reference/Url.php',
+=======
+>>>>>>> 84a0c44b3756bda5f52a6c1bd0e6f5f28eeb317f
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Return_' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Return_.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\See' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/See.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Since' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Since.php',
@@ -4002,6 +4054,10 @@ return array(
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Var_' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Var_.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tags\\Version' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Version.php',
     'phpDocumentor\\Reflection\\Element' => $vendorDir . '/phpdocumentor/reflection-common/src/Element.php',
+<<<<<<< HEAD
+=======
+    'phpDocumentor\\Reflection\\ExampleFinder' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock/ExampleFinder.php',
+>>>>>>> 84a0c44b3756bda5f52a6c1bd0e6f5f28eeb317f
     'phpDocumentor\\Reflection\\File' => $vendorDir . '/phpdocumentor/reflection-common/src/File.php',
     'phpDocumentor\\Reflection\\Fqsen' => $vendorDir . '/phpdocumentor/reflection-common/src/Fqsen.php',
     'phpDocumentor\\Reflection\\FqsenResolver' => $vendorDir . '/phpdocumentor/type-resolver/src/FqsenResolver.php',
@@ -4019,12 +4075,20 @@ return array(
     'phpDocumentor\\Reflection\\Types\\Float_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Float_.php',
     'phpDocumentor\\Reflection\\Types\\Integer' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Integer.php',
     'phpDocumentor\\Reflection\\Types\\Iterable_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Iterable_.php',
+<<<<<<< HEAD
     'phpDocumentor\\Reflection\\Types\\Mixed_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Mixed_.php',
+=======
+    'phpDocumentor\\Reflection\\Types\\Mixed' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Mixed.php',
+>>>>>>> 84a0c44b3756bda5f52a6c1bd0e6f5f28eeb317f
     'phpDocumentor\\Reflection\\Types\\Null_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Null_.php',
     'phpDocumentor\\Reflection\\Types\\Nullable' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Nullable.php',
     'phpDocumentor\\Reflection\\Types\\Object_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Object_.php',
     'phpDocumentor\\Reflection\\Types\\Parent_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Parent_.php',
+<<<<<<< HEAD
     'phpDocumentor\\Reflection\\Types\\Resource_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Resource_.php',
+=======
+    'phpDocumentor\\Reflection\\Types\\Resource' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Resource.php',
+>>>>>>> 84a0c44b3756bda5f52a6c1bd0e6f5f28eeb317f
     'phpDocumentor\\Reflection\\Types\\Scalar' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Scalar.php',
     'phpDocumentor\\Reflection\\Types\\Self_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Self_.php',
     'phpDocumentor\\Reflection\\Types\\Static_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Static_.php',

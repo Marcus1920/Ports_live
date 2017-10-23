@@ -1221,6 +1221,7 @@ Route::group(['prefix' => "api"], function () {
 	Route::any("switchseen", "CasesSeenController@switchSeen");
 });
 
+<<<<<<< HEAD
 
 Route::get('test', function ()
 {
@@ -1237,3 +1238,41 @@ Route::get('vue',function()
 //
 //  return view::make('DroneApproves.create');
 //});
+=======
+/*-------------------------------------------------------------------
+DRONES ROUTING
+---------------------------------------------------------------------
+*/
+
+
+Route::group(array('prefix' => 'api/v1'), function()
+{    /*|--------------------------------------------------------------------------|
+    DRONE ROUTING
+    |--------------------------------------------------------------------------|*/
+    Route::resource('drone', 'DroneRequestController');
+    Route::post('firstDroneApproval/{id}', 'DroneRequestController@FirstApprove');
+    Route::post('finalDroneApproval/{id}', 'DroneRequestController@Approve');
+    Route::post('rejectDroneRequest/{id}', 'DroneRequestController@Reject');
+
+    /*|--------------------------------------------------------------------------|
+    END DRONE ROUTING
+    |--------------------------------------------------------------------------|*/
+
+    /*|--------------------------------------------------------------------------|
+     DRONE TYPES AND SUB TYPES ROUTING
+    |--------------------------------------------------
+    ------------------------|*/
+    Route::resource('drone-type','DroneTypesController');
+    Route::resource('drone-sub-type','DroneSubTypesController');
+
+
+    /*|--------------------------------------------------------------------------|
+    END DRONE TYPES AND SUB TYPES ROUTING
+    |--------------------------------------------------------------------------|*/
+
+    Route::get('userDepartment','DronesController@userDepartment');
+});
+
+
+Route::get('requestForm','DronesController@create');
+>>>>>>> 84a0c44b3756bda5f52a6c1bd0e6f5f28eeb317f

@@ -75,6 +75,8 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
 			postal_code: 'short_name'
 		};
   </script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
   <style>
     body {
 
@@ -88,6 +90,12 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
       width: 100%;
       height: 100%;
     }
+    .has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline {
+          color:#FE1B1B;
+      }
+      [ v-cloak]{
+          display:none;
+      }
   </style>
 
     <script src="https://unpkg.com/vue"></script>
@@ -410,6 +418,14 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
               </li>
 
             @endif
+                @if (Auth::user())
+                    <li {{ (Request::is('reports') ? "class=active" : '') }}>
+                        <a class="sa-side-drone" href="{{ url('requestForm')}}">
+                            <span class="menu-item">drone Request</span>
+                        </a>
+                    </li>
+
+                @endif
 
           @endif
         </ul>
@@ -524,17 +540,11 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
 
 <!-- END  -->
 
-
     <script src="{{ asset('js/socket.io.js') }}"></script>
 
     <script src="{{ asset('js/calendar.min.js') }}"></script> <!-- Calendar -->
 
     <script src="{{ asset('js/raphael.js') }}"></script>
-
-
-
-
-
   <!-- D3.js
         <script src="{{ asset('js/d3/plugins.js') }}"></script>
         <script src="{{ asset('js/d3/script.js') }}"></script>
@@ -543,7 +553,6 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
         <script src="{{ asset('js/d3/Tooltip.js') }}"></script>
         <script src="{{ asset('js/d3/Tooltip.js') }}"></script>
     -->
-
 
     {{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwXS96_uM6y-6ZJZhSJGE87pO-qxpDp-Q&libraries=places"></script>--}}
 
@@ -557,8 +566,6 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
 				"4ddb695c8c89887c9a9322ac8514fe87ccc88da0ed42aabb64b569389ad79f7eeb0f0be40d780" +
 				"b487a324116c7da20f45f1e2f90ee01b277a2c56b52e04b13e6e567ae4c5c42cffb71a0ec7b58";
     </script>
-
-
 
     <!-- zoomchart -->
     <script src="{{ asset('js/zoomcharts.js') }}"></script>
@@ -654,7 +661,6 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
 				}
 			}
     </script>
-
     @include('functions.caseModal')
     @yield('footer')
     @include('partials.forms')
@@ -746,6 +752,7 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
 			});
 		});
   </script>
+<<<<<<< HEAD
 
 <script src="js/approve.js">
 
@@ -753,3 +760,8 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
 
 <script src="main.js"></script>
 </body></html>
+=======
+  <script src="js/droneRequest.js"></script>
+</body>
+</html>
+>>>>>>> 84a0c44b3756bda5f52a6c1bd0e6f5f28eeb317f

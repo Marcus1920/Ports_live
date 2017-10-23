@@ -32,24 +32,6 @@ new Vue(
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // new Vue({
 //     el: '#bonjour',
 //     data: {
