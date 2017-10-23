@@ -17,7 +17,7 @@
                             {{--<input type="text" name="droneType"   class="form-control" id="droneType"  v-model="droneType">--}}
                             <select v-model="firstOption"  @change="updateDroneType($event.target.value)"  v-cloak class="form-control" id="droneType">
                                 @foreach($droneTypes as $droneType)
-                                <option  value="{{$droneType->id}}">{{$droneType->name}}</option>
+                                    <option  value="{{$droneType->id}}">{{$droneType->name}}</option>
                                 @endforeach
                             </select>
                             <p class="help-block"  v-cloak v-if="submition && wrongDroneType">@{{droneTypeFB}}</p>
@@ -31,7 +31,7 @@
                         <div class="col-sm-6">
                             {{--<input type="text" name="serviceType" class="form-control" id="serviceType"  v-model="serviceType">--}}
                             <select v-model="secondOption"  v-cloak  v-if="firstOption" name="serviceType" class="form-control" id="serviceType">
-                                <option  v-for="option in list[firstOption]" value="option.size"  >@{{option.prize}}</option>
+                                <option  v-for="option in list[firstOption]" value="0"  >@{{data.name}}</option>
                             </select>
                             <p class="help-block"  v-cloak v-if="submition && wrongServiceType">@{{serviceTypeFB}}</p>
                         </div>

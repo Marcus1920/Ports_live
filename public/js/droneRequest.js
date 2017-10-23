@@ -24,8 +24,8 @@ const ERRORS =
         firstOption: [],
         secondOption: [],
         list: {
-            'Aerial':[ { size:'1',prize:'5' },{ size:'2',prize:'10'}],
-            'Aquatic':[{size:'3', prize:'8'}]
+            'value':[],
+            'Aquatic':[]
         }
     },
 
@@ -61,24 +61,34 @@ const ERRORS =
         }
     },
     methods: {
+
         validateForm() {
             this.submition = true
             if(this.wrongDroneType || this.wrongServiceType || this.wrongDepartment || this.wrongComment)
                 event.preventDefault()
         },
+
         updateDroneType : function(value)
            {
-               if (value !== '') {
-                   alert(value);
-                   
-                   axios.get('/api/v1/drone-type')
-                       .then(response => this.firstOption = response.data);
-
+               if (value !== '')
+               {
+                   axios.get('/api/v1/droneSubType/' + value)
+                       .then(function (response)
+                       {
+                           this.secondOption.push(response.data.name,response.data.id);
+                           return this.secondOption;
+                       })
+                       .catch(function (error) {
+                           console.log(error);
+                       });
                }
-               //this.$emit('input', value);
 
-
-           }
+           },
+        props:['secondOption'],
+            data : function()
+            {
+                console.log(secondOption);
+            }
         },
     mounted()
         {
