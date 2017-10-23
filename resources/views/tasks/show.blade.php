@@ -2,8 +2,6 @@
 
 @section('content')
 
-
-
     <!-- Breadcrumb -->
     <ol class="breadcrumb hidden-xs">
         <li><a href="{{ url('tasks') }}">TASK LIST</a></li>

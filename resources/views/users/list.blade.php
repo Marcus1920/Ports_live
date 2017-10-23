@@ -23,9 +23,6 @@
 
 
 
-
-
-
 <!-- Responsive Table -->
 <div class="block-area" id="responsiveTable">
     @if(Session::has('success'))

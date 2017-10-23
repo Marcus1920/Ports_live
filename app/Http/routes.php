@@ -1222,7 +1222,18 @@ Route::group(['prefix' => "api"], function () {
 });
 
 
-Route::get('test', function () {
+Route::get('test', function ()
+{
     return view('testVue');
 });
 
+
+Route::get('vue',function()
+{
+    return view('droneAprove');
+});
+//Route::get('create', function()
+//{
+//
+//  return view::make('DroneApproves.create');
+//});

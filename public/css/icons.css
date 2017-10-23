@@ -44,7 +44,6 @@
 .sa-side-agenda { background-image: url(../img/icon/agenda.png); }
 
 
-
 /* Top Menu */
 [class*="sa-top-"] {
     width: 40px;
@@ -80,6 +79,8 @@
 .editor-help { background-image: url(../img/editor/help.png); }
 .editor-font { background-image: url(../img/editor/font.png); }
 .editor-heading { background-image: url(../img/editor/heading.png); }
+
+
 
 /* List Icons */
 [class*="sa-list-"] {

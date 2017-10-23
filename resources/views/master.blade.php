@@ -518,6 +518,7 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
 	
 <!-- Vue  js    -->
 <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
 
 
@@ -749,4 +750,6 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
 <script src="js/approve.js">
 
 </script>
+
+<script src="main.js"></script>
 </body></html>
