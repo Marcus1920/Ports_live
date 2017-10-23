@@ -387,6 +387,7 @@ class ComposerStaticInit1c721112013bbf52b0a2636c6824a7ee
     );
 
     public static $classMap = array (
+<<<<<<< HEAD
         'App\\Affiliation' => __DIR__ . '/../..' . '/app/Affiliation.php',
         'App\\AffiliationPositions' => __DIR__ . '/../..' . '/app/AffiliationPositions.php',
         'App\\Bank' => __DIR__ . '/../..' . '/app/Bank.php',
@@ -430,6 +431,8 @@ class ComposerStaticInit1c721112013bbf52b0a2636c6824a7ee
         'App\\FormFieldType' => __DIR__ . '/../..' . '/app/FormFieldType.php',
         'App\\FormsData' => __DIR__ . '/../..' . '/app/FormsData.php',
         'App\\GroupPermission' => __DIR__ . '/../..' . '/app/GroupPermission.php',
+=======
+>>>>>>> c9c0a56dde84fcb115004073888b3033a074ad15
         'App\\Http\\Controllers\\AddressBookController' => __DIR__ . '/../..' . '/app/Http/Controllers/AddressBookController.php',
         'App\\Http\\Controllers\\AffiliationsController' => __DIR__ . '/../..' . '/app/Http/Controllers/AffiliationsController.php',
         'App\\Http\\Controllers\\Auth\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AuthController.php',
@@ -460,6 +463,9 @@ class ComposerStaticInit1c721112013bbf52b0a2636c6824a7ee
         'App\\Http\\Controllers\\DepartmentController' => __DIR__ . '/../..' . '/app/Http/Controllers/DepartmentController.php',
         'App\\Http\\Controllers\\DistricsController' => __DIR__ . '/../..' . '/app/Http/Controllers/DistricsController.php',
         'App\\Http\\Controllers\\DocumentRepositoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/DocumentRepositoryController.php',
+        'App\\Http\\Controllers\\DroneRequestController' => __DIR__ . '/../..' . '/app/Http/Controllers/DroneRequestController.php',
+        'App\\Http\\Controllers\\DroneSubTypesController' => __DIR__ . '/../..' . '/app/Http/Controllers/DroneSubTypesController.php',
+        'App\\Http\\Controllers\\DroneTypesController' => __DIR__ . '/../..' . '/app/Http/Controllers/DroneTypesController.php',
         'App\\Http\\Controllers\\FormsController' => __DIR__ . '/../..' . '/app/Http/Controllers/FormsController.php',
         'App\\Http\\Controllers\\FormsDataController' => __DIR__ . '/../..' . '/app/Http/Controllers/FormsDataController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
@@ -737,6 +743,7 @@ class ComposerStaticInit1c721112013bbf52b0a2636c6824a7ee
         'CalendarEventTypesSeeder' => __DIR__ . '/../..' . '/database/seeds/CalendarEventTypesSeeder.php',
         'CalendarGroupsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/CalendarGroupsTableSeeder.php',
         'CalendarTableSeeder' => __DIR__ . '/../..' . '/database/seeds/CalendarTableSeeder.php',
+<<<<<<< HEAD
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
@@ -802,6 +809,16 @@ class ComposerStaticInit1c721112013bbf52b0a2636c6824a7ee
         'Cron\\MinutesField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/MinutesField.php',
         'Cron\\MonthField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/MonthField.php',
         'Cron\\YearField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/YearField.php',
+=======
+        'CreateCasesSeensTable' => __DIR__ . '/../..' . '/database/mm/2017_08_29_003544_create_cases_seens_table.php',
+        'CreateDroneApprovalStatusesTable' => __DIR__ . '/../..' . '/database/mm/2017_10_18_183502_create_drone_approval_statuses_table.php',
+        'CreateDroneRejectReasonsTable' => __DIR__ . '/../..' . '/database/mm/2017_10_18_183613_create_drone_reject_reasons_table.php',
+        'CreateDroneRequestActivitiesTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_19_232950_create_drone_request_activities_table.php',
+        'CreateDroneRequestsTable' => __DIR__ . '/../..' . '/database/mm/2017_10_20_183736_create_drone_requests_table.php',
+        'CreateDroneSubTypesTable' => __DIR__ . '/../..' . '/database/mm/2017_10_19_191732_create_drone_sub_types_table.php',
+        'CreateDroneTypesTable' => __DIR__ . '/../..' . '/database/mm/2017_10_19_191659_create_drone_types_table.php',
+        'CreateReportersTable' => __DIR__ . '/../..' . '/database/mm/2017_09_19_094751_create_reporters_table.php',
+>>>>>>> c9c0a56dde84fcb115004073888b3033a074ad15
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'Diff' => __DIR__ . '/..' . '/phpspec/php-diff/lib/Diff.php',
         'Diff_Renderer_Abstract' => __DIR__ . '/..' . '/phpspec/php-diff/lib/Diff/Renderer/Abstract.php',
@@ -2187,6 +2204,7 @@ class ComposerStaticInit1c721112013bbf52b0a2636c6824a7ee
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
         'Languages' => __DIR__ . '/../..' . '/database/seeds/Languages.php',
+<<<<<<< HEAD
         'League\\Flysystem\\AdapterInterface' => __DIR__ . '/..' . '/league/flysystem/src/AdapterInterface.php',
         'League\\Flysystem\\Adapter\\AbstractAdapter' => __DIR__ . '/..' . '/league/flysystem/src/Adapter/AbstractAdapter.php',
         'League\\Flysystem\\Adapter\\AbstractFtpAdapter' => __DIR__ . '/..' . '/league/flysystem/src/Adapter/AbstractFtpAdapter.php',
@@ -2407,6 +2425,8 @@ class ComposerStaticInit1c721112013bbf52b0a2636c6824a7ee
         'Monolog\\Processor\\UidProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/UidProcessor.php',
         'Monolog\\Processor\\WebProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/WebProcessor.php',
         'Monolog\\Registry' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Registry.php',
+=======
+>>>>>>> c9c0a56dde84fcb115004073888b3033a074ad15
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
         'PHPUnit\\Framework\\AssertionFailedError' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/AssertionFailedError.php',
         'PHPUnit\\Framework\\BaseTestListener' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',

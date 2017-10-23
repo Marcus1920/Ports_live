@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+<<<<<<< HEAD
     'App\\Affiliation' => $baseDir . '/app/Affiliation.php',
     'App\\AffiliationPositions' => $baseDir . '/app/AffiliationPositions.php',
     'App\\Bank' => $baseDir . '/app/Bank.php',
@@ -49,6 +50,8 @@ return array(
     'App\\FormFieldType' => $baseDir . '/app/FormFieldType.php',
     'App\\FormsData' => $baseDir . '/app/FormsData.php',
     'App\\GroupPermission' => $baseDir . '/app/GroupPermission.php',
+=======
+>>>>>>> c9c0a56dde84fcb115004073888b3033a074ad15
     'App\\Http\\Controllers\\AddressBookController' => $baseDir . '/app/Http/Controllers/AddressBookController.php',
     'App\\Http\\Controllers\\AffiliationsController' => $baseDir . '/app/Http/Controllers/AffiliationsController.php',
     'App\\Http\\Controllers\\Auth\\AuthController' => $baseDir . '/app/Http/Controllers/Auth/AuthController.php',
@@ -79,6 +82,9 @@ return array(
     'App\\Http\\Controllers\\DepartmentController' => $baseDir . '/app/Http/Controllers/DepartmentController.php',
     'App\\Http\\Controllers\\DistricsController' => $baseDir . '/app/Http/Controllers/DistricsController.php',
     'App\\Http\\Controllers\\DocumentRepositoryController' => $baseDir . '/app/Http/Controllers/DocumentRepositoryController.php',
+    'App\\Http\\Controllers\\DroneRequestController' => $baseDir . '/app/Http/Controllers/DroneRequestController.php',
+    'App\\Http\\Controllers\\DroneSubTypesController' => $baseDir . '/app/Http/Controllers/DroneSubTypesController.php',
+    'App\\Http\\Controllers\\DroneTypesController' => $baseDir . '/app/Http/Controllers/DroneTypesController.php',
     'App\\Http\\Controllers\\FormsController' => $baseDir . '/app/Http/Controllers/FormsController.php',
     'App\\Http\\Controllers\\FormsDataController' => $baseDir . '/app/Http/Controllers/FormsDataController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
@@ -356,6 +362,7 @@ return array(
     'CalendarEventTypesSeeder' => $baseDir . '/database/seeds/CalendarEventTypesSeeder.php',
     'CalendarGroupsTableSeeder' => $baseDir . '/database/seeds/CalendarGroupsTableSeeder.php',
     'CalendarTableSeeder' => $baseDir . '/database/seeds/CalendarTableSeeder.php',
+<<<<<<< HEAD
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
     'Carbon\\CarbonInterval' => $vendorDir . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
     'Carbon\\Exceptions\\InvalidDateException' => $vendorDir . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
@@ -421,6 +428,16 @@ return array(
     'Cron\\MinutesField' => $vendorDir . '/mtdowling/cron-expression/src/Cron/MinutesField.php',
     'Cron\\MonthField' => $vendorDir . '/mtdowling/cron-expression/src/Cron/MonthField.php',
     'Cron\\YearField' => $vendorDir . '/mtdowling/cron-expression/src/Cron/YearField.php',
+=======
+    'CreateCasesSeensTable' => $baseDir . '/database/mm/2017_08_29_003544_create_cases_seens_table.php',
+    'CreateDroneApprovalStatusesTable' => $baseDir . '/database/mm/2017_10_18_183502_create_drone_approval_statuses_table.php',
+    'CreateDroneRejectReasonsTable' => $baseDir . '/database/mm/2017_10_18_183613_create_drone_reject_reasons_table.php',
+    'CreateDroneRequestActivitiesTable' => $baseDir . '/database/migrations/2017_10_19_232950_create_drone_request_activities_table.php',
+    'CreateDroneRequestsTable' => $baseDir . '/database/mm/2017_10_20_183736_create_drone_requests_table.php',
+    'CreateDroneSubTypesTable' => $baseDir . '/database/mm/2017_10_19_191732_create_drone_sub_types_table.php',
+    'CreateDroneTypesTable' => $baseDir . '/database/mm/2017_10_19_191659_create_drone_types_table.php',
+    'CreateReportersTable' => $baseDir . '/database/mm/2017_09_19_094751_create_reporters_table.php',
+>>>>>>> c9c0a56dde84fcb115004073888b3033a074ad15
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'Diff' => $vendorDir . '/phpspec/php-diff/lib/Diff.php',
     'Diff_Renderer_Abstract' => $vendorDir . '/phpspec/php-diff/lib/Diff/Renderer/Abstract.php',
@@ -1806,6 +1823,7 @@ return array(
     'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => $vendorDir . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
     'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => $vendorDir . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
     'Languages' => $baseDir . '/database/seeds/Languages.php',
+<<<<<<< HEAD
     'League\\Flysystem\\AdapterInterface' => $vendorDir . '/league/flysystem/src/AdapterInterface.php',
     'League\\Flysystem\\Adapter\\AbstractAdapter' => $vendorDir . '/league/flysystem/src/Adapter/AbstractAdapter.php',
     'League\\Flysystem\\Adapter\\AbstractFtpAdapter' => $vendorDir . '/league/flysystem/src/Adapter/AbstractFtpAdapter.php',
@@ -2026,6 +2044,8 @@ return array(
     'Monolog\\Processor\\UidProcessor' => $vendorDir . '/monolog/monolog/src/Monolog/Processor/UidProcessor.php',
     'Monolog\\Processor\\WebProcessor' => $vendorDir . '/monolog/monolog/src/Monolog/Processor/WebProcessor.php',
     'Monolog\\Registry' => $vendorDir . '/monolog/monolog/src/Monolog/Registry.php',
+=======
+>>>>>>> c9c0a56dde84fcb115004073888b3033a074ad15
     'PHPUnit\\Framework\\Assert' => $vendorDir . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
     'PHPUnit\\Framework\\AssertionFailedError' => $vendorDir . '/phpunit/phpunit/src/ForwardCompatibility/AssertionFailedError.php',
     'PHPUnit\\Framework\\BaseTestListener' => $vendorDir . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',
