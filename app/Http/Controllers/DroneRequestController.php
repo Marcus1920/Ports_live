@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\DroneRequest;
+use App\DroneRequestActivity;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Auth;
@@ -73,36 +74,67 @@ class DroneRequestController extends Controller
         return "Drone request created";
     }
 
-    public function FirstApprove($id)
+    public function FirstApprove($id, Request $request)
     {
         $dronRequest = DroneRequest::where('id',$id)
             ->update(['drone_case_status'=> 2,
                 'updated_at'=>\Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString()]);
 
-        return "Successfully Approved, waiting for Final Approval";
+        $dronRequestActivity = new DroneRequestActivity();
+        $dronRequestActivity->drone_request_id = $id;
+        $dronRequestActivity->user = $request['user'];
+        $dronRequestActivity->activity = "first approved drone request";
+        $dronRequestActivity->save();
+
+        return $dronRequestActivity;
     }
 
-    public function Approve($id)
+    public function Approve($id, Request $request)
     {
         $dronRequest = DroneRequest::where('id',$id)
             ->update(['drone_case_status'=> 3,
                 'updated_at'=>\Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString()]);
 
+        $dronRequestActivity = new DroneRequestActivity();
+        $dronRequestActivity->drone_request_id = $id;
+        $dronRequestActivity->user = $request['user'];
+        $dronRequestActivity->activity = "final approved drone request";
+        $dronRequestActivity->save();
+
         return "Successfully Approved";
     }
 
-    public function Reject($id)
+    public function Reject($id, Request $request)
     {
         $dronRequest = DroneRequest::where('id',$id)
             ->update(['drone_case_status'=> 4,
                 'updated_at'=>\Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString()]);
+
+        $dronRequestActivity = new DroneRequestActivity();
+        $dronRequestActivity->drone_request_id = $id;
+        $dronRequestActivity->user = $request['user'];
+        $dronRequestActivity->activity = "rejected drone request";
+        $dronRequestActivity->save();
 
         return "Successfully Rejected drone request";
     }
 
     public function show($id)
     {
-        //
+        $droneRequest = DroneRequest::with('DroneType')
+            ->with('DroneSubType')
+            ->with('DroneCaseStatus')
+            ->with('Department')
+            ->with('RejectReason')
+            ->where('id',$id)
+            ->get();
+
+        $droneRequestActivity = DroneRequestActivity::with('DroneRequest')
+            ->with('User')
+            ->where('drone_request_id',$id)
+            ->get();
+
+        return compact('droneRequest','droneRequestActivity');
     }
 
     public function edit($id)

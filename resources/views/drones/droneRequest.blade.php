@@ -14,7 +14,12 @@
                     <div class="col-md-6">
                         <label for="inputEmail3" class="col-sm-6 control-label">Drone Type Required</label>
                         <div class="col-sm-6">
-                            <input type="text" name="droneType" class="form-control" id="droneType"  v-model="droneType">
+                            {{--<input type="text" name="droneType"   class="form-control" id="droneType"  v-model="droneType">--}}
+                            <select v-model="firstOption"  @change="updateDroneType($event.target.value)"  v-cloak class="form-control" id="droneType">
+                                @foreach($droneTypes as $droneType)
+                                <option  value="{{$droneType->id}}">{{$droneType->name}}</option>
+                                @endforeach
+                            </select>
                             <p class="help-block"  v-cloak v-if="submition && wrongDroneType">@{{droneTypeFB}}</p>
                         </div>
                     </div>
@@ -24,7 +29,10 @@
                     <div class="col-md-6">
                         <label for="inputEmail3" class="col-sm-6 control-label">Service Required</label>
                         <div class="col-sm-6">
-                            <input type="text" name="serviceType" class="form-control" id="serviceType"  v-model="serviceType">
+                            {{--<input type="text" name="serviceType" class="form-control" id="serviceType"  v-model="serviceType">--}}
+                            <select v-model="secondOption"  v-cloak  v-if="firstOption" name="serviceType" class="form-control" id="serviceType">
+                                <option  v-for="option in list[firstOption]" value="option.size"  >@{{option.prize}}</option>
+                            </select>
                             <p class="help-block"  v-cloak v-if="submition && wrongServiceType">@{{serviceTypeFB}}</p>
                         </div>
                     </div>
