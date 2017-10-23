@@ -54,6 +54,7 @@ class DroneRequestController extends Controller
     public function create()
     {
         //
+        return view('drones.droneApprove');
     }
 
     public function store(Request $request)

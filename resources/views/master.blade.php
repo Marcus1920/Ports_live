@@ -752,7 +752,7 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
 			});
 		});
   </script>
-<<<<<<< HEAD
+
 
 <script src="js/approve.js">
 
@@ -760,8 +760,8 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
 
 <script src="main.js"></script>
 </body></html>
-=======
+
   <script src="js/droneRequest.js"></script>
 </body>
 </html>
->>>>>>> 84a0c44b3756bda5f52a6c1bd0e6f5f28eeb317f
+

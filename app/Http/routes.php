@@ -1221,24 +1221,24 @@ Route::group(['prefix' => "api"], function () {
 	Route::any("switchseen", "CasesSeenController@switchSeen");
 });
 
-<<<<<<< HEAD
-
-Route::get('test', function ()
-{
-    return view('testVue');
-});
 
 
-Route::get('vue',function()
-{
-    return view('droneAprove');
-});
+//Route::get('test', function ()
+//{
+//    return view('testVue');
+//});
+//
+//
+//Route::get('vue',function()
+//{
+//    return view('droneAprove');
+//});
 //Route::get('create', function()
 //{
 //
 //  return view::make('DroneApproves.create');
 //});
-=======
+
 /*-------------------------------------------------------------------
 DRONES ROUTING
 ---------------------------------------------------------------------
@@ -1275,4 +1275,6 @@ Route::group(array('prefix' => 'api/v1'), function()
 
 
 Route::get('requestForm','DronesController@create');
->>>>>>> 84a0c44b3756bda5f52a6c1bd0e6f5f28eeb317f
+Route::get('approveForm','DroneRequestController@create');
+//Route::get('');
+

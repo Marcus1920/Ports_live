@@ -73,7 +73,7 @@
                     </table>
                 </div>
                 <div class="panel-footer">
-                    {{count($contactBook)}}     Users
+                    {{count($contactBook)}}    Users
 
                 </div>
             </div>

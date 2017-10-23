@@ -1,7 +1,7 @@
 @extends('master')
 @section('content')
 
-<<<<<<< HEAD
+
     <table>
         <tr>
 
@@ -66,8 +66,8 @@
     {{--</table>--}}
 {{--</table>--}}
 @endsection
-=======
+
 <input  placeholder="edit me">
 <p id="bonjour">Message is: @{{message}}</p>
     @endsection
->>>>>>> 825d9b830b876810b24e80d772da8915d06059f0
+
