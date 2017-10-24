@@ -23,7 +23,7 @@ class DocumentRepositoryRequest extends Request
            if(Request::segment(1)=='saveDocumentfile')
            {                
                 return [
-                    'upload_doc'     =>'required|mimes:jpeg,png,jpg,gif,svg,pdf,DOC,doc,txt,csv,xls,DOCX,XLSX,xlsx,docx',
+                    'upload_doc'     =>'required|mimes:jpeg,png,jpg,gif,svg,pdf,DOC,doc,txt,csv,xls,DOCX,XLSX,xlsx,docx,avi,kmz,tif,tfw,xyz,mov',
                     'description'     =>'required',
                     'role' =>'required',
                 ];
