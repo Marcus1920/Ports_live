@@ -46,7 +46,7 @@ class CaseFilesController extends Controller
      */
     public function store(Request $request)
     {
-
+$txtDebug = __CLASS__."".__FUNCTION__."(\$request) \$request - ".print_r($request->all(),1);
         //tutsnare.com/upload-files-in-laravel/
         //laravel-recipes.com/recipes/147/creating-a-directory
         //github.com/Studio-42/elFinder/wiki/Client-configuration-options#uiOptions
@@ -58,13 +58,16 @@ class CaseFilesController extends Controller
 
         $fileName          = $request->file('caseFile')->getClientOriginalName();
         $fileFullPath      = $destinationFolder.'/'.$fileName;
+//$txtDebug .= "\n  \$fileFullPath: {$fileFullPath}, exists - ".file_exists($fileFullPath,1);
+//die("<pre>{$txtDebug}</pre>");
 
         if(!\File::exists($fileFullPath)) {
 
             $request->file('caseFile')->move($destinationFolder,$fileName);
             $caseOwners = CaseOwner::where('case_id','=',$request['caseID'])->get();
             $author     = User::find($request['uid']);
-
+//$txtDebug .= "\n  \$caseOwners - ".print_r($caseOwners,1);
+//die("<pre>{$txtDebug}</pre>");
             $caseFile           = new CaseFile();
             $caseFile->file     = $fileName;
             $caseFile->img_url  = $fileFullPath;
@@ -81,7 +84,7 @@ class CaseFilesController extends Controller
             $caseActivity->save();
 
             foreach ($caseOwners as $caseOwner) {
-
+if ($caseOwner->user == 0) continue;
                 $user = User::find($caseOwner->user);
 
                 $data = array(
