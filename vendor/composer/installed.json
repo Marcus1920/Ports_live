@@ -3100,7 +3100,7 @@
         ]
     },
     {
-<<<<<<< HEAD
+
         "name": "doctrine/dbal",
         "version": "v2.6.2",
         "version_normalized": "2.6.2.0",
@@ -3113,7 +3113,7 @@
             "type": "zip",
             "url": "https://api.github.com/repos/doctrine/dbal/zipball/1a4ee83a5a709555f2c6f9057a3aacf892451c7e",
             "reference": "1a4ee83a5a709555f2c6f9057a3aacf892451c7e",
-=======
+
         "name": "league/flysystem",
         "version": "1.0.41",
         "version_normalized": "1.0.41.0",
@@ -3126,7 +3126,7 @@
             "type": "zip",
             "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/f400aa98912c561ba625ea4065031b7a41e5a155",
             "reference": "f400aa98912c561ba625ea4065031b7a41e5a155",
->>>>>>> 35f40b708f936b3ec9ecb290b386fe3b6cbbb5a7
+
             "shasum": ""
         },
         "require": {
@@ -3138,7 +3138,7 @@
             "league/flysystem-sftp": "<1.0.6"
         },
         "require-dev": {
-<<<<<<< HEAD
+
             "phpunit/phpunit": "^5.4.6",
             "phpunit/phpunit-mock-objects": "!=3.2.4,!=3.2.5",
             "symfony/console": "2.*||^3.0"
@@ -3153,8 +3153,7 @@
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "2.6.x-dev"
-=======
+                "dev-master": "2.6.x-dev",
             "ext-fileinfo": "*",
             "mockery/mockery": "~0.9",
             "phpspec/phpspec": "^2.2",
@@ -3179,18 +3178,18 @@
         "extra": {
             "branch-alias": {
                 "dev-master": "1.1-dev"
->>>>>>> 35f40b708f936b3ec9ecb290b386fe3b6cbbb5a7
+
             }
         },
         "installation-source": "dist",
         "autoload": {
-<<<<<<< HEAD
+
             "psr-0": {
-                "Doctrine\\DBAL\\": "lib/"
-=======
+                "Doctrine\\DBAL\\": "lib/",
+
             "psr-4": {
                 "League\\Flysystem\\": "src/"
->>>>>>> 35f40b708f936b3ec9ecb290b386fe3b6cbbb5a7
+
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -3199,7 +3198,7 @@
         ],
         "authors": [
             {
-<<<<<<< HEAD
+
                 "name": "Roman Borschel",
                 "email": "roman@code-factory.org"
             },
@@ -3224,8 +3223,8 @@
             "persistence",
             "queryobject"
         ]
-    },
-    {
+      },
+
         "name": "symfony/var-dumper",
         "version": "v2.7.35",
         "version_normalized": "2.7.35.0",
@@ -3238,11 +3237,11 @@
             "type": "zip",
             "url": "https://api.github.com/repos/symfony/var-dumper/zipball/8247e51cbe9ce139a001db96ac1d63c302bbf0d7",
             "reference": "8247e51cbe9ce139a001db96ac1d63c302bbf0d7",
-=======
                 "name": "Frank de Jonge",
                 "email": "info@frenky.net"
             }
-        ],
+        ,
+
         "description": "Filesystem abstraction: Many filesystems, one API.",
         "keywords": [
             "Cloud Files",
@@ -3264,7 +3263,7 @@
             "storage"
         ]
     },
-    {
+
         "name": "barryvdh/laravel-ide-helper",
         "version": "v2.4.1",
         "version_normalized": "2.4.1.0",
@@ -3277,7 +3276,7 @@
             "type": "zip",
             "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/2b1273c45e2f8df7a625563e2283a17c14f02ae8",
             "reference": "2b1273c45e2f8df7a625563e2283a17c14f02ae8",
->>>>>>> 35f40b708f936b3ec9ecb290b386fe3b6cbbb5a7
+
             "shasum": ""
         },
         "require": {
@@ -3340,7 +3339,7 @@
             "sublime"
         ]
     },
-    {
+
         "name": "fzaninotto/faker",
         "version": "v1.7.1",
         "version_normalized": "1.7.1.0",
@@ -4413,7 +4412,7 @@
         "require-dev": {
             "mockery/mockery": "0.9.1",
             "phpspec/phpspec": "2.0.*@dev"
-<<<<<<< HEAD
+
         },
         "time": "2017-09-12T14:11:34+00:00",
         "type": "library",
@@ -4486,7 +4485,7 @@
         "autoload": {
             "psr-4": {
                 "League\\Fractal\\": "src"
-=======
+
         },
         "time": "2017-09-12T14:11:34+00:00",
         "type": "library",
@@ -4494,7 +4493,7 @@
         "autoload": {
             "psr-0": {
                 "Cornford\\Googlmapper": "src/"
->>>>>>> 35f40b708f936b3ec9ecb290b386fe3b6cbbb5a7
+
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -4503,7 +4502,7 @@
         ],
         "authors": [
             {
-<<<<<<< HEAD
+
                 "name": "Phil Sturgeon",
                 "email": "me@philsturgeon.uk",
                 "homepage": "http://philsturgeon.uk/",
@@ -4519,7 +4518,7 @@
             "rest"
         ]
     },
-    {
+
         "name": "doctrine/instantiator",
         "version": "1.1.0",
         "version_normalized": "1.1.0.0",
@@ -4548,12 +4547,12 @@
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "1.2.x-dev"
-=======
+                "dev-master": "1.2.x-dev",
+
                 "name": "Bradley Cornford",
                 "email": "me@bradleycornford.co.uk"
             }
-        ],
+        ,
         "description": "An easy way to integrate Google Maps with Laravel.",
         "keywords": [
             "google",
@@ -4564,7 +4563,7 @@
             "streetview"
         ]
     },
-    {
+
         "name": "league/fractal",
         "version": "0.17.0",
         "version_normalized": "0.17.0.0",
@@ -4601,17 +4600,17 @@
         "extra": {
             "branch-alias": {
                 "dev-master": "0.13-dev"
->>>>>>> 35f40b708f936b3ec9ecb290b386fe3b6cbbb5a7
+
             }
         },
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-<<<<<<< HEAD
-                "Doctrine\\Instantiator\\": "src/Doctrine/Instantiator/"
-=======
+
+                "Doctrine\\Instantiator\\": "src/Doctrine/Instantiator/",
+
                 "League\\Fractal\\": "src"
->>>>>>> 35f40b708f936b3ec9ecb290b386fe3b6cbbb5a7
+
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -4620,7 +4619,7 @@
         ],
         "authors": [
             {
-<<<<<<< HEAD
+
                 "name": "Marco Pivetta",
                 "email": "ocramius@gmail.com",
                 "homepage": "http://ocramius.github.com/"
@@ -4629,9 +4628,10 @@
         "description": "A small, lightweight utility to instantiate objects in PHP without invoking their constructors",
         "homepage": "https://github.com/doctrine/instantiator",
         "keywords": [
-            "constructor",
-            "instantiate"
-=======
+            {
+            "constructor":
+            "instantiate",
+
                 "name": "Phil Sturgeon",
                 "email": "me@philsturgeon.uk",
                 "homepage": "http://philsturgeon.uk/",
@@ -4645,7 +4645,7 @@
             "json",
             "league",
             "rest"
->>>>>>> 35f40b708f936b3ec9ecb290b386fe3b6cbbb5a7
+
         ]
     },
     {
@@ -4886,17 +4886,19 @@
         "require-dev": {
             "symfony/finder": "~2.8|~3.0",
             "symfony/polyfill-apcu": "~1.1"
-<<<<<<< HEAD
+
         },
-        "suggest": {
+        "suggest":
+        {
+            "symfony/polyfill-apcu": "For using ApcClassLoader on HHVM"
+
+
+        },
+        "suggest":
+        {
             "symfony/polyfill-apcu": "For using ApcClassLoader on HHVM"
         },
-=======
-        },
-        "suggest": {
-            "symfony/polyfill-apcu": "For using ApcClassLoader on HHVM"
-        },
->>>>>>> 35f40b708f936b3ec9ecb290b386fe3b6cbbb5a7
+
         "time": "2017-10-02T06:42:24+00:00",
         "type": "library",
         "extra": {
@@ -4925,7 +4927,7 @@
             {
                 "name": "Symfony Community",
                 "homepage": "https://symfony.com/contributors"
-<<<<<<< HEAD
+
             }
         ],
         "description": "Symfony ClassLoader Component",
@@ -4960,14 +4962,12 @@
         "extra": {
             "branch-alias": {
                 "dev-master": "3.3-dev"
-=======
->>>>>>> 35f40b708f936b3ec9ecb290b386fe3b6cbbb5a7
-            }
-        ],
+
+            },
         "description": "Symfony ClassLoader Component",
         "homepage": "https://symfony.com"
-    },
-    {
+         },
+
         "name": "symfony/yaml",
         "version": "v3.3.10",
         "version_normalized": "3.3.10.0",

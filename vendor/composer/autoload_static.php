@@ -254,7 +254,7 @@ class ComposerStaticInit1c721112013bbf52b0a2636c6824a7ee
         ),
         'Doctrine\\Instantiator\\' => 
         array (
-            0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
+            0 => __DIR__ . '/..' . '/league/fractal/src/Doctrine/Instantiator',
         ),
         'Doctrine\\Common\\Inflector\\' => 
         array (
@@ -353,10 +353,6 @@ class ComposerStaticInit1c721112013bbf52b0a2636c6824a7ee
             array (
                 0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
             ),
-            'Doctrine\\DBAL\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/doctrine/dbal/lib',
-            ),
             'Doctrine\\Common\\Lexer\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
@@ -387,53 +383,6 @@ class ComposerStaticInit1c721112013bbf52b0a2636c6824a7ee
     );
 
     public static $classMap = array (
-<<<<<<< HEAD
-=======
-
-        'App\\Affiliation' => __DIR__ . '/../..' . '/app/Affiliation.php',
-        'App\\AffiliationPositions' => __DIR__ . '/../..' . '/app/AffiliationPositions.php',
-        'App\\Bank' => __DIR__ . '/../..' . '/app/Bank.php',
-        'App\\Calendar' => __DIR__ . '/../..' . '/app/Calendar.php',
-        'App\\CalendarEvent' => __DIR__ . '/../..' . '/app/CalendarEvent.php',
-        'App\\CalendarEventType' => __DIR__ . '/../..' . '/app/CalendarEventType.php',
-        'App\\CalendarGroup' => __DIR__ . '/../..' . '/app/CalendarGroup.php',
-        'App\\CalendarGroupUser' => __DIR__ . '/../..' . '/app/CalendarGroupUser.php',
-        'App\\CaseActivity' => __DIR__ . '/../..' . '/app/CaseActivity.php',
-        'App\\CaseEscalator' => __DIR__ . '/../..' . '/app/CaseEscalator.php',
-        'App\\CaseFile' => __DIR__ . '/../..' . '/app/CaseFile.php',
-        'App\\CaseNote' => __DIR__ . '/../..' . '/app/CaseNote.php',
-        'App\\CaseOwner' => __DIR__ . '/../..' . '/app/CaseOwner.php',
-        'App\\CasePoi' => __DIR__ . '/../..' . '/app/CasePoi.php',
-        'App\\CasePriority' => __DIR__ . '/../..' . '/app/CasePriority.php',
-        'App\\CaseRelated' => __DIR__ . '/../..' . '/app/CaseRelated.php',
-        'App\\CaseReport' => __DIR__ . '/../..' . '/app/CaseReport.php',
-        'App\\CaseResponder' => __DIR__ . '/../..' . '/app/CaseResponder.php',
-        'App\\CaseSource' => __DIR__ . '/../..' . '/app/CaseSource.php',
-        'App\\CaseStatus' => __DIR__ . '/../..' . '/app/CaseStatus.php',
-        'App\\CaseSubType' => __DIR__ . '/../..' . '/app/CaseSubType.php',
-        'App\\CaseType' => __DIR__ . '/../..' . '/app/CaseType.php',
-        'App\\CasesSeen' => __DIR__ . '/../..' . '/app/CasesSeen.php',
-        'App\\Category' => __DIR__ . '/../..' . '/app/Category.php',
-        'App\\Company' => __DIR__ . '/../..' . '/app/Company.php',
-        'App\\Console\\Commands\\AssignCommand' => __DIR__ . '/../..' . '/app/Console/Commands/AssignCommand.php',
-        'App\\Console\\Commands\\Inspire' => __DIR__ . '/../..' . '/app/Console/Commands/Inspire.php',
-        'App\\Console\\Commands\\notifyCommand' => __DIR__ . '/../..' . '/app/Console/Commands/notifyCommand.php',
-        'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
-        'App\\Country' => __DIR__ . '/../..' . '/app/Country.php',
-        'App\\Department' => __DIR__ . '/../..' . '/app/Department.php',
-        'App\\District' => __DIR__ . '/../..' . '/app/District.php',
-        'App\\DocumentImage' => __DIR__ . '/../..' . '/app/DocumentImage.php',
-        'App\\DocumentLog' => __DIR__ . '/../..' . '/app/DocumentLog.php',
-        'App\\DocumentRepository' => __DIR__ . '/../..' . '/app/DocumentRepository.php',
-        'App\\Events\\Event' => __DIR__ . '/../..' . '/app/Events/Event.php',
-        'App\\Events\\MyEventNameHere' => __DIR__ . '/../..' . '/app/Events/MyEventNameHere.php',
-        'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
-        'App\\Form' => __DIR__ . '/../..' . '/app/Form.php',
-        'App\\FormField' => __DIR__ . '/../..' . '/app/FormField.php',
-        'App\\FormFieldType' => __DIR__ . '/../..' . '/app/FormFieldType.php',
-        'App\\FormsData' => __DIR__ . '/../..' . '/app/FormsData.php',
-        'App\\GroupPermission' => __DIR__ . '/../..' . '/app/GroupPermission.php',
->>>>>>> 35f40b708f936b3ec9ecb290b386fe3b6cbbb5a7
         'App\\Http\\Controllers\\AddressBookController' => __DIR__ . '/../..' . '/app/Http/Controllers/AddressBookController.php',
         'App\\Http\\Controllers\\AffiliationsController' => __DIR__ . '/../..' . '/app/Http/Controllers/AffiliationsController.php',
         'App\\Http\\Controllers\\Auth\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AuthController.php',
@@ -467,10 +416,7 @@ class ComposerStaticInit1c721112013bbf52b0a2636c6824a7ee
         'App\\Http\\Controllers\\DroneRequestController' => __DIR__ . '/../..' . '/app/Http/Controllers/DroneRequestController.php',
         'App\\Http\\Controllers\\DroneSubTypesController' => __DIR__ . '/../..' . '/app/Http/Controllers/DroneSubTypesController.php',
         'App\\Http\\Controllers\\DroneTypesController' => __DIR__ . '/../..' . '/app/Http/Controllers/DroneTypesController.php',
-<<<<<<< HEAD
         'App\\Http\\Controllers\\DronesController' => __DIR__ . '/../..' . '/app/Http/Controllers/DronesController.php',
-=======
->>>>>>> 35f40b708f936b3ec9ecb290b386fe3b6cbbb5a7
         'App\\Http\\Controllers\\FormsController' => __DIR__ . '/../..' . '/app/Http/Controllers/FormsController.php',
         'App\\Http\\Controllers\\FormsDataController' => __DIR__ . '/../..' . '/app/Http/Controllers/FormsDataController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
@@ -519,27 +465,6 @@ class ComposerStaticInit1c721112013bbf52b0a2636c6824a7ee
         'CreateDroneSubTypesTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_19_191732_create_drone_sub_types_table.php',
         'CreateDroneTypesTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_19_191659_create_drone_types_table.php',
         'CreateReportersTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_19_094751_create_reporters_table.php',
-<<<<<<< HEAD
-=======
-        'Cron\\AbstractField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/AbstractField.php',
-        'Cron\\CronExpression' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/CronExpression.php',
-        'Cron\\DayOfMonthField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/DayOfMonthField.php',
-        'Cron\\DayOfWeekField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/DayOfWeekField.php',
-        'Cron\\FieldFactory' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/FieldFactory.php',
-        'Cron\\FieldInterface' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/FieldInterface.php',
-        'Cron\\HoursField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/HoursField.php',
-        'Cron\\MinutesField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/MinutesField.php',
-        'Cron\\MonthField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/MonthField.php',
-        'Cron\\YearField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/YearField.php',
-        'CreateCasesSeensTable' => __DIR__ . '/../..' . '/database/mm/2017_08_29_003544_create_cases_seens_table.php',
-        'CreateDroneApprovalStatusesTable' => __DIR__ . '/../..' . '/database/mm/2017_10_18_183502_create_drone_approval_statuses_table.php',
-        'CreateDroneRejectReasonsTable' => __DIR__ . '/../..' . '/database/mm/2017_10_18_183613_create_drone_reject_reasons_table.php',
-        'CreateDroneRequestActivitiesTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_19_232950_create_drone_request_activities_table.php',
-        'CreateDroneRequestsTable' => __DIR__ . '/../..' . '/database/mm/2017_10_20_183736_create_drone_requests_table.php',
-        'CreateDroneSubTypesTable' => __DIR__ . '/../..' . '/database/mm/2017_10_19_191732_create_drone_sub_types_table.php',
-        'CreateDroneTypesTable' => __DIR__ . '/../..' . '/database/mm/2017_10_19_191659_create_drone_types_table.php',
-        'CreateReportersTable' => __DIR__ . '/../..' . '/database/mm/2017_09_19_094751_create_reporters_table.php',
->>>>>>> 35f40b708f936b3ec9ecb290b386fe3b6cbbb5a7
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',

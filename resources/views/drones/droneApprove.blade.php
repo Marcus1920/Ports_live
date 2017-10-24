@@ -36,10 +36,10 @@
                         <label for="drone" class="col-sm-6 control-label">Drone Type Required</label>
                         <div class="col-sm-6">
                             <input type="text" name="droneType" class="form-control" id="droneType"  v-model="droneType">
-                            {{--<select v-model="firstOption" @change="showDroneType" v-cloak class="form-control" id="droneType">--}}
-                                {{--@foreach ($dropType as $drone)--}}
-                                    {{--<option value="{{$drone->id}}">@{{$drone->name}}</option>--}}
-                                    {{--@endforeach--}}
+                            {{--<select v-model="firstOption"  @change="updateDroneType($event.target.value)"  v-cloak class="form-control" id="droneType">--}}
+                                {{--@foreach($droneTypes as $droneType)--}}
+                                    {{--<option  value="{{$droneType->id}}">{{$droneType->name}}</option>--}}
+                                {{--@endforeach--}}
                             {{--</select>--}}
                             <p class="help-block"  v-cloak v-if="submition && wrongDroneType">@{{droneTypeFA}}</p>
                         </div>
@@ -80,7 +80,7 @@
                 <div class="form-group">
                     <div class="col-md-6">
                         <div class="col-sm-offset-6 col-sm-6">
-                            <button type="submit" class="btn btn-default">FirstDroneApproval</button>
+                            <button type="submit" class="btn btn-default">FirstApproval</button>
                         </div>
                     </div>
                 </div>
