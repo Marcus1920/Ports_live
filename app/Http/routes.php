@@ -1146,6 +1146,43 @@ Route::post('task-reminders', 'TaskRemindersController@store');
 |--------------------------------------------------------------------------
 |
 */
+
+Route::group(array('prefix' => 'api/v1'), function() {
+    /*
+|--------------------------------------------------------------------------
+| DRONE ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+    Route::resource('drone', 'DroneRequestController');
+    Route::post('firstDroneApproval/{id}', 'DroneRequestController@FirstApprove');
+    Route::post('finalDroneApproval/{id}', 'DroneRequestController@Approve');
+    Route::post('rejectDroneRequest/{id}', 'DroneRequestController@Reject');
+
+    /*
+|--------------------------------------------------------------------------
+| END DRONE ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
+    /*
+|--------------------------------------------------------------------------
+| DRONE TYPES AND SUB TYPES ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+    Route::resource('drone-type','DroneTypesController');
+    Route::resource('drone-sub-type','DroneSubTypesController');
+    Route::get('droneSubType/{id}','DroneSubTypesController@droneSubTypes');
+    /*
+|--------------------------------------------------------------------------
+| END DRONE TYPES AND SUB TYPES ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+});
+
 /*
 |--------------------------------------------------------------------------
 | MAP ROUTING
@@ -1219,4 +1256,45 @@ Route::any("logPIR", function () {
 });
 Route::group(['prefix' => "api"], function () {
 	Route::any("switchseen", "CasesSeenController@switchSeen");
+
 });
+
+/*-------------------------------------------------------------------
+DRONES ROUTING
+---------------------------------------------------------------------
+*/
+
+
+Route::group(array('prefix' => 'api/v1'), function()
+{    /*|--------------------------------------------------------------------------|
+    DRONE ROUTING
+    |--------------------------------------------------------------------------|*/
+    Route::resource('drone', 'DroneRequestController');
+    Route::post('firstDroneApproval/{id}', 'DroneRequestController@FirstApprove');
+    Route::post('finalDroneApproval/{id}', 'DroneRequestController@Approve');
+    Route::post('rejectDroneRequest/{id}', 'DroneRequestController@Reject');
+
+    /*|--------------------------------------------------------------------------|
+    END DRONE ROUTING
+    |--------------------------------------------------------------------------|*/
+
+    /*|--------------------------------------------------------------------------|
+     DRONE TYPES AND SUB TYPES ROUTING
+    |--------------------------------------------------
+    ------------------------|*/
+    Route::resource('drone-type','DroneTypesController');
+    Route::resource('drone-sub-type','DroneSubTypesController');
+
+
+    /*|--------------------------------------------------------------------------|
+    END DRONE TYPES AND SUB TYPES ROUTING
+    |--------------------------------------------------------------------------|*/
+
+    Route::get('userDepartment','DronesController@userDepartment');
+});
+
+
+Route::get('requestForm','DroneTypesController@index');
+
+
+

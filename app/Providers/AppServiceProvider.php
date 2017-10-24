@@ -41,7 +41,7 @@ use App\InvestigationOfficer;
 use App\TaskCategory;
 use App\TaskPriority;
 use App\TaskStatus;
-
+use App\DroneType;
 use Auth;
 use App\CalendarEventType; 
 
@@ -556,6 +556,23 @@ class AppServiceProvider extends ServiceProvider
 
         }
 
+       //Drop down for Drones
+
+        if (\Schema::hasTable('drone_types'))
+        {
+            $droneTypes          = DroneType::orderBy('name','ASC')
+                ->get();
+            $selectDroneType    = array();
+            $selectDroneType [0] = "Select / All";
+
+            foreach ($droneTypes as $droneType) {
+                $selectDroneType[$droneType->slug] = $droneType->name;
+            }
+
+            \View::share('selectDroneType',$selectDroneType);
+
+        }
+
 	    $optsCompanies    = array("Select");
 	    if (\Schema::hasTable('companies'))
 	    {
@@ -825,9 +842,7 @@ $txtDebug .= "\n  \$optsReporters - ".print_r($optsReporters,1);
           $view->with('userViewReportsPermission',$userViewReportsPermission);
 
 
-
-
-						$noFormsIn = \DB::table('forms_assigned')->where('user_id','=',\Auth::user()->id)
+              $noFormsIn = \DB::table('forms_assigned')->where('user_id','=',\Auth::user()->id)
 							//->where('read','=',0)
 							//->where('online','=',0)
 							->get();

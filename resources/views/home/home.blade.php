@@ -98,10 +98,14 @@
 
 </section><!-- /.content -->
 
+<!-- Vue  js    -->
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
 
+
+<!-- END  -->
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
 </body>
-
 
 
 
