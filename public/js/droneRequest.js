@@ -4,57 +4,56 @@ const ERRORS =
     serviceTypeField: 'Select the Drone Service Type.',
     departmentField: 'Select your Department.',
     commentField: 'Fill in the Comment.',
-    minLength: 'The length should be minimum 8 characters.',
+    minLength: 'The length should be] minimum 8 characters.',
     invalidEmail: 'This is not a valid email address.'
 }
 
  var drones = new Vue({
     el: "#droneForm",
-    data: {
-        droneType: '',
-        droneTypeFB: '',
-        serviceType: '',
-        serviceTypeFB: '',
-        department: '',
-        departmentFB: '',
-        comment: '',
-        commentFB: '',
-        submition: false,
-        showErrors: false,
-        firstOption: [],
-        secondOption: [],
-        list: {
-            'value':[],
-            'Aquatic':[]
-        }
+    data:  function()
+    {
+        return{
+            droneType: '',
+            droneTypeFB: '',
+            serviceType: '',
+            serviceTypeFB: '',
+            department: '',
+            departmentFB: '',
+            comment: '',
+            commentFB: '',
+            submition: false,
+            showErrors: false,
+            firstOption: [],
+            secondOption: []
+        };
     },
 
     computed: {
-        wrongDroneType()
+        wrongDroneType: function()
         {
             if(this.droneType === '') {
-                this.droneTypeFB = ERRORS.droneTypeField
+                this.droneTypeFB = ERRORS.droneTypeField;
                 return true
             }
             return false
         },
-        wrongServiceType() {
+        wrongServiceType: function() {
             if(this.serviceType === '') {
-                this.serviceTypeFB = ERRORS.serviceTypeField
+                this.serviceTypeFB = ERRORS.serviceTypeField;
                 return true
             }
             return false
         },
-        wrongDepartment() {
+        wrongDepartment : function(){
             if(this.department === '') {
-                this.departmentFB = ERRORS.departmentField
+                this.departmentFB = ERRORS.departmentField;
                 return true
             }
             return false
         },
-        wrongComment() {
+        wrongComment: function() {
             if(this.comment === '') {
-                this.commentFB = ERRORS.commentField
+                this.commentFB = ERRORS.commentField;
                 return true
             }
             return false
@@ -62,8 +61,8 @@ const ERRORS =
     },
     methods: {
 
-        validateForm() {
-            this.submition = true
+        validateForm :function(){
+            this.submition = true;
             if(this.wrongDroneType || this.wrongServiceType || this.wrongDepartment || this.wrongComment)
                 event.preventDefault()
         },
@@ -75,22 +74,22 @@ const ERRORS =
                    axios.get('/api/v1/droneSubType/' + value)
                        .then(function (response)
                        {
-                           this.secondOption.push(response.data.name,response.data.id);
+                           alert("before: " + response.data);
+                           $.each(response.data, function(key, value) {
+                            this.secondOption.push(value.id , value.name);
+                           }.bind(this));
+                           //console.log("after: " + this.contas);
+                           alert(this.secondOption);
                            return this.secondOption;
-                       })
-                       .catch(function (error) {
-                           console.log(error);
-                       });
+                                }.bind(this))
+                           .catch(function (error)
+                           {
+                               console.log(error);
+                           });
                }
-
-           },
-        props:['secondOption'],
-            data : function()
-            {
-                console.log(secondOption);
-            }
+           }
         },
-    mounted()
+     mounted()
         {
             axios.get('/api/v1/drone-type')
                 .then(response => this.firstOption = response.data);
