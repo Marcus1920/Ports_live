@@ -42,7 +42,7 @@
                             {{--<input type="text" name="serviceType" class="form-control" id="serviceType"  v-model="serviceType">--}}
                             <select v-model="secondOption"  v-cloak  v-if="firstOption" name="serviceType" class="form-control" id="serviceType">
                                 <option value="0" selected = "disabled">Select Service</option>
-                                <option   v-for="service in secondOption" :value="service">@{{service}}</option>
+                                <option   v-for="service in secondOption" :value="service.id">@{{service.name}}</option>
                             </select>
                             <p class="help-block"  v-cloak v-if="submition && wrongServiceType">@{{serviceTypeFB}}</p>
                         </div>

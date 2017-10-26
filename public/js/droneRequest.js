@@ -73,12 +73,12 @@ const ERRORS =
                {
                    this.secondOption = [];
                    axios.get('/api/v1/droneSubType/' + value)
-                       .then(function (response)
+                        .then(function (response)
                        {
                            //$.each(response.data, function(key, value) {
                             this.secondOption.push(response.data);
-                          // }.bind(this));
-                           return this.secondOption;
+                           //}.bind(this));
+                            return this.secondOption;
                        }.bind(this))
                            .catch(function (error)
                            {
