@@ -75,9 +75,9 @@ const ERRORS =
                    axios.get('/api/v1/droneSubType/' + value)
                        .then(function (response)
                        {
-                           $.each(response.data, function(key, value) {
-                            this.secondOption.push(value.id +' '+ value.name);
-                           }.bind(this));
+                           //$.each(response.data, function(key, value) {
+                            this.secondOption.push(response.data);
+                          // }.bind(this));
                            return this.secondOption;
                        }.bind(this))
                            .catch(function (error)
