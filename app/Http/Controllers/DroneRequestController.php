@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 use App\DroneRequest;
 use App\DroneRequestActivity;
+use App\User;
+use App\Position;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Auth;
@@ -76,6 +78,76 @@ class DroneRequestController extends Controller
         $droneRequestActivity->user = $request['created_by'];
         $droneRequestActivity->activity = "requested a drone";
         $droneRequestActivity->save();
+
+        $userRole = User::find($request['created_by']);
+        $position = Position::find($userRole->position);
+
+        if($position->name == "SHE Representative")
+        {
+            $droneRequests = \DB::table('users')
+            ->join('positions', 'users.position', '=', 'positions.id')
+            ->select(\DB::raw
+            (
+                "
+                    users.id,
+                    users.email,
+                    users.name as userName,
+                    users.surname as surname,
+                    positions.name
+                "
+            )
+            )->where('positions.name','=',"Environmental Manager")
+            ->get();
+
+            return $droneRequests;
+
+
+
+
+
+//            foreach ($droneRequests as $rr){
+////                 print_r($rr->email);
+//                 $empty=$rr->email;
+//            }
+//
+//            return $empty;
+//            return $droneRequests;
+//            for ($i=0;$i<count($droneRequests);$i++)
+//            {
+//                return $i;
+//
+//            }
+
+
+//            $data = array(
+//                'name'        =>"mxoh",
+//
+//            );
+//
+//
+//            \Mail::send('emails.Drones.DronesRequestCreate',$data,function($message) use ($droneRequests)
+//            {
+//
+//                $message->from('info@siyaleader.net', 'Siyaleader');
+//                $message->to('zipho.dancah@gmail.com')->subject('testing');
+//            });
+//
+//            return $droneRequests;
+        }
+        else if($position->name == "Engineering officer")
+        {
+            return "Engineering officer";
+        }
+        else if($position->name == "Vessel Traffic Controller")
+        {
+            return "vessel traffic controller";
+        }
+        else if($position->name == "Joint Operations Centre Monitor")
+        {
+            return "joint operations centre monitor";
+        }
+//        return $position->name;
+
 
         return "Drone request created";
     }
