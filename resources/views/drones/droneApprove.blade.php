@@ -1,93 +1,130 @@
 @extends('master')
 @section('content')
-    <div class="block-area" id="basic">
-        <ol class="breadcrumb hidden-xs">
-            <li class="active">Drone Approve Form</li>
-        </ol>
-        <h4 class="page-title">APPROVE FORM</h4>
+    <div class="container-fluid" id="droneForm">
+        <form class="form-horizontal">
+        <div class="row">
 
-        <br>
-        <div class="tile p-15" style="margin:0 auto;">
-            <form class="form-horizontal" id="droneForm"  v-on:submit="validateForm">
+            <div  class="col-md-4" >
+                <h3 class="h3"> Case  Number : </h3>
 
-                <div class="form-group">
-                    <div class="col-md-6">
-                        <div class="col-sm-offset-6 col-sm-6">
-                            <button type="submit" class="btn btn-default">Approve</button>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="col-sm-offset-6 col-sm-6">
-                            <button type="submit" class="btn btn-default">Reject</button>
-                        </div>
-                    </div>
-                </div>
+                <h3 class="h3"> Created By   :    </h3>
+            </div>
 
-                {{--<div class="form-group">--}}
-                    {{--<div class="col-md-6">--}}
-                        {{--<div class="col-sm-offset-6 col-sm-6">--}}
-                            {{--<button type="submit" class="btn btn-default">Reject</button>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-
-                <div class="form-group" v-bind:class="{ 'has-error': submition && wrongDroneType }">
-                    <div class="col-md-6">
-                        <label for="drone" class="col-sm-6 control-label">Drone Type Required</label>
-                        <div class="col-sm-6">
-                            <input type="text" name="droneType" class="form-control" id="droneType"  v-model="droneType">
-                            {{--<select v-model="firstOption"  @change="updateDroneType($event.target.value)"  v-cloak class="form-control" id="droneType">--}}
-                                {{--@foreach($droneTypes as $droneType)--}}
-                                    {{--<option  value="{{$droneType->id}}">{{$droneType->name}}</option>--}}
-                                {{--@endforeach--}}
-                            {{--</select>--}}
-                            <p class="help-block"  v-cloak v-if="submition && wrongDroneType">@{{droneTypeFA}}</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group" v-bind:class="{ 'has-error': submition && wrongServiceType }">
-                    <div class="col-md-6">
-                        <label for="inputEmail3" class="col-sm-6 control-label">Service Required</label>
-                        <div class="col-sm-6">
-                            <input type="text" name="serviceType" class="form-control" id="serviceType"  v-model="serviceType">
-                            <p class="help-block"  v-cloak v-if="submition && wrongServiceType">@{{serviceTypeFA}}</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group" v-bind:class="{ 'has-error': submition && wrongDepartment }">
-                    <div class="col-md-6">
-                        <label for="inputEmail3" class="col-sm-6 control-label">Department</label>
-                        <div class="col-sm-6">
-                            <input type="text" name="department" class="form-control" id="department"  v-model="department">
-                            <p class="help-block" v-cloak  v-if="submition && wrongDepartment">@{{departmentFA}}</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group" v-bind:class="{ 'has-error': submition && wrongComment}">
-                    <div class="col-md-6">
-                        <label for="inputEmail3" class="col-sm-6 control-label">Comments</label>
-                        <div class="col-sm-6">
-                            <textarea type="text"  name="comment " class="form-control" id="comment" v-model="comment"></textarea>
-                            <p class="help-block" v-cloak   v-if="submition && wrongComment">@{{commentFA}}</p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="form-group">
-                    <div class="col-md-6">
-                        <div class="col-sm-offset-6 col-sm-6">
-                            <button type="submit" class="btn btn-default">FirstApproval</button>
-                        </div>
-                    </div>
-                </div>
-
-            </form>
+            <div class="col-md-8">
+                <h3>  Service  Request : Aquatic Drone   </h3>
+            </div>
         </div>
+        {{--<div class="form-group">--}}
+        {{--<div class="row">--}}
+
+            {{--<div  class="col-md-4">--}}
+                {{--<a href = "#" class = "list-group-item active">--}}
+                    {{--Navigation--}}
+                {{--</a>--}}
+
+                {{--<a href = "#" class = "list-group-item">Home</a>--}}
+                {{--<a href = "#" class = "list-group-item">All Cases</a>--}}
+                {{--<a href = "#" class = "list-group-item">My  Cases</a>--}}
+                {{--<a href = "#" class = "list-group-item">Cases Awaiting  Review</a>--}}
+
+            {{--</div>--}}
+        {{--</div>--}}
+        {{--</div>--}}
+
+
+            <div class="form-group">
+
+                <div class="col-md-6" style="margin-top:20px;">
+                    <div class="col-sm-offset-6 col-sm-6">
+                    <button
+                            class="btn btn-primary"
+                             @click.prevent="approved">Approve
+                    </button>
+                        <p class="help-block" v-cloack v-if="submition && wrongApprove">@{{approveFB }}</p>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6" style="margin-top:10px;">
+                    <div class="col-sm-offset-6 col-sm-6">
+                    <button
+                            class="btn  btn-danger">Reject</button>
+                        <p class="help-block" v-cloack v-if="submition && wrongReject">@{{rejectFB}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+
+            {{--<div class="row">--}}
+            <div  class="col-md-2 from-group" >
+                <label for="rejectReason" name="Rejection Reason" id="rejectReason">Rejection Reason</label>
+
+                <select
+                        class="form-control"
+                        >
+                    <option
+                            v-for="rejectReason"
+                            :selected="rejectReason =='Duplicated Request'">@{{rejectReason}}</option>
+                </select>
+
+            </div>
+            </div>
+            {{--</div>--}}
+
+            <div class="form-group">
+
+            <div class="col-md-2">
+               Search <input type="search" class="form-control">`
+                <h3> Case Status  : Active </h3>
+                <h3> Date   : 12-03-2029 </h3>
+                <h3> Case Duration   : 12-03-2029 </h3>
+            </div>
+            </div>
+        <div class="form-group" >
+        <div class="row">
+
+            <div class="col-md-6">
+                <label for="comment">Comment</label>
+                <textarea id="comment" rows="5" class="form-control" v-model="comment" >@{{comment}}</textarea>
+            </div>
+
+        </div>
+        </div>
+        </form>
     </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    </body>
 @stop
 @section('footer')
 @stop
+<script src="/js/main.js">
+    export default{
+        data()
+        {
+            return{
+                approveFB:'',
+                rejectFB:'',
+                comment:'',
+                rejectionReason:['Duplicated Request'],
+                approve:'true'
+            },
+                methods:
+              {
+                  FirstApprove()
+                  {
+
+                  }
+               },
+
+        }
+
+
+
+
+        }
+    };
+</script>

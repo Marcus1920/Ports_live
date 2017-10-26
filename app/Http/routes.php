@@ -939,7 +939,6 @@ Route::get('getLoggedInUsers', function () {
 |--------------------------------------------------------------------------
 | CASE MESSAGE ROUTING
 |--------------------------------------------------------------------------
-|
 */
 Route::post('addCaseMessage', ['middleware' => 'resetLastActive', 'uses' => 'MessageController@store']);
 Route::post('sendCaseMessage', ['middleware' => 'resetLastActive', 'uses' => 'MessageController@storeEmail']);
@@ -1311,12 +1310,13 @@ Route::group(array('prefix' => 'api/v1'), function()
     Route::get('userDepartment','DronesController@userDepartment');
 });
 
-
-
 Route::get('requestForm','DronesController@create');
 Route::get('approveForm','DroneRequestController@create');
+
 //Route::get('');
 
 Route::get('requestForm','DroneTypesController@index');
 
+Route::get('firstDroneApproval', 'DroneRequestController@FirstApprove');
 
+Route::get('Drone','DroneRequestController@index');

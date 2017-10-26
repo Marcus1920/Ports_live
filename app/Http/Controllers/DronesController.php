@@ -22,6 +22,7 @@ class DronesController extends Controller
     public function create()
     {
         return view('drones.droneRequest');
+
     }
 
 

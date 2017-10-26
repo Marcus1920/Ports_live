@@ -15,7 +15,7 @@ class DroneRequestController extends Controller
 
     public function index()
     {
-        //Eloquent
+
         $droneRequests = DroneRequest::with('User')
             ->with('DroneType')
             ->with('DroneSubType')
@@ -24,30 +24,30 @@ class DroneRequestController extends Controller
             ->with('RejectReason')
             ->get();
 
-//        $droneRequests = \DB::table('drone_requests')
-//            ->join('drone_types', 'drone_requests.drone_type_id', '=', 'drone_types.id')
-//            ->join('drone_sub_types', 'drone_requests.sub_drone_type_id', '=', 'drone_sub_types.id')
-//            ->join('users', 'drone_requests.created_by', '=', 'users.id')
-//            ->join('drone_approval_statuses', 'drone_requests.drone_case_status', '=', 'drone_approval_statuses.id')
-//            ->join('departments', 'drone_requests.department', '=', 'departments.id')
-//            ->join('drone_reject_reasons', 'drone_requests.reject_reason', '=', 'drone_reject_reasons.id')
-//            ->select(\DB::raw
-//            (
-//                "
-//                    drone_requests.id,
-//                    drone_requests.created_at,
-//                    drone_types.name as DroneType,
-//                    drone_sub_types.name as DroneSubType,
-//                    drone_requests.comments,
-//                    users.name as CreatedBy,
-//                    drone_approval_statuses.name as CaseStatus,
-//                    departments.name as Department,
-//                    drone_reject_reasons.reason as RejectReason
-//                "
-//            )
-//            )
-//            ->orderBy('created_at','DESC')
-//            ->get();
+        $droneRequests = \DB::table('drone_requests')
+            ->join('drone_types', 'drone_requests.drone_type_id', '=', 'drone_types.id')
+            ->join('drone_sub_types', 'drone_requests.sub_drone_type_id', '=', 'drone_sub_types.id')
+            ->join('users', 'drone_requests.created_by', '=', 'users.id')
+            ->join('drone_approval_statuses', 'drone_requests.drone_case_status', '=', 'drone_approval_statuses.id')
+            ->join('departments', 'drone_requests.department', '=', 'departments.id')
+            ->join('drone_reject_reasons', 'drone_requests.reject_reason', '=', 'drone_reject_reasons.id')
+            ->select(\DB::raw
+            (
+                "
+                    drone_requests.id,
+                    drone_requests.created_at,
+                    drone_types.name as DroneType,
+                    drone_sub_types.name as DroneSubType,
+                    drone_requests.comments,
+                    users.name as CreatedBy,
+                    drone_approval_statuses.name as CaseStatus,
+                    departments.name as Department,
+                    drone_reject_reasons.reason as RejectReason
+                "
+            )
+            )
+            ->orderBy('created_at','DESC')
+            ->get();
 
         return $droneRequests;
     }
@@ -56,6 +56,7 @@ class DroneRequestController extends Controller
     {
         //
         return view('drones.droneApprove');
+
     }
 
     public function store(Request $request)
@@ -86,8 +87,10 @@ class DroneRequestController extends Controller
         $dronRequestActivity->activity = "first approved drone request";
         $dronRequestActivity->save();
 
-        return $dronRequestActivity;
+      //  return $dronRequestActivity;
+        return response()->json[($dronRequestActivity)];
     }
+
 
     public function Approve($id, Request $request)
     {
