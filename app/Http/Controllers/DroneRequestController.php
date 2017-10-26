@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DroneType;
 use Illuminate\Http\Request;
 
 use App\DroneRequest;
@@ -71,6 +72,12 @@ class DroneRequestController extends Controller
         $newDroneRequest->reject_reason = 4;
         $newDroneRequest->reject_other_reason = "None";
         $newDroneRequest->save();
+
+        $droneRequestActivity = new DroneRequestActivity();
+        $droneRequestActivity->drone_request_id = $newDroneRequest->id;
+        $droneRequestActivity->user = $request['created_by'];
+        $droneRequestActivity->activity = "requested a drone";
+        $droneRequestActivity->save();
 
         return "Drone request created";
     }
