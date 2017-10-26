@@ -71,8 +71,8 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
 			postal_code: 'short_name'
 		};
   </script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <style>
     body {
         background-color: #5c788f;
@@ -522,8 +522,8 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
 	
 	
 <!-- Vue  js    -->
-<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
+{{--<script src="https://unpkg.com/vue/dist/vue.min.js"></script>--}}
+{{--<script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>--}}
 
 
 <!-- END  -->

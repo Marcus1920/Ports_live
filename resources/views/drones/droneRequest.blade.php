@@ -10,6 +10,16 @@
         <div class="tile p-15" style="margin:0 auto;" >
             <form class="form-horizontal" id="droneForm"  v-on:submit="validateForm">
 
+                <div class="form-group" v-bind:class="{ 'has-error': submition && wrongDepartment }">
+                    <div class="col-md-6">
+                        <label for="inputEmail3" class="col-sm-6 control-label">Department</label>
+                        <div class="col-sm-6">
+                            <input type="text" name="department" class="form-control" id="department"  v-model="department">
+                            <p class="help-block" v-cloak  v-if="submition && wrongDepartment">@{{departmentFB}}</p>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="form-group" v-bind:class="{ 'has-error': submition && wrongDroneType }">
                     <div class="col-md-6">
                         <label for="inputEmail3" class="col-sm-6 control-label">Drone Type Required</label>
@@ -31,22 +41,15 @@
                         <div class="col-sm-6">
                             {{--<input type="text" name="serviceType" class="form-control" id="serviceType"  v-model="serviceType">--}}
                             <select v-model="secondOption"  v-cloak  v-if="firstOption" name="serviceType" class="form-control" id="serviceType">
-                                <option  v-bind:servicTypes="secondOption" v-for="service in secondOption[firstOption]"  value="@{{service.id}}">@{{service.name}}</option>
+                                <option value="0" selected = "disabled">Select Service</option>
+                                <option   v-for="service in secondOption" :value="service">@{{service}}</option>
                             </select>
                             <p class="help-block"  v-cloak v-if="submition && wrongServiceType">@{{serviceTypeFB}}</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="form-group" v-bind:class="{ 'has-error': submition && wrongDepartment }">
-                    <div class="col-md-6">
-                        <label for="inputEmail3" class="col-sm-6 control-label">Department</label>
-                        <div class="col-sm-6">
-                            <input type="text" name="department" class="form-control" id="department"  v-model="department">
-                            <p class="help-block" v-cloak  v-if="submition && wrongDepartment">@{{departmentFB}}</p>
-                        </div>
-                    </div>
-                </div>
+
 
                 <div class="form-group" v-bind:class="{ 'has-error': submition && wrongComment}">
                     <div class="col-md-6">
@@ -72,4 +75,11 @@
     </div>
 @stop
 @section('footer')
+    {{--<script>--}}
+
+        {{--$("#task_user_id").tokenInput("{!! url('/getUsers')!!}",{tokenLimit:1});--}}
+        {{--$("#case_id").tokenInput("{!! url('/getCases')!!}",{tokenLimit:1});--}}
+
+
+    {{--</script>--}}
 @stop

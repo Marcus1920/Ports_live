@@ -71,17 +71,15 @@ const ERRORS =
            {
                if (value !== '')
                {
+                   this.secondOption = [];
                    axios.get('/api/v1/droneSubType/' + value)
                        .then(function (response)
                        {
-                           alert("before: " + response.data);
                            $.each(response.data, function(key, value) {
-                            this.secondOption.push(value.id , value.name);
+                            this.secondOption.push(value.id +' '+ value.name);
                            }.bind(this));
-                           //console.log("after: " + this.contas);
-                           alert(this.secondOption);
                            return this.secondOption;
-                                }.bind(this))
+                       }.bind(this))
                            .catch(function (error)
                            {
                                console.log(error);
