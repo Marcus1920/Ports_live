@@ -79,7 +79,7 @@
    function launchUpdateProvinceModal(id)
     {
 
-       $(".modal-body #provinceID").val(id);
+       $(".modjal-body #provinceID").val(id);
        $.ajax({
         type    :"GET",
         dataType:"json",

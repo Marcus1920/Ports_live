@@ -750,14 +750,16 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
   </script>
 
 
-<script src="js/approve.js">
+{{--<script src="js/approve.js">--}}
 
-</script>
+{{--</script>--}}
 
-<script src="main.js"></script>
-</body></html>
+{{--<script src="js/main.js"></script>--}}
+</body>
+</html>
 
   <script src="js/droneRequest.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
 

@@ -94,8 +94,8 @@ class DroneRequestController extends Controller
         $dronRequestActivity->activity = "first approved drone request";
         $dronRequestActivity->save();
 
-      //  return $dronRequestActivity;
-        return response()->json[($dronRequestActivity)];
+       return $dronRequestActivity;
+        //return response()->json[($dronRequestActivity)];
     }
 
 

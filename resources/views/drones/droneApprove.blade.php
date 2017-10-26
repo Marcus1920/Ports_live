@@ -38,7 +38,7 @@
                     <div class="col-sm-offset-6 col-sm-6">
                     <button
                             class="btn btn-primary"
-                             @click.prevent="approved">Approve
+                            >Approve
                     </button>
                         <p class="help-block" v-cloack v-if="submition && wrongApprove">@{{approveFB }}</p>
 
@@ -101,30 +101,30 @@
 @stop
 @section('footer')
 @stop
-<script src="/js/main.js">
-    export default{
-        data()
-        {
-            return{
-                approveFB:'',
-                rejectFB:'',
-                comment:'',
-                rejectionReason:['Duplicated Request'],
-                approve:'true'
-            },
-                methods:
-              {
-                  FirstApprove()
-                  {
+{{--<script src="/js/main.js">--}}
+    {{--export default{--}}
+        {{--data()--}}
+        {{--{--}}
+            {{--return{--}}
+                {{--approveFB:'',--}}
+                {{--rejectFB:'',--}}
+                {{--comment:'',--}}
+                {{--rejectionReason:['Duplicated Request'],--}}
+                {{--approve:'true'--}}
+            {{--},--}}
+                {{--methods:--}}
+              {{--{--}}
+                  {{--FirstApprove()--}}
+                  {{--{--}}
 
-                  }
-               },
+                  {{--}--}}
+               {{--},--}}
 
-        }
-
-
+        {{--}--}}
 
 
-        }
-    };
-</script>
+
+
+        {{--}--}}
+    {{--};--}}
+{{--</script>--}}
