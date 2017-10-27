@@ -1,26 +1,3 @@
-//const ERRORS =
-  //  {
-
-       // commentField: 'Fill in the Comment.',
-     //   rejectReasonField:'Select Reject Reason',
-     //   minLength: 'The length should be minimum 8 characters.',
-      //  invalidEmail: 'This is not a valid email address.'
-    //}
-
-//new Vue({
-  //   el: "#droneForm",
-  //   data: {
-       //  comment: '',
-        // commentFB: '',
-       //  approve:'',
-       //  rejectReasonFB: '',
-         // firstOption: [],
-         //secondOption: [],
-         // submition: false,
-         // showErrors: false,
-
-
- //}});
 const ERRORS=
     {
         approveFBField: 'Please Click.',
@@ -31,9 +8,6 @@ const ERRORS=
     }
 
 
-
-
-
 new Vue(
     {
         el:'#droneForm',
@@ -42,7 +16,7 @@ new Vue(
 
                 approveFB:'',
                 rejectFB:'',
-                rejectReason:'',
+                rejectReasonFB:'',
                 caseStatus:'',
                 comment:'drone is not available',
 

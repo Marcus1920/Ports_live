@@ -1291,6 +1291,7 @@ Route::group(array('prefix' => 'api/v1'), function()
     Route::post('finalDroneApproval/{id}', 'DroneRequestController@Approve');
     Route::post('rejectDroneRequest/{id}', 'DroneRequestController@Reject');
 
+
     /*|--------------------------------------------------------------------------|
     END DRONE ROUTING
     |--------------------------------------------------------------------------|*/
@@ -1320,3 +1321,5 @@ Route::get('requestForm','DroneTypesController@index');
 Route::get('firstDroneApproval', 'DroneRequestController@FirstApprove');
 
 Route::get('Drone','DroneRequestController@index');
+
+Route::get('droneApprove','DroneRequestController@index');

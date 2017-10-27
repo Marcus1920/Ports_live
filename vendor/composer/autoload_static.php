@@ -383,7 +383,7 @@ class ComposerStaticInit1c721112013bbf52b0a2636c6824a7ee
     );
 
     public static $classMap = array (
-<<<<<<< HEAD
+
         'App\\Http\\Controllers\\AddressBookController' => __DIR__ . '/../..' . '/app/Http/Controllers/AddressBookController.php',
         'App\\Http\\Controllers\\AffiliationsController' => __DIR__ . '/../..' . '/app/Http/Controllers/AffiliationsController.php',
         'App\\Http\\Controllers\\Auth\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AuthController.php',
@@ -467,7 +467,7 @@ class ComposerStaticInit1c721112013bbf52b0a2636c6824a7ee
         'CreateDroneTypesTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_19_191659_create_drone_types_table.php',
         'CreateReportersTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_19_094751_create_reporters_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
-=======
+
         'App\\Http\\Controllers\\AddressBookController' => __DIR__ . '/../..' . '/../Ports_Live/app/Http/Controllers/AddressBookController.php',
         'App\\Http\\Controllers\\AffiliationsController' => __DIR__ . '/../..' . '/../Ports_Live/app/Http/Controllers/AffiliationsController.php',
         'App\\Http\\Controllers\\Auth\\AuthController' => __DIR__ . '/../..' . '/../Ports_Live/app/Http/Controllers/Auth/AuthController.php',
@@ -551,7 +551,7 @@ class ComposerStaticInit1c721112013bbf52b0a2636c6824a7ee
         'CreateDroneTypesTable' => __DIR__ . '/../..' . '/../Ports_Live/database/migrations/2017_10_19_191659_create_drone_types_table.php',
         'CreateReportersTable' => __DIR__ . '/../..' . '/../Ports_Live/database/migrations/2017_09_19_094751_create_reporters_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/../Ports_Live/database/seeds/DatabaseSeeder.php',
->>>>>>> e11b3b95e3216c7b8ff896eb7bf70105b0e3d0ae
+
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
@@ -624,11 +624,11 @@ class ComposerStaticInit1c721112013bbf52b0a2636c6824a7ee
         'Hamcrest\\Util' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
         'IlluminateQueueClosure' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
-<<<<<<< HEAD
+
         'Languages' => __DIR__ . '/../..' . '/database/seeds/Languages.php',
-=======
+
         'Languages' => __DIR__ . '/../..' . '/../Ports_Live/database/seeds/Languages.php',
->>>>>>> e11b3b95e3216c7b8ff896eb7bf70105b0e3d0ae
+
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
         'PHPUnit\\Framework\\AssertionFailedError' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/AssertionFailedError.php',
         'PHPUnit\\Framework\\BaseTestListener' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',
@@ -1034,15 +1034,15 @@ class ComposerStaticInit1c721112013bbf52b0a2636c6824a7ee
         'PHP_Token_XOR_EQUAL' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD_FROM' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
-<<<<<<< HEAD
+
         'PoiPicturesTypes' => __DIR__ . '/../..' . '/database/seeds/PoiPicturesTypes.php',
         'QualificationTypes' => __DIR__ . '/../..' . '/database/seeds/QualificationTypes.php',
         'Religions' => __DIR__ . '/../..' . '/database/seeds/Religions.php',
-=======
+
         'PoiPicturesTypes' => __DIR__ . '/../..' . '/../Ports_Live/database/seeds/PoiPicturesTypes.php',
         'QualificationTypes' => __DIR__ . '/../..' . '/../Ports_Live/database/seeds/QualificationTypes.php',
         'Religions' => __DIR__ . '/../..' . '/../Ports_Live/database/seeds/Religions.php',
->>>>>>> e11b3b95e3216c7b8ff896eb7bf70105b0e3d0ae
+
         'SebastianBergmann\\Comparator\\ArrayComparator' => __DIR__ . '/..' . '/sebastian/comparator/src/ArrayComparator.php',
         'SebastianBergmann\\Comparator\\Comparator' => __DIR__ . '/..' . '/sebastian/comparator/src/Comparator.php',
         'SebastianBergmann\\Comparator\\ComparisonFailure' => __DIR__ . '/..' . '/sebastian/comparator/src/ComparisonFailure.php',
@@ -1080,15 +1080,15 @@ class ComposerStaticInit1c721112013bbf52b0a2636c6824a7ee
         'SebastianBergmann\\RecursionContext\\InvalidArgumentException' => __DIR__ . '/..' . '/sebastian/recursion-context/src/InvalidArgumentException.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'SessionHandlerInterface' => __DIR__ . '/..' . '/symfony/http-foundation/Resources/stubs/SessionHandlerInterface.php',
-<<<<<<< HEAD
+
         'TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
         'TrainingTypes' => __DIR__ . '/../..' . '/database/seeds/TrainingTypes.php',
-=======
+
         'TestCase' => __DIR__ . '/../..' . '/../Ports_Live/tests/TestCase.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
         'TrainingTypes' => __DIR__ . '/../..' . '/../Ports_Live/database/seeds/TrainingTypes.php',
->>>>>>> e11b3b95e3216c7b8ff896eb7bf70105b0e3d0ae
+
     );
 
     public static function getInitializer(ClassLoader $loader)

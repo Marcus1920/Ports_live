@@ -16,7 +16,6 @@ class DroneRequestController extends Controller
 
     public function index()
     {
-
         $droneRequests = DroneRequest::with('User')
             ->with('DroneType')
             ->with('DroneSubType')
