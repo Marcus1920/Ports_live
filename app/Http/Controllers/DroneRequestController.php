@@ -60,11 +60,11 @@ class DroneRequestController extends Controller
     public function store(Request $request)
     {
         $newDroneRequest = new DroneRequest();
-        $newDroneRequest->created_by = $request['created_by'];
+        $newDroneRequest->created_by = Auth::user()->id;
         $newDroneRequest->drone_type_id = $request['drone_type_id'];
         $newDroneRequest->sub_drone_type_id = $request['sub_drone_type_id'];
         $newDroneRequest->drone_case_status = 1;
-        $newDroneRequest->comments = $request['comments'];
+        $newDroneRequest->comments = $request['comment'];
         $newDroneRequest->department = $request['department'];
         $newDroneRequest->reject_reason = 4;
         $newDroneRequest->reject_other_reason = "None";

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\DroneRequest;
+use Auth;
 
 class DronesController extends Controller
 {
@@ -28,7 +30,18 @@ class DronesController extends Controller
 
     public function store(Request $request)
     {
+        $newDroneRequest = new DroneRequest();
+        $newDroneRequest->created_by = Auth::user()->id;
+        $newDroneRequest->drone_type_id = $request['drone_type_id'];
+        $newDroneRequest->sub_drone_type_id = $request['sub_drone_type_id'];
+        $newDroneRequest->drone_case_status = 1;
+        $newDroneRequest->comments = $request['comment'];
+        $newDroneRequest->department = $request['department'];
+        $newDroneRequest->reject_reason = 4;
+        $newDroneRequest->reject_other_reason = "None";
+        $newDroneRequest->save();
 
+        return "Drone request created";
     }
 
 
@@ -79,6 +92,7 @@ class DronesController extends Controller
 
     public function destroy($id)
     {
-        //
+
     }
+
 }

@@ -1,9 +1,12 @@
+
+//import VueTypeahead from 'vue-typeahead'
 const ERRORS =
     {
     droneTypeField: 'Select the Drone Type.',
     serviceTypeField: 'Select the Drone Service Type.',
     departmentField: 'Select your Department.',
     commentField: 'Fill in the Comment.',
+        createdByField: 'Fill in the Comment.',
     minLength: 'The length should be] minimum 8 characters.',
     invalidEmail: 'This is not a valid email address.'
 }
@@ -13,40 +16,41 @@ const ERRORS =
     data:  function()
     {
         return{
-            droneType: '',
-            droneTypeFB: '',
-            serviceType: '',
-            serviceTypeFB: '',
             department: '',
             departmentFB: '',
+            drone_type_id: '',
+            droneTypeFB: '',
+            sub_drone_type_id: '',
+            serviceTypeFB: '',
             comment: '',
             commentFB: '',
             submition: false,
             showErrors: false,
-            droneType: [],
-            secondOption: []
+            droneTypeData: [],
+            serviceTypeData: []
         };
     },
 
     computed: {
+        wrongDepartment : function(){
+            if(this.department === '') {
+                this.departmentFB = ERRORS.departmentField;
+                return true
+            }
+            return false
+        },
+
         wrongDroneType: function()
         {
-            if(this.droneType === '') {
+            if(this.drone_type_id === '') {
                 this.droneTypeFB = ERRORS.droneTypeField;
                 return true
             }
             return false
         },
         wrongServiceType: function() {
-            if(this.serviceType === '') {
+            if(this.sub_drone_type_id === '') {
                 this.serviceTypeFB = ERRORS.serviceTypeField;
-                return true
-            }
-            return false
-        },
-        wrongDepartment : function(){
-            if(this.department === '') {
-                this.departmentFB = ERRORS.departmentField;
                 return true
             }
             return false
@@ -58,68 +62,46 @@ const ERRORS =
             }
             return false
         }
+
     },
     methods: {
-
         validateForm :function(){
             this.submition = true;
-            if(this.wrongDroneType || this.wrongServiceType || this.wrongDepartment || this.wrongComment)
-                event.preventDefault()
-        },
-
+            if( this.wrongDepartment || this.wrongDroneType || this.wrongServiceType || this.wrongComment)
+            {event.preventDefault()
+            }else
+                {
+                axios.post('/api/v1/drone')
+                    .then(function (response) {
+                        alert('you have made your request');
+                       // console.log(data);
+                    })
+                    .catch(function (error) {
+                       // alert('not working');
+                        console.log(error);
+                    });
+                }
+                },
         updateDroneType : function(value)
            {
                if (value !== '')
                {
-                   this.secondOption = [];
+                   this.serviceTypeData = [];
                    axios.get('/api/v1/droneSubType/' + value)
                         .then(function (response)
                        {
                            $.each(response.data, function(key, value) {
-                            this.secondOption.push(value);
+                            this.serviceTypeData.push(value);
                            }.bind(this));
-                           alert(this.secondOption);
-                            return this.secondOption;
+                           //alert(this.secondOption);
+                            return this.serviceTypeData;
                        }.bind(this))
                            .catch(function (error)
                            {
                                console.log(error);
                            });
                }
-           }
-        },
-     mounted()
-        {
-            axios.get('/api/v1/drone-type')
-                .then(response => this.firstOption = response.data);
-                // .then(function (response) {
-                    
-                //     console.log(response.data);
-                // })
-                // .catch(function (error) {
-                //     console.log(error);
-                // });
+            }
+         }
 
-            // this.$http.get("/api/camps",function(camps){
-            //     this.$set('camps',camps);
-            //     this.$emit('data-loaded');
-            // });
-
-            axios.get('/api/v1/drone-sub-type')
-                .then(function (response) {
-                    console.log(response.data);
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
-
-            axios.get('/api/v1/userDepartment')
-                .then(function (response) {
-                    console.log(response.data);
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
-
-        }
-});
+})
