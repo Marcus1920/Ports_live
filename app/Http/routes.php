@@ -1161,35 +1161,8 @@ Route::group(array('prefix' => 'api/v1'), function() {
 */
 
 
-   /*Route::get ('all' , function() {
-	   
-	    $droneRequests = \DB::table('drone_requests')
-            ->join('drone_types', 'drone_requests.drone_type_id', '=', 'drone_types.id')
-            ->join('drone_sub_types', 'drone_requests.sub_drone_type_id', '=', 'drone_sub_types.id')
-            ->join('users', 'drone_requests.created_by', '=', 'users.id')
-            ->join('drone_approval_statuses', 'drone_requests.drone_case_status', '=', 'drone_approval_statuses.id')
-            ->join('departments', 'drone_requests.department', '=', 'departments.id')
-            ->join('drone_reject_reasons', 'drone_requests.reject_reason', '=', 'drone_reject_reasons.id')
-            ->select(\DB::raw
-            (
-                "
-                    drone_requests.id,
-                    drone_requests.created_at,
-                    drone_types.name as DroneType,
-                    drone_sub_types.name as DroneSubType,
-                    drone_requests.comments,
-                    users.name as CreatedBy,
-                    drone_approval_statuses.name as CaseStatus,
-                    departments.name as Department,
-                    drone_reject_reasons.reason as RejectReason
-                "
-            )
-            )
-            
-            ->paginate(1);
-            return Response::json($droneRequests,200);
-	   */
-   }); 
+  
+
 
 
     Route::resource('drone', 'DroneRequestController');
