@@ -4,87 +4,96 @@ const ERRORS =
     serviceTypeField: 'Select the Drone Service Type.',
     departmentField: 'Select your Department.',
     commentField: 'Fill in the Comment.',
-    minLength: 'The length should be minimum 8 characters.',
+    minLength: 'The length should be] minimum 8 characters.',
     invalidEmail: 'This is not a valid email address.'
 }
 
  var drones = new Vue({
     el: "#droneForm",
-    data: {
-        droneType: '',
-        droneTypeFB: '',
-        serviceType: '',
-        serviceTypeFB: '',
-        department: '',
-        departmentFB: '',
-        comment: '',
-        commentFB: '',
-        submition: false,
-        showErrors: false,
-        firstOption: [],
-        secondOption: [],
-        list: {
-            'Aerial':[ { size:'1',prize:'5' },{ size:'2',prize:'10'}],
-            'Aquatic':[{size:'3', prize:'8'}]
-        }
+    data:  function()
+    {
+        return{
+            droneType: '',
+            droneTypeFB: '',
+            serviceType: '',
+            serviceTypeFB: '',
+            department: '',
+            departmentFB: '',
+            comment: '',
+            commentFB: '',
+            submition: false,
+            showErrors: false,
+            droneType: [],
+            secondOption: []
+        };
     },
 
     computed: {
-        wrongDroneType()
+        wrongDroneType: function()
         {
             if(this.droneType === '') {
-                this.droneTypeFB = ERRORS.droneTypeField
+                this.droneTypeFB = ERRORS.droneTypeField;
                 return true
             }
             return false
         },
-        wrongServiceType() {
+        wrongServiceType: function() {
             if(this.serviceType === '') {
-                this.serviceTypeFB = ERRORS.serviceTypeField
+                this.serviceTypeFB = ERRORS.serviceTypeField;
                 return true
             }
             return false
         },
-        wrongDepartment() {
+        wrongDepartment : function(){
             if(this.department === '') {
-                this.departmentFB = ERRORS.departmentField
+                this.departmentFB = ERRORS.departmentField;
                 return true
             }
             return false
         },
-        wrongComment() {
+        wrongComment: function() {
             if(this.comment === '') {
-                this.commentFB = ERRORS.commentField
+                this.commentFB = ERRORS.commentField;
                 return true
             }
             return false
         }
     },
     methods: {
-        validateForm() {
-            this.submition = true
+
+        validateForm :function(){
+            this.submition = true;
             if(this.wrongDroneType || this.wrongServiceType || this.wrongDepartment || this.wrongComment)
                 event.preventDefault()
         },
+
         updateDroneType : function(value)
            {
-               if (value !== '') {
-                   alert(value);
-                   
-                   axios.get('/api/v1/drone-type')
-                       .then(response => this.firstOption = response.data);
-
+               if (value !== '')
+               {
+                   this.secondOption = [];
+                   axios.get('/api/v1/droneSubType/' + value)
+                        .then(function (response)
+                       {
+                           $.each(response.data, function(key, value) {
+                            this.secondOption.push(value);
+                           }.bind(this));
+                           alert(this.secondOption);
+                            return this.secondOption;
+                       }.bind(this))
+                           .catch(function (error)
+                           {
+                               console.log(error);
+                           });
                }
-               //this.$emit('input', value);
-
-
            }
         },
-    mounted()
+     mounted()
         {
             axios.get('/api/v1/drone-type')
                 .then(response => this.firstOption = response.data);
                 // .then(function (response) {
+                    
                 //     console.log(response.data);
                 // })
                 // .catch(function (error) {

@@ -1,7 +1,8 @@
 {
   "private": true,
   "devDependencies": {
-    "gulp": "^3.8.8"
+    "gulp": "^3.8.8",
+    "vue-devtools": "^3.1.9"
   },
   "dependencies": {
     "axios": "^0.16.2",

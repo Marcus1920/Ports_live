@@ -7,17 +7,27 @@
         <h4 class="page-title">REQUEST FORM</h4>
 
         <br>
-        <div class="tile p-15" style="margin:0 auto;">
+        <div class="tile p-15" style="margin:0 auto;" >
             <form class="form-horizontal" id="droneForm"  v-on:submit="validateForm">
+
+                <div class="form-group" v-bind:class="{ 'has-error': submition && wrongDepartment }">
+                    <div class="col-md-6">
+                        <label for="inputEmail3" class="col-sm-6 control-label">Department</label>
+                        <div class="col-sm-6">
+                            <input type="text" name="department" class="form-control" id="department"  v-model="department">
+                            <p class="help-block" v-cloak  v-if="submition && wrongDepartment">@{{departmentFB}}</p>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="form-group" v-bind:class="{ 'has-error': submition && wrongDroneType }">
                     <div class="col-md-6">
                         <label for="inputEmail3" class="col-sm-6 control-label">Drone Type Required</label>
                         <div class="col-sm-6">
                             {{--<input type="text" name="droneType"   class="form-control" id="droneType"  v-model="droneType">--}}
-                            <select v-model="firstOption"  @change="updateDroneType($event.target.value)"  v-cloak class="form-control" id="droneType">
+                            <select  v-model="droneType"  @change="updateDroneType($event.target.value)"  v-cloak class="form-control" id="droneType">
                                 @foreach($droneTypes as $droneType)
-                                <option  value="{{$droneType->id}}">{{$droneType->name}}</option>
+                                    <option  value="{{$droneType->id}}">{{$droneType->name}}</option>
                                 @endforeach
                             </select>
                             <p class="help-block"  v-cloak v-if="submition && wrongDroneType">@{{droneTypeFB}}</p>
@@ -30,23 +40,16 @@
                         <label for="inputEmail3" class="col-sm-6 control-label">Service Required</label>
                         <div class="col-sm-6">
                             {{--<input type="text" name="serviceType" class="form-control" id="serviceType"  v-model="serviceType">--}}
-                            <select v-model="secondOption"  v-cloak  v-if="firstOption" name="serviceType" class="form-control" id="serviceType">
-                                <option  v-for="option in list[firstOption]" value="option.size"  >@{{option.prize}}</option>
+                            <select v-model="secondOption"  v-cloak  v-if="droneType" name="serviceType" class="form-control" id="secondOption">
+                              <!--   <option value="0" selected = "disabled">Select Service</option> -->
+                                <option   v-for="service in secondOption" :value="service.id">@{{service.name}}</option>
                             </select>
                             <p class="help-block"  v-cloak v-if="submition && wrongServiceType">@{{serviceTypeFB}}</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="form-group" v-bind:class="{ 'has-error': submition && wrongDepartment }">
-                    <div class="col-md-6">
-                        <label for="inputEmail3" class="col-sm-6 control-label">Department</label>
-                        <div class="col-sm-6">
-                            <input type="text" name="department" class="form-control" id="department"  v-model="department">
-                            <p class="help-block" v-cloak  v-if="submition && wrongDepartment">@{{departmentFB}}</p>
-                        </div>
-                    </div>
-                </div>
+
 
                 <div class="form-group" v-bind:class="{ 'has-error': submition && wrongComment}">
                     <div class="col-md-6">
@@ -72,4 +75,11 @@
     </div>
 @stop
 @section('footer')
+    {{--<script>--}}
+
+        {{--$("#task_user_id").tokenInput("{!! url('/getUsers')!!}",{tokenLimit:1});--}}
+        {{--$("#case_id").tokenInput("{!! url('/getCases')!!}",{tokenLimit:1});--}}
+
+
+    {{--</script>--}}
 @stop
