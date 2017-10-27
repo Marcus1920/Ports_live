@@ -1219,9 +1219,18 @@
 				$("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
 			});
 		});
+
 		function shows(ev, index) {
 			console.log("shows(ev) index - ", index, ", ev - ", ev);
-			var index2 = index - 1;
+			var index2 = index;
+			var elShow = document.getElementById('side_contents' + (index2));
+			var elTab = $(elShow).parents(".bhoechie-tab-content");
+			console.log("elShow - ",elShow);
+			console.log("elTab", elTab);
+			hides(ev);
+			$(elShow).show();
+			$(elTab[0]).show();
+			return;
 //                        document.getElementById("side_navs").style.display="block";
 //                        document.getElementById("top_navs_action").className="bhoechie-tab-content";
 //                        document.getElementById('side_contents1').style.display="block";

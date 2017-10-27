@@ -1,4 +1,4 @@
-{!! Form::open(['url' => 'addCaseFile', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"addCaseFileForm",'files' => 'true' ]) !!}
+{!! Form::open(['url' => 'addCaseFile', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"addCaseFileForm",'files' => 'true', 'enctype'=>"multipart/form-data" ]) !!}
     {!! Form::hidden('uid',Auth::user()->id,['id' => 'uid']) !!}
     {!! Form::hidden('caseID',NULL,['id' => 'caseID']) !!}
     <input type="hidden" name="caseID" value="{{ $case->id }}">
