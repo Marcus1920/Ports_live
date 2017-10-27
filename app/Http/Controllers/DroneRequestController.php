@@ -7,9 +7,15 @@ use Illuminate\Http\Request;
 
 use App\DroneRequest;
 use App\DroneRequestActivity;
+
+
+use App\User;
+use App\Position;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Auth;
+use PhpParser\Node\Expr\Array_;
 
 class DroneRequestController extends Controller
 {
@@ -22,6 +28,7 @@ class DroneRequestController extends Controller
             ->with('DroneCaseStatus')
             ->with('Department')
             ->with('RejectReason')
+
             ->get();
 
         $droneRequests = \DB::table('drone_requests')
@@ -47,7 +54,10 @@ class DroneRequestController extends Controller
             )
             )
             ->orderBy('created_at','DESC')
-            ->get();
+            ->get()
+
+            ->paginate(10);
+
 
         return $droneRequests;
     }
@@ -78,6 +88,44 @@ class DroneRequestController extends Controller
         $droneRequestActivity->activity = "requested a drone";
         $droneRequestActivity->save();
 
+
+
+        $userRole = User::find($request['created_by']);
+        $position = Position::find($userRole->position);
+
+        if($position->name == "SHE Representative")
+        {
+            $responderPosition = Position::where('name','Environmental Manager')->first();
+            $droneRequestResponder = User::where('position',$responderPosition->id)->get();
+
+            $data = array(
+                'name'    => $droneRequestResponder[0]['name'],
+
+            );
+
+            \Mail::send('emails.Drones.DronesRequestCreate',$data,function($message) use ($droneRequestResponder)
+            {
+                $email = $droneRequestResponder[0]['email'];
+                $message->from('info@siyaleader.net', 'Siyaleader');
+                $message->to($email)->subject('testing notification');
+            });
+
+            return "Drone request created";
+        }
+        else if($position->name == "Engineering officer")
+        {
+            return "Engineering officer";
+        }
+        else if($position->name == "Vessel Traffic Controller")
+        {
+            return "vessel traffic controller";
+        }
+        else if($position->name == "Joint Operations Centre Monitor")
+        {
+            return "joint operations centre monitor";
+        }
+//        return $position->name;
+
         return "Drone request created";
     }
 
@@ -92,6 +140,7 @@ class DroneRequestController extends Controller
         $dronRequestActivity->user = $request['user'];
         $dronRequestActivity->activity = "first approved drone request";
         $dronRequestActivity->save();
+
 
        return $dronRequestActivity;
         //return response()->json[($dronRequestActivity)];
