@@ -23,7 +23,7 @@ const ERRORS =
             commentFB: '',
             submition: false,
             showErrors: false,
-            firstOption: [],
+            droneType: [],
             secondOption: []
         };
     },
@@ -75,9 +75,10 @@ const ERRORS =
                    axios.get('/api/v1/droneSubType/' + value)
                         .then(function (response)
                        {
-                           //$.each(response.data, function(key, value) {
-                            this.secondOption.push(response.data);
-                           //}.bind(this));
+                           $.each(response.data, function(key, value) {
+                            this.secondOption.push(value);
+                           }.bind(this));
+                           alert(this.secondOption);
                             return this.secondOption;
                        }.bind(this))
                            .catch(function (error)
@@ -92,6 +93,7 @@ const ERRORS =
             axios.get('/api/v1/drone-type')
                 .then(response => this.firstOption = response.data);
                 // .then(function (response) {
+                    
                 //     console.log(response.data);
                 // })
                 // .catch(function (error) {
