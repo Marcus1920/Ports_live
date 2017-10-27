@@ -6,7 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-<<<<<<< HEAD
+
     'App\\Http\\Controllers\\AddressBookController' => $baseDir . '/app/Http/Controllers/AddressBookController.php',
     'App\\Http\\Controllers\\AffiliationsController' => $baseDir . '/app/Http/Controllers/AffiliationsController.php',
     'App\\Http\\Controllers\\Auth\\AuthController' => $baseDir . '/app/Http/Controllers/Auth/AuthController.php',
@@ -90,7 +90,7 @@ return array(
     'CreateDroneTypesTable' => $baseDir . '/database/migrations/2017_10_19_191659_create_drone_types_table.php',
     'CreateReportersTable' => $baseDir . '/database/migrations/2017_09_19_094751_create_reporters_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
-=======
+
     'App\\Http\\Controllers\\AddressBookController' => $baseDir . '/../Ports_Live/app/Http/Controllers/AddressBookController.php',
     'App\\Http\\Controllers\\AffiliationsController' => $baseDir . '/../Ports_Live/app/Http/Controllers/AffiliationsController.php',
     'App\\Http\\Controllers\\Auth\\AuthController' => $baseDir . '/../Ports_Live/app/Http/Controllers/Auth/AuthController.php',
@@ -174,7 +174,7 @@ return array(
     'CreateDroneTypesTable' => $baseDir . '/../Ports_Live/database/migrations/2017_10_19_191659_create_drone_types_table.php',
     'CreateReportersTable' => $baseDir . '/../Ports_Live/database/migrations/2017_09_19_094751_create_reporters_table.php',
     'DatabaseSeeder' => $baseDir . '/../Ports_Live/database/seeds/DatabaseSeeder.php',
->>>>>>> e11b3b95e3216c7b8ff896eb7bf70105b0e3d0ae
+
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',
     'File_Iterator_Factory' => $vendorDir . '/phpunit/php-file-iterator/src/Factory.php',
@@ -247,11 +247,11 @@ return array(
     'Hamcrest\\Util' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
     'Hamcrest\\Xml\\HasXPath' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
     'IlluminateQueueClosure' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
-<<<<<<< HEAD
+
     'Languages' => $baseDir . '/database/seeds/Languages.php',
-=======
+
     'Languages' => $baseDir . '/../Ports_Live/database/seeds/Languages.php',
->>>>>>> e11b3b95e3216c7b8ff896eb7bf70105b0e3d0ae
+
     'PHPUnit\\Framework\\Assert' => $vendorDir . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
     'PHPUnit\\Framework\\AssertionFailedError' => $vendorDir . '/phpunit/phpunit/src/ForwardCompatibility/AssertionFailedError.php',
     'PHPUnit\\Framework\\BaseTestListener' => $vendorDir . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',
@@ -657,15 +657,15 @@ return array(
     'PHP_Token_XOR_EQUAL' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD_FROM' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
-<<<<<<< HEAD
+
     'PoiPicturesTypes' => $baseDir . '/database/seeds/PoiPicturesTypes.php',
     'QualificationTypes' => $baseDir . '/database/seeds/QualificationTypes.php',
     'Religions' => $baseDir . '/database/seeds/Religions.php',
-=======
+
     'PoiPicturesTypes' => $baseDir . '/../Ports_Live/database/seeds/PoiPicturesTypes.php',
     'QualificationTypes' => $baseDir . '/../Ports_Live/database/seeds/QualificationTypes.php',
     'Religions' => $baseDir . '/../Ports_Live/database/seeds/Religions.php',
->>>>>>> e11b3b95e3216c7b8ff896eb7bf70105b0e3d0ae
+
     'SebastianBergmann\\Comparator\\ArrayComparator' => $vendorDir . '/sebastian/comparator/src/ArrayComparator.php',
     'SebastianBergmann\\Comparator\\Comparator' => $vendorDir . '/sebastian/comparator/src/Comparator.php',
     'SebastianBergmann\\Comparator\\ComparisonFailure' => $vendorDir . '/sebastian/comparator/src/ComparisonFailure.php',
@@ -703,13 +703,13 @@ return array(
     'SebastianBergmann\\RecursionContext\\InvalidArgumentException' => $vendorDir . '/sebastian/recursion-context/src/InvalidArgumentException.php',
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Resources/stubs/SessionHandlerInterface.php',
-<<<<<<< HEAD
+
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
     'TrainingTypes' => $baseDir . '/database/seeds/TrainingTypes.php',
-=======
+
     'TestCase' => $baseDir . '/../Ports_Live/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
     'TrainingTypes' => $baseDir . '/../Ports_Live/database/seeds/TrainingTypes.php',
->>>>>>> e11b3b95e3216c7b8ff896eb7bf70105b0e3d0ae
+
 );

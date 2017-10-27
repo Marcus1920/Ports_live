@@ -28,7 +28,6 @@ class DroneRequestController extends Controller
             ->with('DroneCaseStatus')
             ->with('Department')
             ->with('RejectReason')
-
             ->get();
 
         $droneRequests = \DB::table('drone_requests')

@@ -40,7 +40,7 @@ new Vue(
         {
             console.log(error);
         });
-    axios.get('api/v1/drone/1"')
+    axios.get('api/v1/drone/1')
         .then(function(response)
         {
             console.log(response.data);
@@ -64,7 +64,12 @@ new Vue(
     axios.get('api/v1/rejectDroneRequest/5')
         .then(function (response) {
             console.log(response.data);
-        })
+        });
+     // axios.get('')
+     //     .then(function (error) {
+     //         console.log(response.data);
+     //     });
+
 
 
 }

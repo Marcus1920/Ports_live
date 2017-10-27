@@ -1,6 +1,6 @@
 @extends('master')
 @section('content')
-    <div class="container-fluid" id="droneForm"> <form class="form-horizontal">
+    <div class="container" id="droneForm"> <form class="form-horizontal">
         <div class="row">
 
             <div  class="col-md-4" >
@@ -8,6 +8,7 @@
 
                 <h3 class="h3"> Created By   :    </h3>
             </div>
+
 
             <div class="col-md-8">
                 <h3>  Service  Request : Aquatic Drone   </h3>
@@ -52,22 +53,22 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            {{--<div class="form-group">--}}
 
-            <div class="col-md-6">
+            {{--<div class="col-md-6">--}}
             {{--<div  class="col-md-2 from-group" >--}}
-                <label for="inputEmail3" class="col-sm-6 control-label">Rejection Reason</label>
-               <div class="col-sm-6">
-                <select v-model="rejectReason"  v-cloak v-if="form-control" id="rejectReason" name="rejectReason">
-                    @foreach
-                        <option value="{{$RejectReason->id}}">{{$RejectReason->name}}</option>
-                        @endforeach
-                </select>
-                   <p class="help-block" >@{{rejectReasonFB}}</p>
+                {{--<label for="inputEmail3" class="col-sm-6 control-label">Rejection Reason</label>--}}
+               {{--<div class="col-sm-6">--}}
+                {{--<select v-model="rejectReason"  v-cloak v-if="form-control" id="rejectReason" name="rejectReason">--}}
+                    {{--@foreach($droneRequests as $droneRequest)--}}
+                        {{--<option value="{{$droneRequests->id}}">{{$RejectReason->name}}</option>--}}
+                        {{--@endforeach--}}
+                {{--</select>--}}
+                   {{--<p class="help-block" >@{{rejectReasonFB}}</p>--}}
             {{--</div>--}}
-            </div>
-            </div>
-            </div>
+            {{--</div>--}}
+            {{--</div>--}}
+            {{--</div>--}}
 
             {{--<div class="form-group" v-bind:class="{ 'has-error': submition && wrongServiceType }">--}}
                 <div class="col-md-6">
