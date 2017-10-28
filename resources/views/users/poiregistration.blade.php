@@ -390,9 +390,7 @@
                         <div class="col-md-4">
 
                                 {!! Form::label('Driver Licence', 'Driver Licence', array('class' => '')) !!}
-                                {!! Form::select('has_driver_licence',['0' => 'Please Select Driver Licence','1' => 'No','2' => 'Yes'],0,['class' => 'form-control input-sm m-b-10' ,'id' => 'has_driver_licence']) !!}
-                               
-                            
+                                {!! Form::select('has_driver_licence',['0' =>'Please Select Driver Licence','1' => 'No','2' => 'Yes'],0,['class' => 'form-control input-sm m-b-10' ,'id' => 'has_driver_licence']) !!}
                         </div>
                     </div>
                     <div id="driver_licence_container">

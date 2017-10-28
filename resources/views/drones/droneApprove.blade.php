@@ -1,6 +1,7 @@
 @extends('master')
 @section('content')
-    <div class="container" id="droneForm"> <form class="form-horizontal">
+    <div class="container" >
+        <form class="form-horizontal" id="droneApproval">
         <div class="row">
 
             <div  class="col-md-4" >
@@ -11,9 +12,10 @@
 
 
             <div class="col-md-8">
-                <h3>  Service  Request : Aquatic Drone   </h3>
+                <h3>  Service  Request : Aquatic Drone </h3>
             </div>
         </div>
+
         {{--<div class="form-group">--}}
         {{--<div class="row">--}}
 
@@ -31,7 +33,6 @@
         {{--</div>--}}
             {{--</div>--}}
 
-
             <div class="form-group">
 
                 <div class="col-md-6" style="margin-top:20px;">
@@ -40,10 +41,8 @@
                             class="btn btn-primary">Approve
                     </button>
                         <p class="help-block" v-cloack v-if="submition && wrongApprove">@{{approveFB }}</p>
-
                     </div>
                 </div>
-
                 <div class="col-md-6" style="margin-top:10px;">
                     <div class="col-sm-offset-6 col-sm-6">
                     <button
@@ -53,37 +52,13 @@
                 </div>
             </div>
 
-            {{--<div class="form-group">--}}
-
-            {{--<div class="col-md-6">--}}
-            {{--<div  class="col-md-2 from-group" >--}}
-                {{--<label for="inputEmail3" class="col-sm-6 control-label">Rejection Reason</label>--}}
-               {{--<div class="col-sm-6">--}}
-                {{--<select v-model="rejectReason"  v-cloak v-if="form-control" id="rejectReason" name="rejectReason">--}}
-                    {{--@foreach($droneRequests as $droneRequest)--}}
-                        {{--<option value="{{$droneRequests->id}}">{{$RejectReason->name}}</option>--}}
-                        {{--@endforeach--}}
-                {{--</select>--}}
-                   {{--<p class="help-block" >@{{rejectReasonFB}}</p>--}}
-            {{--</div>--}}
-            {{--</div>--}}
-            {{--</div>--}}
-            {{--</div>--}}
-
-            {{--<div class="form-group" v-bind:class="{ 'has-error': submition && wrongServiceType }">--}}
+            <div class="form-group">
+                {!! Form::label('Reject Reason','Reject Reason', array('class'=>'col-md-3  control-label'))  !!}
                 <div class="col-md-6">
-                    <label for="inputEmail3" class="col-sm-6 control-label">Service Required</label>
-                    <div class="col-sm-6">
-                        {{--<input type="text" name="serviceType" class="form-control" id="serviceType"  v-model="serviceType">--}}
-                        <select v-model="secondOption"  v-cloak  v-if="droneType" name="serviceType" class="form-control" id="secondOption">
-                            <!--   <option value="0" selected = "disabled">Select Service</option> -->
-                            <option   v-for="service in secondOption" :value="service.id">@{{service.name}}</option>
-                        </select>
-                        <p class="help-block"  v-cloak v-if="submition && wrongServiceType">@{{serviceTypeFB}}</p>
-                    </div>
+                    {!! Form::select('rejectReason',$DroneRequests,0,['class' => 'form-control input-sm','id'=>'RejectReason','name'=>'RejectReason'])!!}
                 </div>
+                <p class="help-block">@{{rejectReasonFB}}</p>
             </div>
-
             <div class="form-group">
 
             <div class="col-md-2">
@@ -108,35 +83,7 @@
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
-    </body>
+    {{--<script src="js/scripts.js"></script>--}}
 @stop
 @section('footer')
 @stop
-{{--<script src="/js/main.js">--}}
-    {{--export default{--}}
-        {{--data()--}}
-        {{--{--}}
-            {{--return{--}}
-                {{--approveFB:'',--}}
-                {{--rejectFB:'',--}}
-                {{--comment:'',--}}
-                {{--rejectionReason:['Duplicated Request'],--}}
-                {{--approve:'true'--}}
-            {{--},--}}
-                {{--methods:--}}
-              {{--{--}}
-                  {{--FirstApprove()--}}
-                  {{--{--}}
-
-                  {{--}--}}
-               {{--},--}}
-
-        {{--}--}}
-
-
-
-
-        {{--}--}}
-    {{--};--}}
-{{--</script>--}}

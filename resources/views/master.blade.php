@@ -533,7 +533,7 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
 <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
-
+    <script src="js/main.js"></script>
 {{--<script src="https://unpkg.com/vue/dist/vue.min.js"></script>--}}
 {{--<script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>--}}
 
@@ -760,11 +760,9 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
 {{--</script>--}}
 
 {{--<script src="js/main.js"></script>--}}
+  <script src="js/droneRequest.js"></script>
+
 </body>
 </html>
 
-  <script src="js/droneRequest.js"></script>
-  <script src="js/main.js"></script>
-</body>
-</html>
 

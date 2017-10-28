@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\DroneType;
 use Illuminate\Http\Request;
-
 use App\DroneRequest;
 use App\DroneRequestActivity;
 
@@ -53,9 +52,9 @@ class DroneRequestController extends Controller
             )
             )
             ->orderBy('created_at','DESC')
-            ->get()
+            ->get();
 
-            ->paginate(10);
+            //->paginate(10);
 
 
         return $droneRequests;
@@ -63,8 +62,8 @@ class DroneRequestController extends Controller
 
     public function create()
     {
-        //
-        return view('drones.droneApprove');
+        $DroneRequests = $this->index();
+        return view('drones.droneApprove' ,['DroneRequests'=> $DroneRequests]);
 
     }
 
