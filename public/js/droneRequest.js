@@ -1,107 +1,100 @@
-
-//import VueTypeahead from 'vue-typeahead'
 const ERRORS =
     {
-    droneTypeField: 'Select the Drone Type.',
-    serviceTypeField: 'Select the Drone Service Type.',
-    departmentField: 'Select your Department.',
-    commentField: 'Fill in the Comment.',
+        droneTypeField: 'Select the Drone Type.',
+        serviceTypeField: 'Select the Drone Service Type.',
+        departmentField: 'Select your Department.',
+        commentField: 'Fill in the Comment.',
         createdByField: 'Fill in the Comment.',
-    minLength: 'The length should be] minimum 8 characters.',
-    invalidEmail: 'This is not a valid email address.'
+        minLength: 'The length should be] minimum 8 characters.',
+        invalidEmail: 'This is not a valid email address.'
 }
 
- var drones = new Vue({
-    el: "#droneForm",
-    data:  function()
-    {
-        return{
-            department: '',
-            departmentFB: '',
-            drone_type_id: '',
-            droneTypeFB: '',
-            sub_drone_type_id: '',
-            serviceTypeFB: '',
-            comment: '',
-            commentFB: '',
-            submition: false,
-            showErrors: false,
-            droneTypeData: [],
-            serviceTypeData: []
-        };
-    },
-
-    computed: {
-        wrongDepartment : function(){
-            if(this.department === '') {
-                this.departmentFB = ERRORS.departmentField;
-                return true
-            }
-            return false
+var drones = new Vue({
+        el: "#droneForm",
+        data: function () {
+            return {
+                department: '',
+                departmentFB: '',
+                drone_type_id: '',
+                droneTypeFB: '',
+                sub_drone_type_id: '',
+                serviceTypeFB: '',
+                comment: '',
+                commentFB: '',
+                submition: false,
+                showErrors: false,
+                loading: false,
+                error: false,
+                departments: [],
+                droneTypeData: [],
+                serviceTypeData: []
+            };
         },
-
-        wrongDroneType: function()
-        {
-            if(this.drone_type_id === '') {
-                this.droneTypeFB = ERRORS.droneTypeField;
-                return true
-            }
-            return false
-        },
-        wrongServiceType: function() {
-            if(this.sub_drone_type_id === '') {
-                this.serviceTypeFB = ERRORS.serviceTypeField;
-                return true
-            }
-            return false
-        },
-        wrongComment: function() {
-            if(this.comment === '') {
-                this.commentFB = ERRORS.commentField;
-                return true
-            }
-            return false
-        }
-
-    },
-    methods: {
-        validateForm :function(){
-            this.submition = true;
-            if( this.wrongDepartment || this.wrongDroneType || this.wrongServiceType || this.wrongComment)
-            {event.preventDefault()
-            }else
-                {
-                axios.post('/api/v1/drone')
-                    .then(function (response) {
-                        alert('you have made your request');
-                       // console.log(data);
-                    })
-                    .catch(function (error) {
-                       // alert('not working');
-                        console.log(error);
-                    });
+        computed: {
+            wrongDepartment: function () {
+                if (this.department === '') {
+                    this.departmentFB = ERRORS.departmentField;
+                    return true
                 }
-                },
-        updateDroneType : function(value)
-           {
-               if (value !== '')
-               {
-                   this.serviceTypeData = [];
-                   axios.get('/api/v1/droneSubType/' + value)
-                        .then(function (response)
-                       {
-                           $.each(response.data, function(key, value) {
-                            this.serviceTypeData.push(value);
-                           }.bind(this));
-                           //alert(this.secondOption);
-                            return this.serviceTypeData;
-                       }.bind(this))
-                           .catch(function (error)
-                           {
-                               console.log(error);
-                           });
-               }
-            }
-         }
+                return false
+            },
 
-})
+            wrongDroneType: function () {
+                if (this.drone_type_id === '') {
+                    this.droneTypeFB = ERRORS.droneTypeField;
+                    return true
+                }
+                return false
+            },
+            wrongServiceType: function () {
+                if (this.sub_drone_type_id === '') {
+                    this.serviceTypeFB = ERRORS.serviceTypeField;
+                    return true
+                }
+                return false
+            },
+            wrongComment: function () {
+                if (this.comment === '') {
+                    this.commentFB = ERRORS.commentField;
+                    return true
+                }
+                return false
+            }
+
+        },
+        methods: {
+            validateForm: function () {
+                this.submition = true;
+                if (this.wrongDepartment || this.wrongDroneType || this.wrongServiceType || this.wrongComment) {
+                    event.preventDefault()
+                } else {
+                    axios.post('/api/v1/drone')
+                        .then(function (response) {
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            updateDroneType: function (value) {
+                if (value !== '') {
+                    this.serviceTypeData = [];
+                    axios.get('/api/v1/droneSubType/' + value)
+                        .then(function (response) {
+                            $.each(response.data, function (key, value) {
+                                this.serviceTypeData.push(value);
+                            }.bind(this));
+                            return this.serviceTypeData;
+                        }.bind(this))
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            }
+
+        }
+    });
+
+$(document).ready(function () {
+    $("#departmentId").tokenInput("/api/v1/userDepartment", {tokenLimit: 1});
+});

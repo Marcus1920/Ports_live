@@ -7,15 +7,12 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\DroneRequest;
+use App\Department;
 use Auth;
 
 class DronesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
 
@@ -24,10 +21,7 @@ class DronesController extends Controller
     public function create()
     {
         return view('drones.droneRequest');
-
     }
-
-
     public function store(Request $request)
     {
         $newDroneRequest = new DroneRequest();
@@ -44,12 +38,24 @@ class DronesController extends Controller
         return "Drone request created";
     }
 
+    public function searchDepartment(Request $request)
+    {
+
+        $error = ['error' => 'No results found, please try with different keywords.'];
+
+        if($request->has('q'))
+        {
+            $posts = Department::search($request->get('q'))->get();
+            return $posts->count() ? $posts : $error;
+        }
+        return $error;
+    }
 
     public function userDepartment()
     {
 
         $searchString           = \Input::get('q');
-        $userDepartment          = \DB::table('departments')
+        $userDepartment         = \DB::table('departments')
             ->whereRaw(
                 "CONCAT(`departments`.`id`, ' ', `departments`.`name`) LIKE '%{$searchString}%'")
             ->select(
@@ -69,27 +75,23 @@ class DronesController extends Controller
 
             $data[] = array(
 
-                "id"     => "{$department->id}",
+
                 "name"   => "Department ID: {$department->id} >  Name: {$department->name}",
+                "id"     => "{$department->id}"
             );
         }
 
         return $data;
 
     }
-
-
     public function edit($id)
     {
 
     }
-
     public function update(Request $request, $id)
     {
 
     }
-
-
     public function destroy($id)
     {
 

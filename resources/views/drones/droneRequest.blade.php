@@ -14,9 +14,7 @@
                     <div class="col-md-6">
                         <label for="department" class="col-sm-6 control-label">Search Department</label>
                         <div class="col-sm-6">
-
-                            <input type="text" name="department" class="form-control" id="department" v-model="department">
-                            {{--<div class="input-group" :class="[form-control]">--}}
+                            <input type="text" name="department" class="form-control" id="departmentId" v-model="department">
                             <p class="help-block" v-cloak  v-if="submition && wrongDepartment">@{{departmentFB}}</p>
                         </div>
                     </div>
@@ -74,3 +72,4 @@
         </div>
     </div>
 @stop
+
