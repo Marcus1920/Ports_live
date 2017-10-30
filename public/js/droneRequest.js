@@ -90,6 +90,12 @@ const ERRORS =
         },
      mounted()
         {
+
+            axios.get('/api/v1/drone-type')
+                .then(function(response)
+                {
+                    console.log(response.data);
+                })
             axios.get('/api/v1/drone-type')
                 .then(response => this.firstOption = response.data);
                 // .then(function (response) {

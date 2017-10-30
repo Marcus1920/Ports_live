@@ -40,24 +40,35 @@
                     <button
                             class="btn btn-primary">Approve
                     </button>
-                        <p class="help-block" v-cloack v-if="submition && wrongApprove">@{{approveFB }}</p>
+                        {{--<p class="help-block" v-cloack v-if="submition && wrongApprove">@{{approveFB }}</p>--}}
+                        <p id="approve" v-model="approve">@{{approveFB}}</p>
                     </div>
                 </div>
                 <div class="col-md-6" style="margin-top:10px;">
                     <div class="col-sm-offset-6 col-sm-6">
                     <button
                             class="btn  btn-danger">Reject</button>
-                        <p class="help-block" v-cloack v-if="submition && wrongReject">@{{rejectFB}}</p>
+                        <p id="approve" v-model="approve">@{{rejectFB}}</p>
+
                     </div>
                 </div>
             </div>
 
+            {{--<div class="form-group">--}}
+                {{--{!! Form::label('Reject Reason','Reject Reason', array('class'=>'col-md-3  control-label'))  !!}--}}
+                {{--<div class="col-md-6">--}}
+                    {{--{!! Form::select('rejectReason',$DroneRequests,2,['class' => 'form-control input-sm','id'=>'RejectReason','name'=>'RejectReason'])!!}--}}
+                {{--</div>--}}
+                {{--<p class="help-block">@{{rejectReasonFB}}</p>--}}
+            {{--</div>--}}
             <div class="form-group">
-                {!! Form::label('Reject Reason','Reject Reason', array('class'=>'col-md-3  control-label'))  !!}
-                <div class="col-md-6">
-                    {!! Form::select('rejectReason',$DroneRequests,0,['class' => 'form-control input-sm','id'=>'RejectReason','name'=>'RejectReason'])!!}
-                </div>
-                <p class="help-block">@{{rejectReasonFB}}</p>
+                <select name="RejectReason" class="form-control">
+                    @foreach($DroneRequests as $DroneRequest)
+                        <option value="{{$DroneRequest->id}}"{{$DroneRequest->name}}></option>
+                        @endforeach
+                    <p id="RejectReason" v-model="RejectReason">@{{rejectReasonFB}}</p>
+                </select>
+
             </div>
             <div class="form-group">
 

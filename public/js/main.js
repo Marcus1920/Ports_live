@@ -15,7 +15,7 @@ new Vue({
 
                 approveFB:'',
                 rejectFB:'',
-                rejectReasonFB:'',
+                rejectReasonFB:'dropdown',
                 caseStatus:'',
                 comment:'drone is not available',
                 submition:false,
@@ -75,4 +75,10 @@ new Vue({
 
 
 })
+methods:
+{
+
+
+
+}
 
