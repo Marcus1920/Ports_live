@@ -8,13 +8,13 @@
 
         <br>
         <div class="tile p-15" style="margin:0 auto;" >
-            <form class="form-horizontal" id="droneForm"  v-on:submit="validateForm">
+            <form class="form-horizontal" id="droneForm"  action="/api/v1/drone" v-on:submit="validateForm"  method="post">
 
                 <div class="form-group" v-bind:class="{ 'has-error': submition && wrongDepartment }">
                     <div class="col-md-6">
-                        <label for="inputEmail3" class="col-sm-6 control-label">Department</label>
+                        <label for="department" class="col-sm-6 control-label">Search Department</label>
                         <div class="col-sm-6">
-                            <input type="text" name="department" class="form-control" id="department"  v-model="department">
+                            <input type="text" name="department" class="form-control" id="departmentId" v-model="department">
                             <p class="help-block" v-cloak  v-if="submition && wrongDepartment">@{{departmentFB}}</p>
                         </div>
                     </div>
@@ -22,40 +22,38 @@
 
                 <div class="form-group" v-bind:class="{ 'has-error': submition && wrongDroneType }">
                     <div class="col-md-6">
-                        <label for="inputEmail3" class="col-sm-6 control-label">Drone Type Required</label>
+                        <label for="drone_type_id" class="col-sm-6 control-label">Drone Type Required</label>
                         <div class="col-sm-6">
-                            {{--<input type="text" name="droneType"   class="form-control" id="droneType"  v-model="droneType">--}}
-                            <select  v-model="droneType"  @change="updateDroneType($event.target.value)"  v-cloak class="form-control" id="droneType">
+                            <select @change="updateDroneType($event.target.value)"  name="drone_type_id" v-cloak class="form-control" id="droneTypeData"  v-model="drone_type_id">
                                 @foreach($droneTypes as $droneType)
-                                    <option  value="{{$droneType->id}}">{{$droneType->name}}</option>
+                                    <option  :value="{{$droneType->id}}">{{$droneType->name}}</option>
                                 @endforeach
                             </select>
                             <p class="help-block"  v-cloak v-if="submition && wrongDroneType">@{{droneTypeFB}}</p>
+
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group" v-bind:class="{ 'has-error': submition && wrongServiceType }">
                     <div class="col-md-6">
-                        <label for="inputEmail3" class="col-sm-6 control-label">Service Required</label>
+                        <label for="sub_drone_type_id" class="col-sm-6 control-label">Service Required</label>
                         <div class="col-sm-6">
                             {{--<input type="text" name="serviceType" class="form-control" id="serviceType"  v-model="serviceType">--}}
-                            <select v-model="secondOption"  v-cloak  v-if="droneType" name="serviceType" class="form-control" id="secondOption">
+                            <select  v-cloak  v-if="droneTypeData" name="sub_drone_type_id" class="form-control" id="serviceTypeData"  v-model="sub_drone_type_id">
                               <!--   <option value="0" selected = "disabled">Select Service</option> -->
-                                <option   v-for="service in secondOption" :value="service.id">@{{service.name}}</option>
+                                <option   v-for="service in serviceTypeData" :value="service.id">@{{service.name}}</option>
                             </select>
                             <p class="help-block"  v-cloak v-if="submition && wrongServiceType">@{{serviceTypeFB}}</p>
                         </div>
                     </div>
                 </div>
 
-
-
                 <div class="form-group" v-bind:class="{ 'has-error': submition && wrongComment}">
                     <div class="col-md-6">
                         <label for="inputEmail3" class="col-sm-6 control-label">Comments</label>
                         <div class="col-sm-6">
-                            <textarea type="text"  name="comment " class="form-control" id="comment" v-model="comment"></textarea>
+                            <textarea type="text"  name="comment" class="form-control" v-model="comment"></textarea>
                             <p class="help-block" v-cloak   v-if="submition && wrongComment">@{{commentFB}}</p>
                         </div>
                     </div>
@@ -74,12 +72,4 @@
         </div>
     </div>
 @stop
-@section('footer')
-    {{--<script>--}}
 
-        {{--$("#task_user_id").tokenInput("{!! url('/getUsers')!!}",{tokenLimit:1});--}}
-        {{--$("#case_id").tokenInput("{!! url('/getCases')!!}",{tokenLimit:1});--}}
-
-
-    {{--</script>--}}
-@stop

@@ -66,7 +66,7 @@
             {{--<div class="form-group">--}}
             {{--{!! Form::label('Reject Reason','Reject Reason', array('class'=>'col-md-3  control-label'))  !!}--}}
             {{--<div class="col-md-6">--}}
-            {{--{!! Form::select('rejectReason',$DroneRequests,2,['class' => 'form-control input-sm','id'=>'RejectReason','name'=>'RejectReason'])!!}--}}
+            {{--{!! Form::select('rejectReason',$DroneRequests,2,s['class' => 'form-control input-sm','id'=>'RejectReason','name'=>'RejectReason'])!!}--}}
             {{--</div>--}}
             {{--<p class="help-block">@{{rejectReasonFB}}</p>--}}
             {{--</div>--}}

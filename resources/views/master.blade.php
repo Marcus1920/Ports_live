@@ -77,7 +77,7 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
   </script>
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <style>
+  <style scoped>
     body {
         background-color: #5c788f;
     }
@@ -92,6 +92,10 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
       [ v-cloak]{
           display:none;
       }
+    .dropdown-menu-list {
+        display: list-item;
+        width: 100%;
+    }
   </style>
 
     <script src="https://unpkg.com/vue"></script>
