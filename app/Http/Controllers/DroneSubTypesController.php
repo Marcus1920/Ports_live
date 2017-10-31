@@ -13,23 +13,22 @@ class DroneSubTypesController extends Controller
     public function index()
     {
         $droneSubType = DroneSubType::with('DroneType')->get();
-
         return $droneSubType;
     }
 
     public function create()
     {
-        //
+
     }
 
     public function store(Request $request)
     {
-        //
+
     }
 
     public function show($id)
     {
-        //
+
     }
 
     public function edit($id)

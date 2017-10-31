@@ -1181,7 +1181,9 @@ Route::group(array('prefix' => 'api/v1'), function() {
 */
     Route::resource('drone-type','DroneTypesController');
     Route::resource('drone-sub-type','DroneSubTypesController');
-    Route::get('droneSubType/{id}','DroneSubTypesController@droneSubTypes');
+//    Route::get('droneSubType/{id}','DroneSubTypesController@droneSubTypes');
+    Route::get('droneSubType/{id}','DroneSubTypesController@index');
+    Route::get('userDepartment','DroneRequestController@userDepartment');
     /*
 |--------------------------------------------------------------------------
 | END DRONE TYPES AND SUB TYPES ROUTING

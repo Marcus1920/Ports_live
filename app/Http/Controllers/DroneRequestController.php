@@ -106,12 +106,40 @@ class DroneRequestController extends Controller
       return view('drones.index');
     }
 
-    public function edit($id)
+    public function userDepartment()
     {
-        //
+
+        $searchString = \Input::get('q');
+        $userDepartment = \DB::table('departments')
+            ->whereRaw(
+                "CONCAT(`departments`.`id`, ' ', `departments`.`name`) LIKE '%{$searchString}%'")
+            ->select(
+                array
+
+                (
+                    'departments.id as id',
+                    'departments.name as name',
+                )
+            )
+            ->get();
+
+        $data = array();
+
+        foreach ($userDepartment as $department) {
+
+            $data[] = array(
+
+
+                "name" => "Department ID: {$department->id} >  Name: {$department->name}",
+                "id" => "{$department->id}"
+            );
+        }
+
+        return $data;
+
     }
 
-    public function update(Request $request, $id)
+        public function update(Request $request, $id)
     {
         //
     }
