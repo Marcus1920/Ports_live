@@ -16,9 +16,13 @@ class DroneSubTypesController extends Controller
         return $droneSubType;
     }
 
-    public function create()
+    public function droneSubTypes($id)
     {
+        $droneSubTypes = DroneSubType::with('DroneType')
+            ->where('drone_type_id',$id)
+            ->get();
 
+        return $droneSubTypes;
     }
 
     public function store(Request $request)

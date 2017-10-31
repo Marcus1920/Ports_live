@@ -8,7 +8,8 @@
         <br>
         <div class="tile p-15" style="margin:0 auto;" >
             {!! Form::open(['url' => '/api/v1/drone', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"requestDroneForm" ]) !!}
-            {!! Form::hidden('userId',Auth::user()->id) !!}
+            {!! Form::hidden('created_by',Auth::user()->id)!!}
+            {{Auth::user()->id}}
             <div class="form-group">
                 {!! Form::label('Search Department', 'Search Department', array('class' => 'col-md-3 control-label')) !!}
                 <div class="col-md-6">
@@ -28,8 +29,14 @@
             <div class="form-group">
                 {!! Form::label('Select Drone Services', 'Select Drone Services', array('class' => 'col-md-3 control-label')) !!}
                 <div class="col-md-6">
-                    {!! Form::select('sub_drone_type_id',$selectTaskPriorities,"",['class' => 'form-control validate[required]' ,'id' => 'sub_drone_type_id']) !!}
-                    @if ($errors->has('sub_drone_type_id')) <p class="help-block red">*{{ $errors->first('sub_drone_type_id') }}</p> @endif
+                    {{--{!! Form::select('sub_drone_type_id',Null,['class' => 'form-control validate[required]' ,'id' => 'sub_drone_type_id']) !!}--}}
+                    {{--@if ($errors->has('sub_drone_type_id')) <p class="help-block red">*{{ $errors->first('sub_drone_type_id') }}</p> @endif--}}
+
+                <select class="form-control" id="dsub_drone_type_i">
+                        <option>Select Drone Service</option>
+
+
+                </select>
                 </div>
             </div>
 
@@ -58,31 +65,43 @@
     <script>
         $('#drone_type_id').on('change',function()
         {
-           // alert( this.value);
             var id = this.value;
+            var DroneServices = [];
             $.ajax({
                 url:'droneSubType/'+ id,
                 success: function(response){
-                    alert(response)
+                    $.each(response ,function(key ,value)
+                    {
+
+                       DroneServices.push(value.name);
+
+                    });
+
+
+                    document.getElementById("dsub_drone_type_i").innerHTML="<option>Select Drone Service</option>";
+
+                    for(var i=0; i < DroneServices.length;i++)
+                    {
+                        document.getElementById("dsub_drone_type_i").innerHTML+="<option value="+DroneServices[i]+">"+DroneServices[i]+"</option>"
+                    }
+
+      //   return          alert(DroneServices[2]);
+//                    return DroneServices;
+
+
+
+//                    t.appendChild(DroneServices);
+                    //alert(DroneServices);
+
+//                    alert(DroneService);
+
+
+//                    var $result   = $(DroneServices).find('#sub_drone_type_id').val();
+//                    return DroneServices;
                 }
             });
 
-            var selectText  = $(this).find("option:selected").text();
-            if(selectText == 'Case' )
-            {
-                $('.searchCase').removeClass('hidden');
-                $("#case_id").removeAttr('disabled');
-
-            }
-            else {
-
-                $('.searchCase').addClass('hidden');
-                $("#case_id").attr('disabled','disabled');
-            }
-
         })
-
         $("#department").tokenInput("{!! url('/api/v1/userDepartment')!!}",{tokenLimit:1});
     </script>
     @endsection
-"ajax": "{!! url('/getTasks')!!}",
