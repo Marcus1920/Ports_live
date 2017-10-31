@@ -101,9 +101,9 @@ class DroneRequestController extends Controller
         return "Successfully Rejected drone request";
     }
 
-    public function show($id)
+    public function requestDrones()
     {
-        //
+      return view('drones.index');
     }
 
     public function edit($id)
