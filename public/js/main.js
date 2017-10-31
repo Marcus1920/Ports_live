@@ -15,15 +15,19 @@ new Vue({
 
                 approveFB:'',
                 rejectFB:'',
-                rejectReasonFB:'dropdown',
+                rejectReasonFB:'',
                 caseStatus:'',
                 comment:'drone is not available',
                 submition:false,
-                showErrors:false
+                showErrors:false,
+                rejectReasonFB:[],
+
+
 
             },
 
-    mounted:function() {
+    mounted:function(s)
+    {
         // axios.get('api/v1/drone-type')
         //     .then(function (response) {
         //         console.log(response.data);
@@ -63,6 +67,7 @@ new Vue({
                 console.log(error);
             });
 
+
         // axios.get('api/v1/rejectDroneRequest/5')
         //     .then(function (response) {
         //         console.log(response.data);
@@ -72,13 +77,27 @@ new Vue({
         //         console.log(response.data);
         //     });
     }
+    ,
+    methods:
+        {
+            FirstApprove:function (data)
+            {
+                axios.post('/api/v1/firstDroneApproval/1')
+                    .then(function(response)
+                    {
+                    console.log(response.data);
+            })
+              .catch(function (error)
+              {
+                  console.log(error);
+
+    });
 
 
+
+            }
+
+        }
 })
-methods:
-{
 
-
-
-}
 

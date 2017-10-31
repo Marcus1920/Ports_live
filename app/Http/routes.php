@@ -1174,6 +1174,8 @@ Route::group(array('prefix' => 'api/v1'), function() {
     Route::resource('drone-type','DroneTypesController');
     Route::resource('drone-sub-type','DroneSubTypesController');
     Route::get('droneSubType/{id}','DroneSubTypesController@droneSubTypes');
+    Route::get('request','DroneRequestController@index');
+
     /*
 |--------------------------------------------------------------------------
 | END DRONE TYPES AND SUB TYPES ROUTING
@@ -1302,17 +1304,15 @@ Route::group(array('prefix' => 'api/v1'), function()
     ------------------------|*/
     Route::resource('drone-type','DroneTypesController');
     Route::resource('drone-sub-type','DroneSubTypesController');
-
-
     /*|--------------------------------------------------------------------------|
     END DRONE TYPES AND SUB TYPES ROUTING
-    |--------------------------------------------------------------------------|*/
+ |--------------------------------------------------------------------------|*/
 
     Route::get('userDepartment','DronesController@userDepartment');
 });
 
 Route::get('requestForm','DronesController@create');
-Route::get('approveForm','DroneRequestController@create');
+Route::get('approveForm','DroneRequestController@index');
 
 //Route::get('');
 
@@ -1320,8 +1320,8 @@ Route::get('requestForm','DroneTypesController@index');
 
 Route::get('firstDroneApproval', 'DroneRequestController@FirstApprove');
 
-Route::get('Drone','DroneRequestController@index');
+//Route::get('Drone','DroneRequestController@index');
 
 Route::get('droneApprove','DroneRequestController@index');
 
-//Route::get('approveForm','DroneRequestController@index');
+Route::get('approveForm','DroneRequestController@create');
