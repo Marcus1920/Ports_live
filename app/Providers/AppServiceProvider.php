@@ -113,7 +113,7 @@ class AppServiceProvider extends ServiceProvider
         if (\Schema::hasTable('drone_types'))
         {
             $droneTypes          = DroneType::orderBy('name','ASC')->get();
-            $selectDroneTypes  = array();
+            $selectDroneTypes    = array();
             $selectDroneTypes[0] = "Choose a Drone";
 
             foreach ($droneTypes as $droneType) {

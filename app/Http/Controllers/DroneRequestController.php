@@ -8,7 +8,9 @@ use App\DroneRequest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Auth;
-use  Response ; 
+use  Response ;
+use Redirect;
+use App\Http\Requests\DroneRequestForm;
 class DroneRequestController extends Controller
 {
 
@@ -58,20 +60,21 @@ class DroneRequestController extends Controller
         //
     }
 
-    public function store(Request $request)
+    public function store(DroneRequestForm $request)
     {
         $newDroneRequest = new DroneRequest();
         $newDroneRequest->created_by = $request['created_by'];
         $newDroneRequest->drone_type_id = $request['drone_type_id'];
         $newDroneRequest->sub_drone_type_id = $request['sub_drone_type_id'];
         $newDroneRequest->drone_case_status = 1;
-        $newDroneRequest->comments = $request['comments'];
+        $newDroneRequest->comments = $request['comment'];
         $newDroneRequest->department = $request['department'];
         $newDroneRequest->reject_reason = 4;
         $newDroneRequest->reject_other_reason = "None";
         $newDroneRequest->save();
 
-        return "Drone request created";
+        \Session::flash('success', 'A drone request   has been sent, you will get a response soon!');
+        return Redirect::back();
     }
 
     public function FirstApprove($id)
