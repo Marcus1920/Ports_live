@@ -70,19 +70,24 @@
             $.ajax({
                 url:'droneSubType/'+ id,
                 success: function(response){
-                    $.each(response ,function(key ,value)
-                    {
-
-                       DroneServices.push(value.name);
-
-                    });
-
+                    var data  = JSON.stringify(response);
+                   // return alert(data);
+//                    for (var x=0; x < data.length; x++) {
+////                        console.log(data[i]); //"aa", "bb"
+//                         //alert(data[0][x]);
+//                        DroneServices.push(data[x]);
+//                    }
+                   $.each(data,function(key,value)
+                  {
+                        //return alert(DroneServices.push(data[i]));
+                         var id=  DroneServices.push(value);
+                       return alert(DroneServices);
+                  });
 
                     document.getElementById("dsub_drone_type_i").innerHTML="<option>Select Drone Service</option>";
-
-                    for(var i=0; i < DroneServices.length;i++)
+                    for(var i= 0; i < DroneServices.length;i++)
                     {
-                        document.getElementById("dsub_drone_type_i").innerHTML+="<option value="+DroneServices[i]+">"+DroneServices[i]+"</option>"
+                        document.getElementById("dsub_drone_type_i").innerHTML+="<option value="+DroneServices[i].id+">"+DroneServices[i].name+"</option>"
                     }
 
       //   return          alert(DroneServices[2]);
