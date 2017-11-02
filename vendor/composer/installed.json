@@ -5040,7 +5040,8 @@
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "phpDocumentor\\Reflection\\": [
+                "phpDocumentor\\Reflection\\":
+                [
                     "src/"
                 ]
 
