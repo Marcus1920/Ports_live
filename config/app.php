@@ -162,7 +162,7 @@ return [
         Arcanedev\LogViewer\LogViewerServiceProvider::class,
 
         //conford
-       // Cornford\Googlmapper\MapperServiceProvider::class,
+       //Cornford\Googlmapper\MapperServiceProvider::class,
 
 	    App\Providers\FormFieldProvider::class,
 
@@ -217,14 +217,14 @@ return [
         'Validator'  => Illuminate\Support\Facades\Validator::class,
         'View'       => Illuminate\Support\Facades\View::class,
 //        'Form'       => 'Illuminate\Html\FormFacade',
-//        'HTML'       => 'Illuminate\Html\HtmlFacade',
+//        'HTML'       => 'Illuminate\Html\HtmlFacade',s
         'Datatables' => yajra\Datatables\Datatables::class,
         'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
         'Form'=>Collective\Html\FormFacade::class,
         'Html'=>Collective\Html\FormFacade::class,
 
         //conford
-       // 'Mapper'         => Cornford\Googlmapper\Facades\MapperFacade::class,
+          //'Mapper'         => Cornford\Googlmapper\Facades\MapperFacade::class,
 
 
         // 'Activation' => Cartalyst\Sentinel\Laravel\Facades\Activation::class,

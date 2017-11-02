@@ -56,6 +56,7 @@
                 <div class="col-md-2">
                     {!!Form::label('Search Department', 'Search Department',array('class'=>'col-md-3 control-label')) !!}
                     <div class="col-md-6">
+                        {{--{!! Form::text('department_id',NULL,['class'=>'form-control input-sm','id'=>]) !!}--}}
                     {{--Search <input type="search" class="form-control">--}}
                     <h3> Case Status  : {{$droneRequest->DroneCaseStatus->name}} </h3>
                     <h3> Date   : {{$droneRequest->created_at}} </h3>
