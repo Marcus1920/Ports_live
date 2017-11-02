@@ -138,7 +138,7 @@ class DroneRequestController extends Controller
         return compact('droneRequest','droneRequestActivity');
     }
 
-    public function edit($id)
+    public function second($id)
     {
         //
     }
