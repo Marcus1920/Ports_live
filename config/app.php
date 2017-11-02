@@ -162,7 +162,7 @@ return [
         Arcanedev\LogViewer\LogViewerServiceProvider::class,
 
         //conford
-        Cornford\Googlmapper\MapperServiceProvider::class,
+       // Cornford\Googlmapper\MapperServiceProvider::class,
 
 	    App\Providers\FormFieldProvider::class,
 

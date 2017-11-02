@@ -61,7 +61,7 @@ class Factory
             return (new ParserFactory())->create(ParserFactory::PREFER_PHP7);
         }
 
-        return new Parser(new Lexer());
+        //return new Parser(new Lexer());
     }
 
     /**
