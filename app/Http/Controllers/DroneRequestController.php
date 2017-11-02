@@ -58,7 +58,7 @@ class DroneRequestController extends Controller
 
     public function create()
     {
-        //
+
     }
 
     public function store(DroneRequestForm $request)
@@ -133,6 +133,7 @@ class DroneRequestController extends Controller
 
     }
 
+
     public function userDepartment()
     {
 
@@ -163,16 +164,19 @@ class DroneRequestController extends Controller
         }
 
         return $data;
-
     }
+
+
+    public function secondApprovalForm()
+    {
+        return view('drones.secondApproval');
+            }
 
         public function update(Request $request, $id)
     {
-        //
     }
 
     public function destroy($id)
     {
-        //
     }
 }

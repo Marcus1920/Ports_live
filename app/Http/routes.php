@@ -1423,6 +1423,7 @@ Route::post('task-reminders','TaskRemindersController@store');
 |--------------------------------------------------------------------------
 |
 */
+<<<<<<< HEAD
 
 Route::get('maps'  , 'MapsController@Getmaps') ;
 
@@ -1438,6 +1439,8 @@ Route::post('searchCase'  ,'MapsController@searchCase');
 Route::post('createMapCase'  ,'MapsController@storeCase');
 
 
+=======
+>>>>>>> dfd3f1c473083e68cbf1283a8be078f691bb7861
     Route::resource('drone', 'DroneRequestController');
     Route::post('firstDroneApproval/{id}', 'DroneRequestController@FirstApprove');
     Route::post('finalDroneApproval/{id}', 'DroneRequestController@Approve');
@@ -1506,7 +1509,10 @@ Route::get('query',['uses' => 'AMyController@create']);
 
 Route::group(['prefix' => "api"], function () {
 	Route::any("switchseen", "CasesSeenController@switchSeen");
+<<<<<<< HEAD
 
+=======
+>>>>>>> dfd3f1c473083e68cbf1283a8be078f691bb7861
 
 });
 
@@ -1545,7 +1551,8 @@ Route::group(array('prefix' => 'api/v1'), function()
 });
 
 
-Route::get('requestForm','DroneTypesController@index');
+Route::resource('droneRejectReason','DroneRejectReasonsController');
 
+Route::get('secondForm','DroneRequestController@secondApprovalForm');
 
 
