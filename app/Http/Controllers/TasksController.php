@@ -49,8 +49,6 @@ class TasksController extends Controller
     protected $calendar;
     protected $eventType;
 
-
-
     public function __construct(TaskService $taskService,TaskNoteService $taskNoteService,TaskFileService $taskFileService,SubTaskService $taskSubTaskService,TaskOwnerService $taskOwnerService,TaskActivityService $taskActivityService,TaskReminderService $taskReminderService, CalendarEventService $calenarEventService, CalendarService $calendar,CalendarEventTypeService $eventType)
     {
 

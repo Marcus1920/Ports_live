@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Providers;
+use App\DroneRejectReason;
 use Illuminate\Support\ServiceProvider;
 use App\Position;
 use App\Department;
@@ -90,6 +91,21 @@ class AppServiceProvider extends ServiceProvider
             }
 
              \View::share('selectCalendarEventTypes',$selectCalendarEventTypes);
+
+        }
+
+        if (\Schema::hasTable('drone_reject_reasons'))
+        {
+            $droneRejectReasons          = DroneRejectReason::orderBy('reason','ASC')
+                ->get();
+            $selectDroneRejectReason     = array();
+            $selectDroneRejectReason [0] = "Select Reason";
+
+            foreach ($droneRejectReasons as $droneRejectReason) {
+                $selectDroneRejectReason[$droneRejectReason->slug] = $droneRejectReason->name;
+            }
+
+            \View::share('selectDroneRejectReason',$selectDroneRejectReason);
 
         }
 

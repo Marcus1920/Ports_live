@@ -162,7 +162,8 @@ return [
         Arcanedev\LogViewer\LogViewerServiceProvider::class,
 
         //conford
-        Cornford\Googlmapper\MapperServiceProvider::class,
+       // Cornford\Googlmapper\MapperServiceProvider::class,
+
 
 	    App\Providers\FormFieldProvider::class,
 
@@ -224,7 +225,7 @@ return [
         'Html'=>Collective\Html\FormFacade::class,
 
         //conford
-        'Mapper'         => Cornford\Googlmapper\Facades\MapperFacade::class,
+       // 'Mapper'         => Cornford\Googlmapper\Facades\MapperFacade::class,
 
 
         // 'Activation' => Cartalyst\Sentinel\Laravel\Facades\Activation::class,

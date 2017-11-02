@@ -71,8 +71,9 @@
                       <i class="sa-plus"></i>
                             </span>
                     </div>
-                    <div id = "hse_error_due_date"></div>
+                    <div id = "hse_error_due_date">
 
+                    </div>
                 </div>
             </div>
 

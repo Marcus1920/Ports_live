@@ -62,9 +62,10 @@ class DroneRequestController extends Controller
 
     public function create()
     {
-       $DroneRequests = $this->index();
+      // $DroneRequests = $this->index();
         //var_dump($DroneRequests);
-       return view('drones.droneApprove' ,['DroneRequests'=> $DroneRequests]);
+    //  return view('drones.droneApprove' ,['DroneRequests'=> $DroneRequests]);
+        //return view('drones.droneApprove');
     }
 
     public function store(Request $request)
@@ -177,20 +178,24 @@ class DroneRequestController extends Controller
 
     public function show($id)
     {
-        $droneRequest  = DroneRequest::with('DroneType')
+        $droneRequest  = DroneRequest::find($id)
+             ->with('DroneType')
             ->with('DroneSubType')
             ->with('DroneCaseStatus')
             ->with('Department')
             ->with('RejectReason')
-            ->where('id',$id)
-            ->get();
+            ->with('User')
+            ->first();
+
+//        return $droneRequest->id;
 
         $droneRequestActivity = DroneRequestActivity::with('DroneRequest')
             ->with('User')
             ->where('drone_request_id',$id)
             ->get();
 
-        return view(compact('droneRequest','droneRequestActivity'));
+        return view('drones.droneApprove',compact('droneRequest','droneRequestActivity'));
+       // return view(compact('droneRequest','droneRequestActivity'));
     }
 
     public function edit($id)

@@ -1322,7 +1322,7 @@ Route::get('approveForm','DroneRequestController@index');
 //{    /*|--------------------------------------------------------------------------|
 //    DRONE ROUTING
 //    |--------------------------------------------------------------------------|*/
-//    Route::resource('drone', 'DroneRequestController');
+    Route::resource('drone', 'DroneRequestController');
 //    Route::post('firstDroneApproval/{id}', 'DroneRequestController@FirstApprove');
 //    Route::post('finalDroneApproval/{id}', 'DroneRequestController@Approve');
 //    Route::post('rejectDroneRequest/{id}', 'DroneRequestController@Reject');
@@ -1354,6 +1354,6 @@ Route::get('firstDroneApproval', 'DroneRequestController@FirstApprove');
 
 //Route::get('Drone','DroneRequestController@index');
 
-Route::get('droneApprove','DroneRequestController@index');
+//Route::get('droneApprove','DroneRequestController@show');
 
-Route::get('approveForm','DroneRequestController@create');
+//Route::get('approveForm','DroneRequestController@show');

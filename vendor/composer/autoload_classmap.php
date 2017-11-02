@@ -6,10 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-<<<<<<< HEAD
-
-=======
->>>>>>> 57f936e58f2d817fb8c479a924263e5758f7a7aa
     'App\\Http\\Controllers\\AddressBookController' => $baseDir . '/app/Http/Controllers/AddressBookController.php',
     'App\\Http\\Controllers\\AffiliationsController' => $baseDir . '/app/Http/Controllers/AffiliationsController.php',
     'App\\Http\\Controllers\\Auth\\AuthController' => $baseDir . '/app/Http/Controllers/Auth/AuthController.php',
@@ -93,94 +89,6 @@ return array(
     'CreateDroneTypesTable' => $baseDir . '/database/migrations/2017_10_19_191659_create_drone_types_table.php',
     'CreateReportersTable' => $baseDir . '/database/migrations/2017_09_19_094751_create_reporters_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
-<<<<<<< HEAD
-
-    'App\\Http\\Controllers\\AddressBookController' => $baseDir . '/../Ports_Live/app/Http/Controllers/AddressBookController.php',
-    'App\\Http\\Controllers\\AffiliationsController' => $baseDir . '/../Ports_Live/app/Http/Controllers/AffiliationsController.php',
-    'App\\Http\\Controllers\\Auth\\AuthController' => $baseDir . '/../Ports_Live/app/Http/Controllers/Auth/AuthController.php',
-    'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/../Ports_Live/app/Http/Controllers/Auth/ForgotPasswordController.php',
-    'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/../Ports_Live/app/Http/Controllers/Auth/LoginController.php',
-    'App\\Http\\Controllers\\Auth\\PasswordController' => $baseDir . '/../Ports_Live/app/Http/Controllers/Auth/PasswordController.php',
-    'App\\Http\\Controllers\\Auth\\RegisterController' => $baseDir . '/../Ports_Live/app/Http/Controllers/Auth/RegisterController.php',
-    'App\\Http\\Controllers\\Auth\\ResetPasswordController' => $baseDir . '/../Ports_Live/app/Http/Controllers/Auth/ResetPasswordController.php',
-    'App\\Http\\Controllers\\CalendarController' => $baseDir . '/../Ports_Live/app/Http/Controllers/CalendarController.php',
-    'App\\Http\\Controllers\\CalendarEventTypesController' => $baseDir . '/../Ports_Live/app/Http/Controllers/CalendarEventTypesController.php',
-    'App\\Http\\Controllers\\CalendarEventsController' => $baseDir . '/../Ports_Live/app/Http/Controllers/CalendarEventsController.php',
-    'App\\Http\\Controllers\\CalendarGroupUserController' => $baseDir . '/../Ports_Live/app/Http/Controllers/CalendarGroupUserController.php',
-    'App\\Http\\Controllers\\CalendarGroupsController' => $baseDir . '/../Ports_Live/app/Http/Controllers/CalendarGroupsController.php',
-    'App\\Http\\Controllers\\CaseActivitiesController' => $baseDir . '/../Ports_Live/app/Http/Controllers/CaseActivitiesController.php',
-    'App\\Http\\Controllers\\CaseFilesController' => $baseDir . '/../Ports_Live/app/Http/Controllers/CaseFilesController.php',
-    'App\\Http\\Controllers\\CaseNotesController' => $baseDir . '/../Ports_Live/app/Http/Controllers/CaseNotesController.php',
-    'App\\Http\\Controllers\\CaseOwnerController' => $baseDir . '/../Ports_Live/app/Http/Controllers/CaseOwnerController.php',
-    'App\\Http\\Controllers\\CasesController' => $baseDir . '/../Ports_Live/app/Http/Controllers/CasesController.php',
-    'App\\Http\\Controllers\\CasesPrioritiesController' => $baseDir . '/../Ports_Live/app/Http/Controllers/CasesPrioritiesController.php',
-    'App\\Http\\Controllers\\CasesSeenController' => $baseDir . '/../Ports_Live/app/Http/Controllers/CasesSeenController.php',
-    'App\\Http\\Controllers\\CasesStatusesController' => $baseDir . '/../Ports_Live/app/Http/Controllers/CasesStatusesController.php',
-    'App\\Http\\Controllers\\CategoriesController' => $baseDir . '/../Ports_Live/app/Http/Controllers/CategoriesController.php',
-    'App\\Http\\Controllers\\ChatController' => $baseDir . '/../Ports_Live/app/Http/Controllers/ChatController.php',
-    'App\\Http\\Controllers\\CompanyController' => $baseDir . '/../Ports_Live/app/Http/Controllers/CompanyController.php',
-    'App\\Http\\Controllers\\Controller' => $baseDir . '/../Ports_Live/app/Http/Controllers/Controller.php',
-    'App\\Http\\Controllers\\DatabaseController' => $baseDir . '/../Ports_Live/app/Http/Controllers/DatabaseController.php',
-    'App\\Http\\Controllers\\DepartController' => $baseDir . '/../Ports_Live/app/Http/Controllers/DepartController.php',
-    'App\\Http\\Controllers\\DepartmentController' => $baseDir . '/../Ports_Live/app/Http/Controllers/DepartmentController.php',
-    'App\\Http\\Controllers\\DistricsController' => $baseDir . '/../Ports_Live/app/Http/Controllers/DistricsController.php',
-    'App\\Http\\Controllers\\DocumentRepositoryController' => $baseDir . '/../Ports_Live/app/Http/Controllers/DocumentRepositoryController.php',
-    'App\\Http\\Controllers\\DroneRequestController' => $baseDir . '/../Ports_Live/app/Http/Controllers/DroneRequestController.php',
-    'App\\Http\\Controllers\\DroneSubTypesController' => $baseDir . '/../Ports_Live/app/Http/Controllers/DroneSubTypesController.php',
-    'App\\Http\\Controllers\\DroneTypesController' => $baseDir . '/../Ports_Live/app/Http/Controllers/DroneTypesController.php',
-    'App\\Http\\Controllers\\DronesController' => $baseDir . '/../Ports_Live/app/Http/Controllers/DronesController.php',
-    'App\\Http\\Controllers\\FormsController' => $baseDir . '/../Ports_Live/app/Http/Controllers/FormsController.php',
-    'App\\Http\\Controllers\\FormsDataController' => $baseDir . '/../Ports_Live/app/Http/Controllers/FormsDataController.php',
-    'App\\Http\\Controllers\\HomeController' => $baseDir . '/../Ports_Live/app/Http/Controllers/HomeController.php',
-    'App\\Http\\Controllers\\InvestigationOfficerController' => $baseDir . '/../Ports_Live/app/Http/Controllers/InvestigationOfficerController.php',
-    'App\\Http\\Controllers\\MainreportController' => $baseDir . '/../Ports_Live/app/Http/Controllers/MainreportController.php',
-    'App\\Http\\Controllers\\MapController' => $baseDir . '/../Ports_Live/app/Http/Controllers/MapController.php',
-    'App\\Http\\Controllers\\MapsController' => $baseDir . '/../Ports_Live/app/Http/Controllers/MapsController.php',
-    'App\\Http\\Controllers\\MeetingFacilitatorsController' => $baseDir . '/../Ports_Live/app/Http/Controllers/MeetingFacilitatorsController.php',
-    'App\\Http\\Controllers\\MeetingsController' => $baseDir . '/../Ports_Live/app/Http/Controllers/MeetingsController.php',
-    'App\\Http\\Controllers\\MessageController' => $baseDir . '/../Ports_Live/app/Http/Controllers/MessageController.php',
-    'App\\Http\\Controllers\\MobliCasesController' => $baseDir . '/../Ports_Live/app/Http/Controllers/MobliCasesController.php',
-    'App\\Http\\Controllers\\MunicipalitiesController' => $baseDir . '/../Ports_Live/app/Http/Controllers/MunicipalitiesController.php',
-    'App\\Http\\Controllers\\PermissionController' => $baseDir . '/../Ports_Live/app/Http/Controllers/PermissionController.php',
-    'App\\Http\\Controllers\\PositionsController' => $baseDir . '/../Ports_Live/app/Http/Controllers/PositionsController.php',
-    'App\\Http\\Controllers\\ProvincesController' => $baseDir . '/../Ports_Live/app/Http/Controllers/ProvincesController.php',
-    'App\\Http\\Controllers\\RelationshipController' => $baseDir . '/../Ports_Live/app/Http/Controllers/RelationshipController.php',
-    'App\\Http\\Controllers\\ReportCController' => $baseDir . '/../Ports_Live/app/Http/Controllers/ReportCController.php',
-    'App\\Http\\Controllers\\ReportController' => $baseDir . '/../Ports_Live/app/Http/Controllers/ReportController.php',
-    'App\\Http\\Controllers\\ReportsController' => $baseDir . '/../Ports_Live/app/Http/Controllers/ReportsController.php',
-    'App\\Http\\Controllers\\RespondersController' => $baseDir . '/../Ports_Live/app/Http/Controllers/RespondersController.php',
-    'App\\Http\\Controllers\\RolesController' => $baseDir . '/../Ports_Live/app/Http/Controllers/RolesController.php',
-    'App\\Http\\Controllers\\SeniorHomeController' => $baseDir . '/../Ports_Live/app/Http/Controllers/SeniorHomeController.php',
-    'App\\Http\\Controllers\\SessionController' => $baseDir . '/../Ports_Live/app/Http/Controllers/SessionController.php',
-    'App\\Http\\Controllers\\SubCategoriesController' => $baseDir . '/../Ports_Live/app/Http/Controllers/SubCategoriesController.php',
-    'App\\Http\\Controllers\\SubSubCategoriesController' => $baseDir . '/../Ports_Live/app/Http/Controllers/SubSubCategoriesController.php',
-    'App\\Http\\Controllers\\SubTaskController' => $baseDir . '/../Ports_Live/app/Http/Controllers/SubTaskController.php',
-    'App\\Http\\Controllers\\TaskActivityController' => $baseDir . '/../Ports_Live/app/Http/Controllers/TaskActivityController.php',
-    'App\\Http\\Controllers\\TaskCategoriesController' => $baseDir . '/../Ports_Live/app/Http/Controllers/TaskCategoriesController.php',
-    'App\\Http\\Controllers\\TaskFileController' => $baseDir . '/../Ports_Live/app/Http/Controllers/TaskFileController.php',
-    'App\\Http\\Controllers\\TaskNoteController' => $baseDir . '/../Ports_Live/app/Http/Controllers/TaskNoteController.php',
-    'App\\Http\\Controllers\\TaskRemindersController' => $baseDir . '/../Ports_Live/app/Http/Controllers/TaskRemindersController.php',
-    'App\\Http\\Controllers\\TasksController' => $baseDir . '/../Ports_Live/app/Http/Controllers/TasksController.php',
-    'App\\Http\\Controllers\\UserCController' => $baseDir . '/../Ports_Live/app/Http/Controllers/UserCController.php',
-    'App\\Http\\Controllers\\UserController' => $baseDir . '/../Ports_Live/app/Http/Controllers/UserController.php',
-    'App\\Http\\Controllers\\VenuesController' => $baseDir . '/../Ports_Live/app/Http/Controllers/VenuesController.php',
-    'App\\Http\\Controllers\\WardsController' => $baseDir . '/../Ports_Live/app/Http/Controllers/WardsController.php',
-    'App\\Http\\Controllers\\WorkflowsController' => $baseDir . '/../Ports_Live/app/Http/Controllers/WorkflowsController.php',
-    'CalendarEventTypesSeeder' => $baseDir . '/../Ports_Live/database/seeds/CalendarEventTypesSeeder.php',
-    'CalendarGroupsTableSeeder' => $baseDir . '/../Ports_Live/database/seeds/CalendarGroupsTableSeeder.php',
-    'CalendarTableSeeder' => $baseDir . '/../Ports_Live/database/seeds/CalendarTableSeeder.php',
-    'CreateCasesSeensTable' => $baseDir . '/../Ports_Live/database/migrations/2017_08_29_003544_create_cases_seens_table.php',
-    'CreateDroneApprovalStatusesTable' => $baseDir . '/../Ports_Live/database/migrations/2017_10_18_183502_create_drone_approval_statuses_table.php',
-    'CreateDroneRejectReasonsTable' => $baseDir . '/../Ports_Live/database/migrations/2017_10_18_183613_create_drone_reject_reasons_table.php',
-    'CreateDroneRequestActivitiesTable' => $baseDir . '/../Ports_Live/database/migrations/2017_10_19_232950_create_drone_request_activities_table.php',
-    'CreateDroneRequestsTable' => $baseDir . '/../Ports_Live/database/migrations/2017_10_20_183736_create_drone_requests_table.php',
-    'CreateDroneSubTypesTable' => $baseDir . '/../Ports_Live/database/migrations/2017_10_19_191732_create_drone_sub_types_table.php',
-    'CreateDroneTypesTable' => $baseDir . '/../Ports_Live/database/migrations/2017_10_19_191659_create_drone_types_table.php',
-    'CreateReportersTable' => $baseDir . '/../Ports_Live/database/migrations/2017_09_19_094751_create_reporters_table.php',
-    'DatabaseSeeder' => $baseDir . '/../Ports_Live/database/seeds/DatabaseSeeder.php',
-
-=======
->>>>>>> 57f936e58f2d817fb8c479a924263e5758f7a7aa
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',
     'File_Iterator_Factory' => $vendorDir . '/phpunit/php-file-iterator/src/Factory.php',
@@ -253,15 +161,7 @@ return array(
     'Hamcrest\\Util' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
     'Hamcrest\\Xml\\HasXPath' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
     'IlluminateQueueClosure' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
-<<<<<<< HEAD
-
     'Languages' => $baseDir . '/database/seeds/Languages.php',
-
-    'Languages' => $baseDir . '/../Ports_Live/database/seeds/Languages.php',
-
-=======
-    'Languages' => $baseDir . '/database/seeds/Languages.php',
->>>>>>> 57f936e58f2d817fb8c479a924263e5758f7a7aa
     'PHPUnit\\Framework\\Assert' => $vendorDir . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
     'PHPUnit\\Framework\\AssertionFailedError' => $vendorDir . '/phpunit/phpunit/src/ForwardCompatibility/AssertionFailedError.php',
     'PHPUnit\\Framework\\BaseTestListener' => $vendorDir . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',
@@ -667,21 +567,9 @@ return array(
     'PHP_Token_XOR_EQUAL' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD_FROM' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
-<<<<<<< HEAD
-
     'PoiPicturesTypes' => $baseDir . '/database/seeds/PoiPicturesTypes.php',
     'QualificationTypes' => $baseDir . '/database/seeds/QualificationTypes.php',
     'Religions' => $baseDir . '/database/seeds/Religions.php',
-
-    'PoiPicturesTypes' => $baseDir . '/../Ports_Live/database/seeds/PoiPicturesTypes.php',
-    'QualificationTypes' => $baseDir . '/../Ports_Live/database/seeds/QualificationTypes.php',
-    'Religions' => $baseDir . '/../Ports_Live/database/seeds/Religions.php',
-
-=======
-    'PoiPicturesTypes' => $baseDir . '/database/seeds/PoiPicturesTypes.php',
-    'QualificationTypes' => $baseDir . '/database/seeds/QualificationTypes.php',
-    'Religions' => $baseDir . '/database/seeds/Religions.php',
->>>>>>> 57f936e58f2d817fb8c479a924263e5758f7a7aa
     'SebastianBergmann\\Comparator\\ArrayComparator' => $vendorDir . '/sebastian/comparator/src/ArrayComparator.php',
     'SebastianBergmann\\Comparator\\Comparator' => $vendorDir . '/sebastian/comparator/src/Comparator.php',
     'SebastianBergmann\\Comparator\\ComparisonFailure' => $vendorDir . '/sebastian/comparator/src/ComparisonFailure.php',
@@ -719,19 +607,7 @@ return array(
     'SebastianBergmann\\RecursionContext\\InvalidArgumentException' => $vendorDir . '/sebastian/recursion-context/src/InvalidArgumentException.php',
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Resources/stubs/SessionHandlerInterface.php',
-<<<<<<< HEAD
-
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
     'TrainingTypes' => $baseDir . '/database/seeds/TrainingTypes.php',
-
-    'TestCase' => $baseDir . '/../Ports_Live/tests/TestCase.php',
-    'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
-    'TrainingTypes' => $baseDir . '/../Ports_Live/database/seeds/TrainingTypes.php',
-
-=======
-    'TestCase' => $baseDir . '/tests/TestCase.php',
-    'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
-    'TrainingTypes' => $baseDir . '/database/seeds/TrainingTypes.php',
->>>>>>> 57f936e58f2d817fb8c479a924263e5758f7a7aa
 );

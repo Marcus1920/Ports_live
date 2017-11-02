@@ -1,91 +1,61 @@
 @extends('master')
+
 @section('content')
-    <div class="container" >
+    <div class="container" id="droneApproval">
         <form class="form-horizontal" id="droneApproval">
             <div class="row">
+                <div  class="col-sm-6 col-sm-6">
+                    <h5 class="h3"> Case  Number : {{$droneRequest->id}}</h5>
 
-                <div class="col-md-4 co-lg-4">
-
-                    <a href = "#" class = "list-group-item active"> Navigation</a>
-                    <a href = "#" class = "list-group-item">Home</a>
-                    <a href = "#" class = "list-group-item">All Cases</a>
-                    <a href = "#" class = "list-group-item">My  Cases</a>
-                    <a href = "#" class = "list-group-item">Cases Awaiting  Review</a>
-                </div>
-
-                <div  class="col-md-4" >
-                    <h3 class="h3"> Case  Number : </h3>
-
-                    <h3 class="h3"> Created By   :    </h3>
-                </div>
+                    <h5 class="h3"> Created By   : {{$droneRequest->User->name}} {{$droneRequest->User->surname}}</h5>
 
 
-                <div class="col-md-8">
-                    <h3>  Service  Request : Aquatic Drone </h3>
+                    <h5 class="h3">  Service  Request : {{$droneRequest->DroneType->name}} </h5>
+
+                    <h5 class="h3">  Drone sub type : {{$droneRequest->DroneSubType->name}} </h5>
+
                 </div>
             </div>
-
-            {{--<div class="form-group">--}}
-            {{--<div class="row">--}}
-
-            {{--<div  class="col-md-4">--}}
-            {{--<a href = "#" class = "list-group-item active">--}}
-            {{--Navigation--}}
-            {{--</a>--}}
-
-            {{--<a href = "#" class = "list-group-item">Home</a>--}}
-            {{--<a href = "#" class = "list-group-item">All Cases</a>--}}
-            {{--<a href = "#" class = "list-group-item">My  Cases</a>--}}
-            {{--<a href = "#" class = "list-group-item">Cases Awaiting  Review</a>--}}
-
-            {{--</div>--}}
-            {{--</div>--}}
-            {{--</div>--}}
-
             <div class="btn-group btn-group-justified">
 
-                <div class="col-md-6" style="margin-top:20px;">
-                    <div class="col-sm-offset-6 col-sm-6">
-                        <button
-                                class="btn btn-primary">Approve
-                        </button>
-                        {{--<p class="help-block" v-cloack v-if="submition && wrongApprove">@{{approveFB }}</p>--}}
-                        <p id="approve" v-model="approve" >@{{approveFB}}</p>
-                    </div>
+                <div class="col-md-4" style="margin-top:20px;">
+                    <button type="button" class="btn btn-primary">Approve</button>
                 </div>
-                <div class="col-md-6" style="margin-top:10px;">
-                    <div class="col-sm-offset-6 col-sm-6">
-                        <button
-                                class="btn  btn-danger">Reject</button>
-                        <p id="approve" v-model="approve">@{{rejectFB}}</p>
 
-                    </div>
-                </div>
             </div>
+                <div class="col-md-4" style="margin-top:20px;">
+                        <button type
+                                class="btn  btn-danger">Reject
+                        </button>
+                </div>
+                <div class="form-group">
+                    {{--{!! Form::label('RejectReason','RejectReason', array('class'=> 'col-md-3 control-label')) !!}--}}
+                        <div class="col-md-6">
+                            <div class="col-md-2 " style="margin-top:10px;">
+                            <select name="rejectReason" id="rejectReason" class="form-control input-sm">
+                            <option value="">{{$selectDroneRejectReason[0]}}</option>
+                            </select>
 
-            {{--<div class="form-group">--}}
-            {{--{!! Form::label('Reject Reason','Reject Reason', array('class'=>'col-md-3  control-label'))  !!}--}}
-            {{--<div class="col-md-6">--}}
-            {{--{!! Form::select('rejectReason',$DroneRequests,2,s['class' => 'form-control input-sm','id'=>'RejectReason','name'=>'RejectReason'])!!}--}}
-            {{--</div>--}}
-            {{--<p class="help-block">@{{rejectReasonFB}}</p>--}}
+                            </div>
+
+                    </div>
+
+                </div>
+            {{--<div class="col-md-2 " style="margin-top:10px;">--}}
+                {{--<select name="rejectReason" id="rejectReason" class="form-control input-sm">--}}
+                    {{--<option value="">{{$selectDroneRejectReason[0]}}</option>--}}
+                {{--</select>--}}
+
             {{--</div>--}}
             <div class="form-group">
-                <select name="RejectReason" class="form-control">
-                    @foreach($DroneRequests as $DroneRequest)
-                        <option value="{{$DroneRequest->id}}">{{$DroneRequest->name}}</option>
-                    @endforeach
-                    <p id="RejectReason" v-model="RejectReason">@{{rejectReasonFB}}</p>
-                </select>
-
             </div>
             <div class="form-group">
 
                 <div class="col-md-2">
-                    Search <input type="search" class="form-control">`
-                    <h3> Case Status  : Active </h3>
-                    <h3> Date   : 12-03-2029 </h3>
-                    <h3> Case Duration   : 12-03-2029 </h3>
+                    Search <input type="search" class="form-control">
+                    <h3> Case Status  : {{$droneRequest->DroneCaseStatus->name}} </h3>
+                    <h3> Date   : {{$droneRequest->created_at}} </h3>
+                    <h3> Case Duration   : {{$droneRequest->created_at->diffForHumans()}}  </h3>
                 </div>
             </div>
             <div class="form-group" >
@@ -93,13 +63,38 @@
 
                     <div class="col-md-6">
                         <label for="comment">Comment</label>
-                        <textarea id="comment" rows="5" class="form-control" v-model="comment" >@{{comment}}</textarea>
+                        {{--{!! Form::label('Comment','Comment',array('class'=>'col-md-3 control-label'))!!}--}}
+                        <textarea id="comment" rows="5" class="form-control" name="comment" ></textarea>
                     </div>
 
                 </div>
             </div>
         </form>
     </div>
-@stop
+@endsection
 @section('footer')
-@stop
+<script>
+    $('#task_category_id').on('change',function(){
+
+        var selectText  = $(this).find("option:selected").text();
+
+        if(selectText == 'Case' ){
+
+            $('.searchCase').removeClass('hidden');
+            $("#case_id").removeAttr('disabled');
+
+        } else {
+
+            $('.searchCase').addClass('hidden');
+            $("#case_id").attr('disabled','disabled');
+        }
+
+    })
+
+
+    $("#task_user_id").tokenInput("{!! url('/getUsers')!!}",{tokenLimit:1});
+    $("#case_id").tokenInput("{!! url('/getCases')!!}",{tokenLimit:1});
+
+</script>
+@endsection
+
