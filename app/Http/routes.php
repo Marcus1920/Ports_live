@@ -1301,6 +1301,6 @@ Route::group(array('prefix' => 'api/v1'), function()
 
 
 
-Route::get('requestForm','DroneTypesController@index');
+Route::get('secondForm','DroneRequestController@secondApprovalForm');
 
 

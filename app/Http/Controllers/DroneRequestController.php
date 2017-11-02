@@ -138,18 +138,16 @@ class DroneRequestController extends Controller
         return compact('droneRequest','droneRequestActivity');
     }
 
-    public function second($id)
+    public function secondApprovalForm()
     {
-        //
+        return view('drones.secondApproval');
     }
 
     public function update(Request $request, $id)
     {
-        //
     }
 
     public function destroy($id)
     {
-        //
     }
 }
