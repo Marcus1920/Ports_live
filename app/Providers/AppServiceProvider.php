@@ -125,7 +125,6 @@ class AppServiceProvider extends ServiceProvider
         }
 
 
-	
 	//if (\Schema::hasTable('investigation_officers'))
 	if (class_exists(InvestigationOfficer::class))
         {
