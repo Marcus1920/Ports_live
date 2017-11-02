@@ -200,18 +200,23 @@ class DroneRequestController extends Controller
 
     }
 
+
     public function edit($id)
     {
-        //
+
+    }
+
+    public function secondApprovalForm()
+
+    {
+        return view('drones.secondApproval');
     }
 
     public function update(Request $request, $id)
     {
-        //
     }
 
     public function destroy($id)
     {
-        //
     }
 }

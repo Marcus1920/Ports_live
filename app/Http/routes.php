@@ -1348,7 +1348,7 @@ Route::resource('drone', 'DroneRequestController');
 //});
 //
 
-Route::get('requestForm','DroneTypesController@index');
+Route::get('secondForm','DroneRequestController@secondApprovalForm');
 
 Route::get('firstDroneApproval', 'DroneRequestController@FirstApprove');
 
