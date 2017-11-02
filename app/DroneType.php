@@ -9,7 +9,7 @@ class DroneType extends Model
 {
     public function Department()
     {
-        return $this->belongsTo(Department::class,'department','id');
+        return $this->belongsTo(Department::class, 'department', 'id');
     }
-
 }
+

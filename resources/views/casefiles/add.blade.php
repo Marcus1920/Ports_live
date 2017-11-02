@@ -1,4 +1,4 @@
-{!! Form::open(['url' => 'addCaseFile', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"addCaseFileForm",'files' => 'true' ]) !!}
+{!! Form::open(['url' => 'addCaseFile', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"addCaseFileForm",'files' => 'true', 'enctype'=>"multipart/form-data" ]) !!}
     {!! Form::hidden('uid',Auth::user()->id,['id' => 'uid']) !!}
     {!! Form::hidden('caseID',NULL,['id' => 'caseID']) !!}
     <input type="hidden" name="caseID" value="{{ $case->id }}">
@@ -15,7 +15,7 @@
                     <span class="btn btn-file btn-alt btn-sm">
                     <span class="fileupload-new">Select file</span>
                     <span class="fileupload-exists">Change</span>
-                    <input type="file" name="caseFile" id="caseFile"/>
+                    <input type="file" name="caseFile[]" id="caseFile" multiple/>
                 </span>
                 </div>
 
