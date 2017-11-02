@@ -72,6 +72,12 @@ class DroneRequestController extends Controller
         $newDroneRequest->reject_other_reason = "None";
         $newDroneRequest->save();
 
+        $dronRequestActivity = new DroneRequestActivity();
+        $dronRequestActivity->drone_request_id = $newDroneRequest->id;
+        $dronRequestActivity->user = $request['created_by'];
+        $dronRequestActivity->activity = "requested a drone";
+        $dronRequestActivity->save();
+
         return "Drone request created";
     }
 
@@ -107,9 +113,21 @@ class DroneRequestController extends Controller
 
     public function Reject($id, Request $request)
     {
-        $dronRequest = DroneRequest::where('id',$id)
-            ->update(['drone_case_status'=> 4,
-                'updated_at'=>\Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString()]);
+        if($request['reject_other_reason']==NULL)
+        {
+            $dronRequest = DroneRequest::where('id',$id)
+                ->update(['drone_case_status'=> 4,
+                    'reject_reason'=>$request['reject_reason'],
+                    'updated_at'=>\Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString()]);
+        }
+        else
+        {
+            $dronRequest = DroneRequest::where('id',$id)
+                ->update(['drone_case_status'=> 4,
+                    'reject_reason'=>$request['reject_reason'],
+                    'reject_other_reason'=>$request['reject_other_reason'],
+                    'updated_at'=>\Carbon\Carbon::now('Africa/Johannesburg')->toDateTimeString()]);
+        }
 
         $dronRequestActivity = new DroneRequestActivity();
         $dronRequestActivity->drone_request_id = $id;
