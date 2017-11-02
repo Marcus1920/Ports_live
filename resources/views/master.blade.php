@@ -85,6 +85,129 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
       height: 100%;
     }
   </style>
+
+  <!-- report css -->
+  <style>
+         .date-div
+         {
+            width: 50% ; float: left;
+         }
+         .date-txt
+         {
+            width: 40% ; float: right;
+         }
+         #datepicker-8 , #datepicker-9
+         {
+            color: blue;    
+         }
+         .sizing-row
+         {
+            width: 180px;
+         }
+         #label-f
+         {
+             width: 80% ;
+             height: 30px;
+             margin-bottom: 3px;
+             background-color: white;
+             color :black;
+             text-align: center;
+             float: left;
+         }
+         #check-box
+         {
+            width: 18% ;
+            height: 20px;
+            margin-bottom: 3px;
+            float: right;"
+         }
+        
+         #check-box ,#check_box
+         {
+            width: 18% ;
+            height: 20px;
+            margin-bottom: 3px;
+            float: right;"
+         }
+
+         .dept-selection , .predict-selection
+         {
+            width: 100%;
+            height: 200px;
+         }
+         #departments , #department-selected ,#predict , #predict-selected
+         {
+            width: 40%;
+            display: block;
+            margin: 0;
+            height: 100%;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            
+         }
+         #department-btns ,#predict-btns
+         {
+            width: 20%;
+            display: block;
+            height: 80%;
+            float: right;
+         }
+         #departments , #predict 
+         {
+            float: left;
+         }
+         #department-selected , #predict-selected
+         {
+            float: right;
+             padding-top:0px;
+             background-color: gray;
+         }
+
+         #departments::-webkit-scrollbar ,#department-selected::-webkit-scrollbar ,#predict::-webkit-scrollbar ,#predict-selected::-webkit-scrollbar
+         {
+             width:5px;
+         }
+         #departments::-webkit-scrollbar-thumb, #department-selected::-webkit-scrollbar-thumb,#predict::-webkit-scrollbar-thumb , #predict-selected::-webkit-scrollbar-thumb
+         {
+             border-radius: 1px;
+             background: rgba(0,0,0,0);
+             background-color: grey;
+         }
+        #department-selected::-webkit-scrollbar-thumb, #predict-selected::-webkit-scrollbar-thumb
+         {
+             background-color:white;
+         }
+         #department-list , #predict-list
+         {
+             width:100%;
+             height:40px;
+             padding-left: 0px;
+             margin-top: 0px;
+             padding-top: 0px;
+             margin-bottom: 0px;
+         }
+         
+         
+        .municipality , .btAdds
+         {
+            width:100%;
+            height:100%;
+            margin: 0px;
+         }
+         .crud
+         {
+            width:90%;
+            height:24%;
+            margin-left:5%; 
+            margin-top: 5px;
+            color:default;
+         }
+         .btnAdded
+         {
+            text-align: center;
+         }
+        </style>
+  <!-- end -->
 </head>
 <body>
   @if(!\Auth::check())
@@ -267,7 +390,7 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
 
           @if(isset($userViewReportsPermission) && $userViewReportsPermission->permission_id =='16')
             <li {{ (Request::is('reports') ? "class=active" : '') }}>
-              <a class="sa-side-chart" href="{{ url('reports') }}">
+              <a class="sa-side-chart" href="{{ url('report') }}">
                 <span class="menu-item">Reports</span>
               </a>
             </li>
