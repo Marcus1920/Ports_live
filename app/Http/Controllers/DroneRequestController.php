@@ -47,17 +47,13 @@ class DroneRequestController extends Controller
                 "
             )
             )
-            
-            ->paginate(1);
+                 ->get();
             return Response::json($droneRequests,200);
 
       //  return Response()->json($droneRequests)  ;
     }
 
-    public function create()
-    {
 
-    }
 
     public function store(Request $request)
     {
@@ -128,19 +124,20 @@ class DroneRequestController extends Controller
             ->with('Department')
             ->with('RejectReason')
             ->where('id',$id)
-            ->get();
+            ->first();
 
         $droneRequestActivity = DroneRequestActivity::with('DroneRequest')
             ->with('User')
             ->where('drone_request_id',$id)
             ->get();
 
-        return compact('droneRequest','droneRequestActivity');
+        return  view('drones.secondApproval',compact('droneRequest','droneRequestActivity'));
     }
 
     public function secondApprovalForm()
     {
-        return view('drones.secondApproval');
+       // $requestDetails  = $this->index();
+        return view('drones.secondApproval',compact('requestDetails'));
     }
 
     public function update(Request $request, $id)
