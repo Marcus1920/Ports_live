@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="Siyaleader Durban University of Technology">
     <meta name="keywords" content="Siyaleader,Durban University of Technology, HIV/AIDS">
-    <link rel="icon" type="image/x-icon" sizes="16x16" href="{{ asset('/img/SiteBadge3.png') }}">
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="{{ asset('public/img/SiteBadge3.png') }}">
 
 
     <title>Transnet  Ports</title>
@@ -14,11 +14,11 @@
 
     <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     <!-- CSS -->
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/css/bootstrap.min.css') }}" rel="stylesheet">
 
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/generics.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/css/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/css/generics.css') }}" rel="stylesheet">
 
 
 
@@ -54,7 +54,7 @@
     	<table border="0" style="height: 118px;width:100%;">
     		<tr style="height: 75px; background-color: #fff;">
     			<td style="">&nbsp;</td>
-    			<td rowspan="2" style="background-color: #3c4e5d;width: 170px;"><img src="{{ asset('/img/login_logo.png') }}" style="float: none" /></td>
+    			<td rowspan="2" style="background-color: #3c4e5d;width: 170px;"><img src="{{ asset('public/img/login_logo.png') }}" style="float: none" /></td>
     		</tr>
     		<tr style="background-color:#3c4e5d">
     			<td>
@@ -141,15 +141,15 @@
 
 <!-- Javascript Libraries -->
 <!-- jQuery -->
-<script src="{{ asset('js/jquery.min.js') }}"></script> <!-- jQuery Library -->
+<script src="{{ asset('public/js/jquery.min.js') }}"></script> <!-- jQuery Library -->
 
 <!-- Bootstrap -->
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('public/js/bootstrap.min.js') }}"></script>
 
 <!--  Form Related -->
-{{--<script src="{{ asset('js/icheck.js') }}"></script> <!-- Custom Checkbox + Radio -->--}}
+{{--<script src="{{ asset('public/js/icheck.js') }}"></script> <!-- Custom Checkbox + Radio -->--}}
 
 <!-- All JS functions -->
-<script src="{{ asset('js/functions.js') }}"></script>
+<script src="{{ asset('public/js/functions.js') }}"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Providers;
+
 use Illuminate\Support\ServiceProvider;
 use App\Position;
 use App\Department;
@@ -106,6 +107,20 @@ class AppServiceProvider extends ServiceProvider
             }
 
              \View::share('selectCalendarEventType',$selectCalendarEventType);
+
+        }
+
+        if (\Schema::hasTable('drone_types'))
+        {
+            $droneTypes          = DroneType::orderBy('name','ASC')->get();
+            $selectDroneTypes    = array();
+            $selectDroneTypes[0] = "Choose a Drone";
+
+            foreach ($droneTypes as $droneType) {
+                $selectDroneTypes[$droneType->id] = $droneType->name;
+            }
+
+            \View::share('selectDroneTypes',$selectDroneTypes);
 
         }
 	

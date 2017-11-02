@@ -16,36 +16,36 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
   <link rel="icon" type="image/x-icon" sizes="16x16" href="{{ asset('/img/SiteBadge3.png') }}">
   <title>{{ $title }}</title>
   <!-- CSS -->
-  <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('/css/animate.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('/css/font-awesome.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('/css/form.css') }}" rel="stylesheet">
-  <link href="{{ asset('/css/calendar.css') }}" rel="stylesheet">
-  <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
-  <link href="{{ asset('/css/generics.css') }}" rel="stylesheet">
-  <link href="{{ asset('/css/token-input.css') }}" rel="stylesheet">
-  <link href="{{ asset('/css/icons.css') }}" rel="stylesheet">
-  <link href="{{ asset('/css/lightbox.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/css/animate.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/css/font-awesome.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/css/form.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/css/calendar.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/css/style.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/css/generics.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/css/token-input.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/css/icons.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/css/lightbox.css') }}" rel="stylesheet">
 <!-- <link href="{{ asset('/css/media-player.css') }}" rel="stylesheet"> -->
-  <link href="{{ asset('/css/file-manager.css') }}" rel="stylesheet">
-  <link href="{{ asset('/css/buttons.dataTables.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('/css/HoldOn.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('/css/bootstrap-switch.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('/incl/animate.css') }}" rel="stylesheet">
-  <link href="{{ asset('/css/Treant.css') }}" rel="stylesheet">
-  <link href="{{ asset('/css/collapsable.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/css/file-manager.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/css/buttons.dataTables.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/css/HoldOn.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/css/bootstrap-switch.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/incl/animate.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/css/Treant.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/css/collapsable.css') }}" rel="stylesheet">
 <!-- <link href="{{ asset('/css/perfect-scrollbar.css') }}" rel="stylesheet"> -->
-  <link href="{{ asset('/css/form-builder.css') }}" rel="stylesheet">
-  <link href="{{ asset('/css/awesome.css') }}" rel="stylesheet">
-  <link href="{{ asset('/css/table.css') }}" rel="stylesheet">
-  <link href="{{ asset('/css/toggles.css') }}" rel="stylesheet">
-  <link href="{{ asset('/css/toggle-themes/toggles-all.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/css/form-builder.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/css/awesome.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/css/table.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/css/toggles.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/css/toggle-themes/toggles-all.css') }}" rel="stylesheet">
   <!-- DataTables CSS -->
-  <link href="{{ asset('/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css') }}" rel="stylesheet">
+  <link href="{{ asset('public/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css') }}" rel="stylesheet">
   <!-- DataTables Responsive CSS -->
-{{--<link href="{{ asset('/bower_components/datatables-responsive/css/responsive.dataTables.scss') }}" rel="stylesheet">--}}
+{{--<link href="{{ asset('public/bower_components/datatables-responsive/css/responsive.dataTables.scss') }}" rel="stylesheet">--}}
 <!-- jQuery Library -->
-  <script src="{{ asset('/js/jquery.min.js') }}"></script>
+  <script src="{{ asset('public/js/jquery.min.js') }}"></script>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwXS96_uM6y-6ZJZhSJGE87pO-qxpDp-Q&libraries=geometry,places"></script>
   {{--<script>--}}
 
@@ -71,14 +71,13 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
 			postal_code: 'short_name'
 		};
   </script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://unpkg.com/vue"></script>
+   
   <style>
     body {
         background-color: #5c788f;
     }
       .eerross {
-          background-image: url("{{ asset('/img/01_fix_background.png') }}");
+          background-image: url("{{ asset('public/img/01_fix_background.png') }}");
       width: 100%;
       height: 100%;
     }
@@ -132,7 +131,7 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
           <!-- Profile Menu -->
           <div class="text-center s-widget m-b-25 dropdown" id="profile-menu">
             <a href="#" data-toggle="dropdown">
-              <img class="profile-pic animated" src="{{ asset('/img/sites_badge.png') }}" alt="Transet Ports">
+              <img class="profile-pic animated" src="{{ asset('public/img/sites_badge.png') }}" alt="Transet Ports">
             </a>
             <ul class="dropdown-menu profile-menu">
               {{--<li><a href="{{ url('all-messages') }}">Messages</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>--}}
@@ -392,7 +391,14 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
           @endif
 
           @if(isset($userViewReportsPermission) && $userViewReportsPermission->permission_id =='16')
+                  @if (Auth::user())
+                      <li {{ (Request::is('reports') ? "class=active" : '') }}>
+                          <a class="sa-side-drone" href="{{ url('api/v1/requestDrones')}}">
+                              <span class="menu-item">drone Request</span>
+                          </a>
+                      </li>
 
+                  @endif
 
           @endif
 
@@ -407,14 +413,7 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
               </li>
 
             @endif
-                @if (Auth::user())
-                    <li {{ (Request::is('reports') ? "class=active" : '') }}>
-                        <a class="sa-side-drone" href="{{ url('requestForm')}}">
-                            <span class="menu-item">drone Request</span>
-                        </a>
-                    </li>
-
-                @endif
+                
 
           @endif
         </ul>
@@ -436,14 +435,14 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
     <!-- jQuery -->
 
     <!--Toggles-->
-    <script src="{{ asset('/js/toggles.js') }}"></script>
+    <script src="{{ asset('public/js/toggles.js') }}"></script>
 
-    <script src="{{ asset('/js/jquery-ui.min.js') }}"></script> <!-- jQuery UI -->
-    <script src="{{ asset('/js/jquery.easing.1.3.js') }}"></script>
+    <script src="{{ asset('public/js/jquery-ui.min.js') }}"></script> <!-- jQuery UI -->
+    <script src="{{ asset('public/js/jquery.easing.1.3.js') }}"></script>
     <!-- jQuery Easing - Requirred for Lightbox + Pie Charts-->
 
     <!-- Bootstrap -->
-    <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('public/js/bootstrap.min.js') }}"></script>
 
 
 
@@ -452,87 +451,84 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
     <script src="{{ asset('/js/icheck.js') }}"></script> <!-- Custom Checkbox + Radio -->
 
     <!-- UX -->
-    <script src="{{ asset('/js/scroll.min.js') }}"></script> <!-- Custom Scrollbar -->
+    <script src="{{ asset('public/js/scroll.min.js') }}"></script> <!-- Custom Scrollbar -->
 
     <!-- Other -->
-    <script src="{{ asset('/js/calendar.min.js') }}"></script> <!-- Calendar -->
-    <script src="{{ asset('/js/feeds.min.js') }}"></script> <!-- News Feeds -->
+    <script src="{{ asset('public/js/calendar.min.js') }}"></script> <!-- Calendar -->
+    <script src="{{ asset('public/js/feeds.min.js') }}"></script> <!-- News Feeds -->
 
 
     <!--  Form Related -->
-    <script src="{{ asset('/js/validation/validate.min.js') }}"></script> <!-- jQuery Form Validation Library -->
-    <script src="{{ asset('/js/validation/validationEngine.min.js') }}"></script>
+    <script src="{{ asset('public/js/validation/validate.min.js') }}"></script> <!-- jQuery Form Validation Library -->
+    <script src="{{ asset('public/js/validation/validationEngine.min.js') }}"></script>
     <!-- jQuery Form Validation Library - requirred with above js -->
 
 
     <!-- All JS functions -->
-    <script src="{{ asset('/js/functions.js') }}"></script>
+    <script src="{{ asset('public/js/functions.js') }}"></script>
 
 
     <!-- Token Input -->
-    <script src="{{ asset('/js/jquery.tokeninput.js') }}"></script> <!-- Token Input -->
+    <script src="{{ asset('public/js/jquery.tokeninput.js') }}"></script> <!-- Token Input -->
 
 
     <!-- Noty JavaScript -->
-    <script src="{{ asset('/bower_components/noty/js/noty/packaged/jquery.noty.packaged.js') }}"></script>
+    <script src="{{ asset('public/bower_components/noty/js/noty/packaged/jquery.noty.packaged.js') }}"></script>
 
     <!-- DataTables JavaScript -->
 
 
-    <script src="{{ asset('/bower_components/datatables/media/js/datatables-plugins/pagination/scrolling.js') }}"></script>
-    <script src="{{ asset('/bower_components/datatables/media/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('public/bower_components/datatables/media/js/datatables-plugins/pagination/scrolling.js') }}"></script>
+    <script src="{{ asset('public/bower_components/datatables/media/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('public/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js') }}"></script>
 
 
 
     <!-- Jquery Bootstrap Maxlength -->
-    <script src="{{ asset('/bower_components/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
+    <script src="{{ asset('public/bower_components/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
 
 
     <!-- Media -->
-    <script src="{{ asset('/js/media-player.min.js') }}"></script> <!-- Video Player -->
-    <script src="{{ asset('/js/pirobox.min.js') }}"></script> <!-- Lightbox -->
-    <script src="{{ asset('js/file-manager/elfinder.js') }}"></script> <!-- File Manager -->
+    <script src="{{ asset('public/js/media-player.min.js') }}"></script> <!-- Video Player -->
+    <script src="{{ asset('public/js/pirobox.min.js') }}"></script> <!-- Lightbox -->
+    <script src="{{ asset('public/js/file-manager/elfinder.js') }}"></script> <!-- File Manager -->
 
 
-    <script type="text/javascript" src="{{ asset('/incl/oms.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/incl/oms.min.js') }}"></script>
 
 
 
     <!-- File Upload -->
-    <script src="{{ asset('/js/fileupload.min.js') }}"></script> <!-- File Upload -->
+    <script src="{{ asset('public/js/fileupload.min.js') }}"></script> <!-- File Upload -->
 
     <!-- Spinner -->
-    <script src="{{ asset('/js/HoldOn.min.js') }}"></script> <!-- Spinner -->
+    <script src="{{ asset('public/js/HoldOn.min.js') }}"></script> <!-- Spinner -->
 
     <!-- bootstrap-switch. -->
-    <script src="{{ asset('/js/bootstrap-switch.js') }}"></script> <!-- bootstrap-switch. -->
+    <script src="{{ asset('public/js/bootstrap-switch.js') }}"></script> <!-- bootstrap-switch. -->
 
     <!-- Date & Time Picker -->
-    <script src="{{ asset('/js/datetimepicker.min.js') }}"></script> <!-- Date & Time Picker -->
+    <script src="{{ asset('public/js/datetimepicker.min.js') }}"></script> <!-- Date & Time Picker -->
 
     <!-- Buttons HTML5 -->
-    <script src="{{ asset('/js/dataTables.buttons.min.js') }}"></script>
-    <script src="{{ asset('/js/buttons.html5.min.js') }}"></script>
-    <script src="{{ asset('/js/jszip.min.js') }}"></script>
-    <script src="{{ asset('/js/pdfmake.min.js') }}"></script>
-    <script src="{{ asset('/js/vfs_fonts.js') }}"></script>
+    <script src="{{ asset('public/js/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('public/js/buttons.html5.min.js') }}"></script>
+    <script src="{{ asset('public/js/jszip.min.js') }}"></script>
+    <script src="{{ asset('public/js/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('public/js/vfs_fonts.js') }}"></script>
     <!--  Buttons HTML5 -->
 
 	
 	
-<!-- Vue  js    -->
-<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script>
 
 
 <!-- END  -->
 
-    <script src="{{ asset('js/socket.io.js') }}"></script>
+    <script src="{{ asset('public/js/socket.io.js') }}"></script>
 
-    <script src="{{ asset('js/calendar.min.js') }}"></script> <!-- Calendar -->
+    <script src="{{ asset('public/js/calendar.min.js') }}"></script> <!-- Calendar -->
 
-    <script src="{{ asset('js/raphael.js') }}"></script>
+    <script src="{{ asset('public/js/raphael.js') }}"></script>
   <!-- D3.js
         <script src="{{ asset('js/d3/plugins.js') }}"></script>
         <script src="{{ asset('js/d3/script.js') }}"></script>
@@ -556,7 +552,7 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
     </script>
 
     <!-- zoomchart -->
-    <script src="{{ asset('js/zoomcharts.js') }}"></script>
+    <script src="{{ asset('public/js/zoomcharts.js') }}"></script>
 
     <script>
 			$(document).ready(function () {
