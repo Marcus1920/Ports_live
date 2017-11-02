@@ -1268,3 +1268,4 @@ Route::any("logPIR", function () {
 Route::group(['prefix' => "api"], function () {
 	Route::any("switchseen", "CasesSeenController@switchSeen");
 });
+
