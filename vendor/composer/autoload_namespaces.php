@@ -15,6 +15,7 @@ return array(
     'Dotenv' => array($vendorDir . '/vlucas/phpdotenv/src'),
     'Doctrine\\DBAL\\' => array($vendorDir . '/doctrine/dbal/lib'),
     'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/lib'),
+    'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib'),
     'Doctrine\\Common\\Collections\\' => array($vendorDir . '/doctrine/collections/lib'),
     'Diff' => array($vendorDir . '/phpspec/php-diff/lib'),
     'Cornford\\Googlmapper' => array($vendorDir . '/cornford/googlmapper/src'),

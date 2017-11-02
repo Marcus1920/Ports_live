@@ -963,11 +963,7 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 |--------------------------------------------------------------------------
 |
 */
-/*
-Route::get('reports', ['middleware' => 'resetLastActive', function () {
-    return view('reports.list');
-}]);
-*/
+
 Route::get('reports-list', ['middleware' => 'resetLastActive', 'uses' => 'ReportsController@index']);
 Route::post('filterReports', ['middleware' => 'resetLastActive', 'uses' => 'ReportsController@show']);
 
@@ -1429,6 +1425,7 @@ Route::post('task-reminders','TaskRemindersController@store');
 */
 Route::get('maps'  , 'MapsController@Getmaps') ;
 
+
 Route::get('map2'  ,function (){
 
     return view('cornford.map2');
@@ -1438,12 +1435,46 @@ Route::post('search'  ,'MapsController@search');
 
 Route::post('searchCase'  ,'MapsController@searchCase');
 Route::post('createMapCase'  ,'MapsController@storeCase');
+
+
+    Route::resource('drone', 'DroneRequestController');
+    Route::post('firstDroneApproval/{id}', 'DroneRequestController@FirstApprove');
+    Route::post('finalDroneApproval/{id}', 'DroneRequestController@Approve');
+    Route::post('rejectDroneRequest/{id}', 'DroneRequestController@Reject');
+
+    Route::get('requestDrones', 'DroneRequestController@requestDrones');
+
+
+   
 /*
 |--------------------------------------------------------------------------
 | END MAP ROUTING
 |--------------------------------------------------------------------------
 |
 */
+
+
+    /*
+|--------------------------------------------------------------------------
+| DRONE TYPES AND SUB TYPES ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+    Route::resource('drone-type','DroneTypesController');
+    Route::resource('drone-sub-type','DroneSubTypesController');
+    Route::get('droneSubType/{id}','DroneSubTypesController@droneSubTypes');
+
+
+//    Route::get('droneSubType/{id}','DroneSubTypesController@index');
+    Route::get('userDepartment','DroneRequestController@userDepartment');
+
+    /*
+|--------------------------------------------------------------------------
+| END DRONE TYPES AND SUB TYPES ROUTING
+|--------------------------------------------------------------------------
+|
+*/
+
 
 
                  // MyRoute
@@ -1468,5 +1499,55 @@ Route::get('newView',function(){
   return view('amyView.newView');
 });
 
+
 // Testing Route
 Route::get('query',['uses' => 'AMyController@create']);
+
+Route::group(['prefix' => "api"], function () {
+	Route::any("switchseen", "CasesSeenController@switchSeen");
+
+
+});
+
+/*-------------------------------------------------------------------
+DRONES ROUTING
+---------------------------------------------------------------------
+*/
+
+
+Route::group(array('prefix' => 'api/v1'), function()
+{    /*|--------------------------------------------------------------------------|
+    DRONE ROUTING
+    |--------------------------------------------------------------------------|*/
+    Route::resource('drone', 'DroneRequestController');
+    Route::post('firstDroneApproval/{id}', 'DroneRequestController@FirstApprove');
+    Route::post('finalDroneApproval/{id}', 'DroneRequestController@Approve');
+    Route::post('rejectDroneRequest/{id}', 'DroneRequestController@Reject');
+
+    /*|--------------------------------------------------------------------------|
+    END DRONE ROUTING
+    |--------------------------------------------------------------------------|*/
+
+    /*|--------------------------------------------------------------------------|
+     DRONE TYPES AND SUB TYPES ROUTING
+    |--------------------------------------------------
+    ------------------------|*/
+    Route::resource('drone-type','DroneTypesController');
+    Route::resource('drone-sub-type','DroneSubTypesController');
+
+
+    /*|--------------------------------------------------------------------------|
+    END DRONE TYPES AND SUB TYPES ROUTING
+    |--------------------------------------------------------------------------|*/
+
+    Route::get('userDepartment','DronesController@userDepartment');
+});
+
+
+Route::get('requestForm','DroneTypesController@index');
+
+
+
+
+
+
