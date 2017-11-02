@@ -1153,10 +1153,14 @@ Route::group(array('prefix' => 'api/v1'), function() {
 |--------------------------------------------------------------------------
 |
 */
+
     Route::resource('drone', 'DroneRequestController');
     Route::post('firstDroneApproval/{id}', 'DroneRequestController@FirstApprove');
     Route::post('finalDroneApproval/{id}', 'DroneRequestController@Approve');
     Route::post('rejectDroneRequest/{id}', 'DroneRequestController@Reject');
+
+    Route::get('requestDrones', 'DroneRequestController@requestDrones');
+
 
     /*
 |--------------------------------------------------------------------------
@@ -1175,9 +1179,15 @@ Route::group(array('prefix' => 'api/v1'), function() {
     Route::resource('drone-sub-type','DroneSubTypesController');
     Route::get('droneSubType/{id}','DroneSubTypesController@droneSubTypes');
 
+
     Route::get('request','DroneRequestController@index');
 
     Route::get('userDepartment','DronesController@userDepartment');
+
+
+//    Route::get('droneSubType/{id}','DroneSubTypesController@index');
+    Route::get('userDepartment','DroneRequestController@userDepartment');
+
 
     /*
 |--------------------------------------------------------------------------
@@ -1259,7 +1269,12 @@ Route::any("logPIR", function () {
     die("<pre>{$txtDebug}</pre>");
 });
 Route::group(['prefix' => "api"], function () {
+
     Route::any("switchseen", "CasesSeenController@switchSeen");
+
+	Route::any("switchseen", "CasesSeenController@switchSeen");
+
+
 
 });
 
@@ -1356,4 +1371,9 @@ Route::get('firstDroneApproval', 'DroneRequestController@FirstApprove');
 
 //Route::get('droneApprove','DroneRequestController@show');
 
+
 //Route::get('approveForm','DroneRequestController@show');
+
+
+
+

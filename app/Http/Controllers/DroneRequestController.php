@@ -14,7 +14,13 @@ use App\Position;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Auth;
+
 use PhpParser\Node\Expr\Array_;
+
+
+use  Response ;
+use Redirect;
+use App\Http\Requests\DroneRequestForm;
 
 class DroneRequestController extends Controller
 {
@@ -68,7 +74,7 @@ class DroneRequestController extends Controller
         //return view('drones.droneApprove');
     }
 
-    public function store(Request $request)
+    public function store(DroneRequestForm $request)
     {
         $newDroneRequest = new DroneRequest();
         $newDroneRequest->created_by = Auth::user()->id;
@@ -80,6 +86,7 @@ class DroneRequestController extends Controller
         $newDroneRequest->reject_reason = 4;
         $newDroneRequest->reject_other_reason = "None";
         $newDroneRequest->save();
+
 
         $droneRequestActivity = new DroneRequestActivity();
         $droneRequestActivity->drone_request_id = $newDroneRequest->id;
@@ -126,6 +133,10 @@ class DroneRequestController extends Controller
 //        return $position->name;
 
         return "Drone request created";
+
+        \Session::flash('success', 'A drone request   has been sent, you will get a response soon!');
+        return Redirect::back();
+
     }
 
     public function FirstApprove($id, Request $request)
@@ -176,8 +187,9 @@ class DroneRequestController extends Controller
         return "Successfully Rejected drone request";
     }
 
-    public function show($id)
+    public function requestDrones($id)
     {
+
         $droneRequest  = DroneRequest::find($id)
             ->with('DroneType')
             ->with('DroneSubType')
@@ -189,10 +201,11 @@ class DroneRequestController extends Controller
 
 //        return $droneRequest->id;
 
-        $droneRequestActivity = DroneRequestActivity::with('DroneRequest')
-            ->with('User')
-            ->where('drone_request_id',$id)
-            ->get();
+       
+
+
+      return view('drones.index');
+
 
        return view('drones.droneApprove',compact('droneRequest','droneRequestActivity'));
         // return view(compact('droneRequest','droneRequestActivity'));
@@ -210,9 +223,44 @@ class DroneRequestController extends Controller
 
     {
         return view('drones.secondApproval');
+
     }
 
-    public function update(Request $request, $id)
+    public function userDepartment()
+    {
+
+        $searchString = \Input::get('q');
+        $userDepartment = \DB::table('departments')
+            ->whereRaw(
+                "CONCAT(`departments`.`id`, ' ', `departments`.`name`) LIKE '%{$searchString}%'")
+            ->select(
+                array
+
+                (
+                    'departments.id as id',
+                    'departments.name as name',
+                )
+            )
+            ->get();
+
+        $data = array();
+
+        foreach ($userDepartment as $department) {
+
+            $data[] = array(
+
+
+                "name" => "Department ID: {$department->id} >  Name: {$department->name}",
+                "id" => "{$department->id}"
+            );
+        }
+
+        return $data;
+
+
+    }
+
+        public function update(Request $request, $id)
     {
     }
 
