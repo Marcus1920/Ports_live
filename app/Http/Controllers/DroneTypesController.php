@@ -15,7 +15,7 @@ class DroneTypesController extends Controller
     public function index()
     {
         $droneTypes=DroneType::with('Department')->get();
-        return $droneTypes;
+        return view('drones.droneRequest',compact('droneTypes'));
     }
 
     public function create()
@@ -45,6 +45,6 @@ class DroneTypesController extends Controller
 
     public function destroy($id)
     {
-        //
+
     }
 }
