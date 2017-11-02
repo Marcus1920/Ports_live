@@ -391,7 +391,14 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
           @endif
 
           @if(isset($userViewReportsPermission) && $userViewReportsPermission->permission_id =='16')
+                  @if (Auth::user())
+                      <li {{ (Request::is('reports') ? "class=active" : '') }}>
+                          <a class="sa-side-drone" href="{{ url('api/v1/requestDrones')}}">
+                              <span class="menu-item">drone Request</span>
+                          </a>
+                      </li>
 
+                  @endif
 
           @endif
 
@@ -406,14 +413,7 @@ $title .= " - " . Route::getCurrentRoute()->getUri();
               </li>
 
             @endif
-                @if (Auth::user())
-                    <li {{ (Request::is('reports') ? "class=active" : '') }}>
-                        <a class="sa-side-drone" href="{{ url('requestForm')}}">
-                            <span class="menu-item">drone Request</span>
-                        </a>
-                    </li>
-
-                @endif
+                
 
           @endif
         </ul>

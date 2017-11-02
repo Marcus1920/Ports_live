@@ -13,11 +13,11 @@ class DroneSubTypesController extends Controller
     public function index()
     {
         $droneSubType = DroneSubType::with('DroneType')->get();
-
         return $droneSubType;
     }
 
     public function droneSubTypes($id)
+
     {
         $droneSubTypes = DroneSubType::with('DroneType')
             ->where('drone_type_id',$id)
@@ -27,18 +27,23 @@ class DroneSubTypesController extends Controller
     }
 
     public function create()
+
     {
-        //
+        $droneSubTypes = DroneSubType::with('DroneType')
+            ->where('drone_type_id',$id)
+            ->get();
+
+        return $droneSubTypes;
     }
 
     public function store(Request $request)
     {
-        //
+
     }
 
     public function show($id)
     {
-        //
+
     }
 
     public function edit($id)

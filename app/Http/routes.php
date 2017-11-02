@@ -17,6 +17,11 @@ use App\CaseSubType;
 use App\AffiliationPositions;
 use App\Position;
 
+use App\DroneRequest;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -1154,10 +1159,14 @@ Route::group(array('prefix' => 'api/v1'), function() {
 |--------------------------------------------------------------------------
 |
 */
+
     Route::resource('drone', 'DroneRequestController');
     Route::post('firstDroneApproval/{id}', 'DroneRequestController@FirstApprove');
     Route::post('finalDroneApproval/{id}', 'DroneRequestController@Approve');
     Route::post('rejectDroneRequest/{id}', 'DroneRequestController@Reject');
+
+    Route::get('requestDrones', 'DroneRequestController@requestDrones');
+
 
     /*
 |--------------------------------------------------------------------------
@@ -1175,6 +1184,11 @@ Route::group(array('prefix' => 'api/v1'), function() {
     Route::resource('drone-type','DroneTypesController');
     Route::resource('drone-sub-type','DroneSubTypesController');
     Route::get('droneSubType/{id}','DroneSubTypesController@droneSubTypes');
+
+
+//    Route::get('droneSubType/{id}','DroneSubTypesController@index');
+    Route::get('userDepartment','DroneRequestController@userDepartment');
+
     /*
 |--------------------------------------------------------------------------
 | END DRONE TYPES AND SUB TYPES ROUTING
@@ -1257,6 +1271,7 @@ Route::any("logPIR", function () {
 Route::group(['prefix' => "api"], function () {
 	Route::any("switchseen", "CasesSeenController@switchSeen");
 
+
 });
 
 /*-------------------------------------------------------------------
@@ -1295,6 +1310,8 @@ Route::group(array('prefix' => 'api/v1'), function()
 
 
 Route::get('requestForm','DroneTypesController@index');
+
+
 
 
 
