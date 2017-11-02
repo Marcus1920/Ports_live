@@ -72,7 +72,6 @@
                             </span>
                     </div>
                     <div id = "hse_error_due_date"></div>
-
                 </div>
             </div>
 
@@ -100,7 +99,6 @@
         <div class="modal-footer">
 
         </div>
-
         {!! Form::close() !!}
     </div>
     </div>

@@ -8,9 +8,6 @@
         <h4 class="page-title">Second Approval</h4>
         <br>
         <div class="row justify-content-center">
-            {{--{!! Form::open(['url' => 'tasks', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"addTaskCaptureForm" ]) !!}--}}
-                {{--<form class="form-horizontal" id="droneApproval">--}}
-
             <div  class="col-md-4 " style="margin-left: 200px;">
                 <h3 class="block-title">CASE DETAILS</h3>
                         <h5 class="h3"> Case  Number   :</h5>
@@ -35,58 +32,42 @@
             {!! Form::open(['url' => 'tasks', 'method' => 'post', 'class' => 'form-horizontal', 'id'=>"addTaskCaptureForm" ]) !!}
             <div class="form-group">
                     <div class="col-md-6" style="margin-top:20px;">
-
                         <button type="button" class="btn btn-primary">Approve</button>
-                        <button type="button" class="btn  btn-danger">Reject</button>
+                        <button type="button" class="btn  btn-danger" id="rejectId">Reject</button>
                     </div>
             </div>
 
-
-            <div class="form-group">
+            <div class="form-group reason hidden ">
                 <div class="col-md-6">
                     <div class="col-md-3 " style="margin-top:10px;">
-                        <select name="rejectReason" id="rejectReason" class="form-control input-sm">
+                        <select name="rejectReason" id="rejectReason" class="form-control input-sm" disabled>
                             <option value="">-reject reason-</option>
                         </select>
-
                     </div>
-
                 </div>
-
             </div>
         <br/>
 
-            <div class="form-group">
+            <div class="form-group submit hidden">
                 <div class="col-md-10">
-                    <button type="submit" type="button" class="btn btn-sm">Submit</button>
+                    <button type="submit" type="button" class="btn btn-sm" id="submitId" disabled>Submit</button>
                 </div>
             </div>
-
             {!! Form::close() !!}
         </div>
     </div>
 @endsection
 @section('footer')
     <script>
-        $('#task_category_id').on('change',function(){
+        $('#rejectId').on('click',function(){
+            alert('okay');
 
-            var selectText  = $(this).find("option:selected").text();
-
-            if(selectText == 'Case' ){
-
-                $('.searchCase').removeClass('hidden');
-                $("#case_id").removeAttr('disabled');
-
-            } else {
-
-                $('.searchCase').addClass('hidden');
-                $("#case_id").attr('disabled','disabled');
-            }
+            $('.reason').removeClass('hidden');
+            $('.submit').removeClass('hidden');
+            $("#submitId").removeAttr('disabled');
+            $("#rejectReason").attr('disabled','disabled');
 
         })
-
-        $("#task_user_id").tokenInput("{!! url('/getUsers')!!}",{tokenLimit:1});
-        $("#case_id").tokenInput("{!! url('/getCases')!!}",{tokenLimit:1});
     </script>
 @endsection
 

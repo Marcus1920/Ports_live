@@ -56,7 +56,7 @@ class DroneRequestController extends Controller
 
     public function create()
     {
-        //
+
     }
 
     public function store(Request $request)
