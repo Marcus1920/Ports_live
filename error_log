@@ -1,0 +1,1 @@
+[02-Nov-2017 14:15:57 AFRICA/JOHANNESBURG] PHP Fatal error:  Class 'Illuminate\Support\Facades\Config' not found in /home/ubdemocoza/public_html/vendor/yajra/laravel-datatables-oracle/src/yajra/Datatables/Engines/BaseEngine.php on line 753
