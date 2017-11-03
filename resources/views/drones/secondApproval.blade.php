@@ -34,7 +34,7 @@
                         @foreach($droneRequestActivity as $item)
                             <div class="media p-l-5">
                                 <div class="media-body">
-                                    <a class="t-overflow" href="">{{$item->User->name}} {{$item->User->surname}} </a><br/>
+                                    <a class="t-overflow" href="">{{$item->User->name}} {{$item->User->surname}}</a><br/>
                                     <small class="text-muted">{{$item->activity}}</small>
                                 </div>
                             </div>
